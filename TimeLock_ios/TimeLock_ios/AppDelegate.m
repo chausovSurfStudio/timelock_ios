@@ -11,6 +11,7 @@
 #import "TLMainViewController.h"
 #import "TLProfileViewController.h"
 #import "TLCheckinsViewController.h"
+#import "TLLaunchLoginViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,6 +25,13 @@
     
     UITabBarController *tabsController = (id)_window.rootViewController;
     [self initTabBarController:tabsController];
+    
+    TLLaunchLoginViewController *vc = [[TLLaunchLoginViewController alloc] init];
+    UIViewController *oldRootController = self.window.rootViewController;
+    self.window.rootViewController = vc;
+    [vc setCompletion:^{
+        self.window.rootViewController = oldRootController;
+    }];
     
     return YES;
 }

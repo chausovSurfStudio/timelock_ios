@@ -9,3 +9,8 @@
 "mainScreenNavBarTitle" = "TimeLock";
 "checkinsScreenNavBarTitle" = "Чекины";
 "profileScreenNavBarTitle" = "Профиль";
+
+// launch login
+"loginButton" = "Войти";
+"emailPlaceholder" = "E-mail";
+"passwordPlaceholder" = "Пароль";

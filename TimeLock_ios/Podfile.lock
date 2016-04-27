@@ -23,6 +23,7 @@ PODS:
   - Crashlytics (3.7.0):
     - Fabric (~> 1.6.3)
   - Fabric (1.6.7)
+  - FrameAccessor (2.0)
   - IQKeyboardManager (4.0.2)
   - MagicalRecord (2.3.2):
     - MagicalRecord/Core (= 2.3.2)
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - Crashlytics
   - Fabric
+  - FrameAccessor (= 2.0)
   - IQKeyboardManager
   - MagicalRecord
   - MBProgressHUD (~> 0.9.1)
@@ -53,6 +55,7 @@ SPEC CHECKSUMS:
   AFNetworking: cb8d14a848e831097108418f5d49217339d4eb60
   Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   Fabric: caf7580c725e64db144f610ac65cd60956911dc7
+  FrameAccessor: 443a13e58e23a10ff22180da0897b28c3f6abf66
   IQKeyboardManager: 2341089c4ae25fa2fa82ce356a259fcd267dc6b6
   MagicalRecord: 53bed74b4323b930992a725be713e53b37d19755
   MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1

@@ -14,5 +14,6 @@ pod 'MBProgressHUD', '~> 0.9.1'
 pod 'SSKeychain'
 pod 'SWTableViewCell', '~> 0.3.7'
 pod 'IQKeyboardManager'
+pod 'FrameAccessor', '2.0'
 
 end

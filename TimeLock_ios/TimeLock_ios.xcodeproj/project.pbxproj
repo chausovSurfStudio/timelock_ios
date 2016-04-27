@@ -37,6 +37,10 @@
 		84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E64F4C1CD0DD65001A06A2 /* PT_Sans-Web-Italic.ttf */; };
 		84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 84E64F4D1CD0DD65001A06A2 /* PT_Sans-Web-Regular.ttf */; };
 		84E64F591CD0E5E2001A06A2 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 84E64F5B1CD0E5E2001A06A2 /* Localizable.strings */; };
+		84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64F601CD10C8E001A06A2 /* TLLaunchLoginViewController.m */; };
+		84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E64F611CD10C8E001A06A2 /* TLLaunchLoginViewController.xib */; };
+		84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64F661CD1139F001A06A2 /* UIButton+TimeLockStyle.m */; };
+		84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64F6A1CD14BCF001A06A2 /* UIImage+Utilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +107,13 @@
 		84E64F581CD0E5BD001A06A2 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Main.strings"; sourceTree = "<group>"; };
 		84E64F5A1CD0E5E2001A06A2 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		84E64F5C1CD0E606001A06A2 /* ru-RU */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "ru-RU"; path = "ru-RU.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		84E64F5F1CD10C8E001A06A2 /* TLLaunchLoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLLaunchLoginViewController.h; sourceTree = "<group>"; };
+		84E64F601CD10C8E001A06A2 /* TLLaunchLoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLLaunchLoginViewController.m; sourceTree = "<group>"; };
+		84E64F611CD10C8E001A06A2 /* TLLaunchLoginViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TLLaunchLoginViewController.xib; sourceTree = "<group>"; };
+		84E64F651CD1139F001A06A2 /* UIButton+TimeLockStyle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+TimeLockStyle.h"; sourceTree = "<group>"; };
+		84E64F661CD1139F001A06A2 /* UIButton+TimeLockStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TimeLockStyle.m"; sourceTree = "<group>"; };
+		84E64F691CD14BCF001A06A2 /* UIImage+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utilities.h"; sourceTree = "<group>"; };
+		84E64F6A1CD14BCF001A06A2 /* UIImage+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utilities.m"; sourceTree = "<group>"; };
 		D4C3556512062F74C2EE573D /* Pods-TimeLock_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLock_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLock_ios/Pods-TimeLock_ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -227,8 +238,9 @@
 		84E64F161CD0D2F1001A06A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				84E64F461CD0DBD5001A06A2 /* BarsAppearance.h */,
-				84E64F471CD0DBD5001A06A2 /* BarsAppearance.m */,
+				84E64F681CD14BBA001A06A2 /* UIImage+Utilities */,
+				84E64F641CD11378001A06A2 /* ButtonStyle */,
+				84E64F5D1CD10C1D001A06A2 /* BarsAppearance */,
 				84E64F451CD0DA6D001A06A2 /* Const.h */,
 			);
 			name = Utils;
@@ -286,6 +298,7 @@
 		84E64F2E1CD0D6B4001A06A2 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				84E64F5E1CD10C45001A06A2 /* LaunchLogin */,
 				84E64F311CD0D6D9001A06A2 /* Checkins */,
 				84E64F2F1CD0D6B9001A06A2 /* Main */,
 				84E64F301CD0D6D0001A06A2 /* Profile */,
@@ -364,6 +377,43 @@
 				84E64F5B1CD0E5E2001A06A2 /* Localizable.strings */,
 			);
 			name = Strings;
+			sourceTree = "<group>";
+		};
+		84E64F5D1CD10C1D001A06A2 /* BarsAppearance */ = {
+			isa = PBXGroup;
+			children = (
+				84E64F461CD0DBD5001A06A2 /* BarsAppearance.h */,
+				84E64F471CD0DBD5001A06A2 /* BarsAppearance.m */,
+			);
+			name = BarsAppearance;
+			sourceTree = "<group>";
+		};
+		84E64F5E1CD10C45001A06A2 /* LaunchLogin */ = {
+			isa = PBXGroup;
+			children = (
+				84E64F5F1CD10C8E001A06A2 /* TLLaunchLoginViewController.h */,
+				84E64F601CD10C8E001A06A2 /* TLLaunchLoginViewController.m */,
+				84E64F611CD10C8E001A06A2 /* TLLaunchLoginViewController.xib */,
+			);
+			name = LaunchLogin;
+			sourceTree = "<group>";
+		};
+		84E64F641CD11378001A06A2 /* ButtonStyle */ = {
+			isa = PBXGroup;
+			children = (
+				84E64F651CD1139F001A06A2 /* UIButton+TimeLockStyle.h */,
+				84E64F661CD1139F001A06A2 /* UIButton+TimeLockStyle.m */,
+			);
+			name = ButtonStyle;
+			sourceTree = "<group>";
+		};
+		84E64F681CD14BBA001A06A2 /* UIImage+Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				84E64F691CD14BCF001A06A2 /* UIImage+Utilities.h */,
+				84E64F6A1CD14BCF001A06A2 /* UIImage+Utilities.m */,
+			);
+			name = "UIImage+Utilities";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -475,6 +525,7 @@
 			files = (
 				84E64F4E1CD0DEC0001A06A2 /* PT_Sans-Web-Bold.ttf in Resources */,
 				84E64F4F1CD0DEC0001A06A2 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
+				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
@@ -568,7 +619,10 @@
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
 				84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */,
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
+				84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */,
+				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,
 				84E64F421CD0D76B001A06A2 /* TLCheckinsViewController.m in Sources */,
+				84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */,
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				84E64EEC1CD0C9E2001A06A2 /* TimeLock_ios.xcdatamodeld in Sources */,

@@ -8,6 +8,10 @@
 
 #import "AppDelegate.h"
 
+#import "TLMainViewController.h"
+#import "TLProfileViewController.h"
+#import "TLCheckinsViewController.h"
+
 @interface AppDelegate ()
 
 @end
@@ -16,8 +20,22 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+    
+    UITabBarController *tabsController = (id)_window.rootViewController;
+    [self initTabBarController:tabsController];
+    
     return YES;
+}
+
+- (void)initTabBarController:(UITabBarController *)tabBarController {
+    _mainNavigationController       = tabBarController.viewControllers[0];
+    _checkinsNavigationController   = tabBarController.viewControllers[1];
+    _profileNavigationController    = tabBarController.viewControllers[2];
+    
+    [_mainNavigationController      pushViewController:[[TLMainViewController alloc] init]  animated:NO];
+    [_checkinsNavigationController  pushViewController:[[TLCheckinsViewController alloc] init] animated:NO];
+    [_profileNavigationController   pushViewController:[[TLProfileViewController alloc] init]  animated:NO];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

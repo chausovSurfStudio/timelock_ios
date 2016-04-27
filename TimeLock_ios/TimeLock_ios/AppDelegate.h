@@ -17,6 +17,10 @@
 @property (readonly, strong, nonatomic) NSManagedObjectModel *managedObjectModel;
 @property (readonly, strong, nonatomic) NSPersistentStoreCoordinator *persistentStoreCoordinator;
 
+@property (nonatomic, readwrite, strong) UINavigationController *mainNavigationController;
+@property (nonatomic, readwrite, strong) UINavigationController *checkinsNavigationController;
+@property (nonatomic, readwrite, strong) UINavigationController *profileNavigationController;
+
 - (void)saveContext;
 - (NSURL *)applicationDocumentsDirectory;
 

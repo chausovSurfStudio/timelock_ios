@@ -1,0 +1,18 @@
+# Uncomment this line to define a global platform for your project
+# platform :ios, '6.0'
+
+inhibit_all_warnings!
+
+target 'TimeLock_ios' do
+    
+pod 'AFNetworking', '~> 2.5'
+pod 'Fabric'
+pod 'Crashlytics'
+pod 'ReactiveCocoa', '~> 2.5'
+pod 'MagicalRecord'
+pod 'MBProgressHUD', '~> 0.9.1'
+pod 'SSKeychain'
+pod 'SWTableViewCell', '~> 0.3.7'
+pod 'IQKeyboardManager'
+
+end

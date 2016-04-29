@@ -9,6 +9,8 @@
 #ifndef timelock_Const_h
 #define timelock_Const_h
 
+// COLOR
+
 #define NAVIGATION_BAR_COLOR    MAIN_BLUE_COLOR
 #define TAB_BAR_COLOR           MAIN_RED_COLOR
 
@@ -26,5 +28,11 @@
 // FONTS
 
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
+
+// STRINGS
+
+static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
+
+static NSString * const TOKEN_PATH = @"/token";
 
 #endif

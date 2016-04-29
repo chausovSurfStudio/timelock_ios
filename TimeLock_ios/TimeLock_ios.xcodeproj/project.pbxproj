@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		410043D9733188293DFE6FAE /* libPods-TimeLock_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A18EA854D8B86ABB749E27 /* libPods-TimeLock_ios.a */; };
+		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
+		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
 		84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EE21CD0C9E2001A06A2 /* AppDelegate.m */; };
 		84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E64EE71CD0C9E2001A06A2 /* Main.storyboard */; };
@@ -63,6 +65,10 @@
 /* Begin PBXFileReference section */
 		4BCCE95DC71BC71C140984B0 /* Pods-TimeLock_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLock_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLock_ios/Pods-TimeLock_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		67A18EA854D8B86ABB749E27 /* libPods-TimeLock_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeLock_ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
+		84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNetworkManager.m; sourceTree = "<group>"; };
+		84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Authorization.h"; sourceTree = "<group>"; };
+		84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLNetworkManager+Authorization.m"; sourceTree = "<group>"; };
 		84E64EDB1CD0C9E2001A06A2 /* TimeLock_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLock_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E64EDF1CD0C9E2001A06A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84E64EE11CD0C9E2001A06A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -160,6 +166,15 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		84B9F9661CD3B6560088D718 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */,
+				84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */,
+			);
+			name = Authorization;
+			sourceTree = "<group>";
+		};
 		84E64ED21CD0C9E1001A06A2 = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +264,9 @@
 		84E64F171CD0D312001A06A2 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				84B9F9661CD3B6560088D718 /* Authorization */,
+				84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */,
+				84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */,
 			);
 			name = NetworkManager;
 			sourceTree = "<group>";
@@ -616,6 +634,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */,
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
 				84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */,
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
@@ -623,6 +642,7 @@
 				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,
 				84E64F421CD0D76B001A06A2 /* TLCheckinsViewController.m in Sources */,
 				84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */,
+				84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */,
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				84E64EEC1CD0C9E2001A06A2 /* TimeLock_ios.xcdatamodeld in Sources */,

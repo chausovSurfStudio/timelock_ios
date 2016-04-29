@@ -9,6 +9,7 @@
 #import "TLLaunchLoginViewController.h"
 #import "Const.h"
 #import "UIButton+TimeLockStyle.h"
+#import "TLNetworkManager+Authorization.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import "FrameAccessor.h"
@@ -81,10 +82,22 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
 }
 
 - (void)configButtons {
-    @weakify(self);
+    //@weakify(self);
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        @strongify(self);
-        [self complete];
+        //@strongify(self);
+        //[self complete];
+        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:@"traktoro_13@mail.ru" forKey:@"email"];
+        [defaults setObject:@"password" forKey:@"password"];
+        [defaults synchronize];
+        [TLNetworkManager sharedNetworkManager].manualErrorShowing = YES;
+        [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
+            if (success) {
+                NSLog(@"nice");
+            } else {
+                NSLog(@"baaaad");
+            }
+        }];
     }];
 }
 

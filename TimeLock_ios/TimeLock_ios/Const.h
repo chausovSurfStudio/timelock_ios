@@ -29,10 +29,15 @@
 
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
 
-// STRINGS
+// URL PATH
 
 static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
 
 static NSString * const TOKEN_PATH = @"/token";
+
+// CONST STRING
+
+static NSString * const needRelogin = @"needReloginNotification";
+static NSString * const needRepeatRequest = @"needRepeatRequestNotification";
 
 #endif

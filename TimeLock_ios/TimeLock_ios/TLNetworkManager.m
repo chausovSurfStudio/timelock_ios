@@ -16,6 +16,11 @@
 
 @property (strong, nonatomic) AFHTTPRequestOperationManager* requestOperationManager;
 
+@property (nonatomic, copy) void (^completion)(BOOL success, id result);
+@property (nonatomic, assign) RequestType type;
+@property (nonatomic, strong) NSString *url;
+@property (nonatomic, strong) NSDictionary *parameters;
+
 @end
 
 @implementation TLNetworkManager
@@ -27,11 +32,11 @@ static TLNetworkManager *networkManager;
     if (!networkManager){
         dispatch_once(&onceToken, ^{
             networkManager = [[TLNetworkManager alloc] init];
-            NSURLCache *urlCache = [[NSURLCache alloc]
-                                    initWithMemoryCapacity:(4 * 1024 * 1024)
-                                    diskCapacity:(20 * 1024 * 1024)
-                                    diskPath:nil];
-            [NSURLCache setSharedURLCache:urlCache];
+//            NSURLCache *urlCache = [[NSURLCache alloc]
+//                                    initWithMemoryCapacity:(4 * 1024 * 1024)
+//                                    diskCapacity:(20 * 1024 * 1024)
+//                                    diskPath:nil];
+//            [NSURLCache setSharedURLCache:urlCache];
         });
     }
     return networkManager;
@@ -53,10 +58,11 @@ static TLNetworkManager *networkManager;
     _manualErrorShowing = NO;
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"token"]) {
+    if ([defaults objectForKey:@"token"] && ![[defaults objectForKey:@"token"] isEqualToString:@""]) {
         [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[defaults objectForKey:@"token"] password:@""];
-    } else if ([defaults objectForKey:@"email"] && [defaults objectForKey:@"password"]) {
-        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[defaults objectForKey:@"email"] password:@"password"];
+    } else if ([defaults objectForKey:@"email"] && [defaults objectForKey:@"password"] &&
+               ![[defaults objectForKey:@"email"] isEqualToString:@""] && ![[defaults objectForKey:@"password"] isEqualToString:@""]) {
+        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[defaults objectForKey:@"email"] password:[defaults objectForKey:@"password"]];
     }
     void (^successBlock)(AFHTTPRequestOperation * operation, id responseObject) = ^(AFHTTPRequestOperation * operation, id responseObject){
         if (!manualErrorShowing) {
@@ -78,7 +84,23 @@ static TLNetworkManager *networkManager;
             // TODO
         }
         if (statusCode == HTTPStatusNotAuthorized) {
-            // TODO
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:@"" forKey:@"token"];
+            [defaults setObject:@"" forKey:@"password"];
+            [defaults synchronize];
+            
+            self.parameters = parameters;
+            self.url = url;
+            self.type = type;
+            self.completion = completion;
+            NSLog(@"%@", [defaults objectForKey:needRelogin]);
+            if (![defaults objectForKey:needRelogin]) {
+                dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                    [[NSNotificationCenter defaultCenter] postNotificationName:needRelogin object:nil userInfo:nil];
+                });
+            } else {
+                completion(NO, error);
+            }
         } else {
             completion(NO, error);
         }
@@ -107,6 +129,36 @@ static TLNetworkManager *networkManager;
 - (BOOL) getNetworkStatus {
     NSLog(@"%d", [AFNetworkReachabilityManager sharedManager].reachable);
     return [AFNetworkReachabilityManager sharedManager].reachable;
+}
+
+- (void) startMonitoring {
+    [[AFNetworkReachabilityManager sharedManager] setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+        switch (status) {
+            case AFNetworkReachabilityStatusUnknown:
+            case AFNetworkReachabilityStatusReachableViaWWAN:
+            case AFNetworkReachabilityStatusReachableViaWiFi:
+                //available
+                break;
+            case AFNetworkReachabilityStatusNotReachable:
+                //not available
+                break;
+            default:
+                break;
+        }
+        
+        NSLog(@"Reachability: %@", AFStringFromNetworkReachabilityStatus(status));
+    }];
+    //start monitoring
+    [[AFNetworkReachabilityManager sharedManager] startMonitoring];
+    [self configureRepeatRequestNotification];
+}
+
+- (void)configureRepeatRequestNotification {
+    @weakify(self)
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:needRepeatRequest object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
+         @strongify(self)
+         [self requestType:self.type url:self.url parameters:self.parameters completion:self.completion];
+     }];
 }
 
 

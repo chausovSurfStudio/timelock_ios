@@ -82,18 +82,24 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
 }
 
 - (void)configButtons {
-    //@weakify(self);
+    @weakify(self);
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
-        //@strongify(self);
-        //[self complete];
+        @strongify(self);
+        @weakify(self);
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"traktoro_13@mail.ru" forKey:@"email"];
-        [defaults setObject:@"password" forKey:@"password"];
+        [defaults setObject:@"" forKey:@"token"];
+        [defaults setObject:self.emailTextField.text forKey:@"email"];
+        [defaults setObject:self.passwordTextField.text forKey:@"password"];
         [defaults synchronize];
         [TLNetworkManager sharedNetworkManager].manualErrorShowing = YES;
         [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
-            if (success) {
-                NSLog(@"nice");
+            @strongify(self);
+            if (success && [object isKindOfClass:[NSDictionary class]]) {
+                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+                [defaults setObject:object[@"token"] forKey:@"token"];
+                [defaults synchronize];
+                NSLog(@"token = %@", [defaults objectForKey:@"token"]);
+                [self complete];
             } else {
                 NSLog(@"baaaad");
             }

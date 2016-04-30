@@ -7,6 +7,10 @@
 //
 
 #import "AppDelegate.h"
+#import "Const.h"
+#import "TLNetworkManager+Authorization.h"
+
+#import <ReactiveCocoa/ReactiveCocoa.h>
 
 #import "TLMainViewController.h"
 #import "TLProfileViewController.h"
@@ -32,6 +36,15 @@
     [vc setCompletion:^{
         self.window.rootViewController = oldRootController;
     }];
+    [[TLNetworkManager sharedNetworkManager] startMonitoring];
+    
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [self configureNotification];
+    });
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    [defaults setObject:nil forKey:needRelogin];
+    [defaults synchronize];
     
     return YES;
 }
@@ -44,6 +57,32 @@
     [_mainNavigationController      pushViewController:[[TLMainViewController alloc] init]  animated:NO];
     [_checkinsNavigationController  pushViewController:[[TLCheckinsViewController alloc] init] animated:NO];
     [_profileNavigationController   pushViewController:[[TLProfileViewController alloc] init]  animated:NO];
+}
+
+- (void)configureNotification {
+    @weakify(self)
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:needRelogin object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
+        @strongify(self)
+        __block NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        [defaults setObject:needRelogin forKey:needRelogin];
+        [defaults synchronize];
+        [TLNetworkManager sharedNetworkManager].manualErrorShowing = NO;
+        [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
+            [defaults setObject:nil forKey:needRelogin];
+            [defaults synchronize];
+            if(!success && [object isKindOfClass:[NSError class]]) {
+#warning TODO исправить повторное открытие экрана авторизации
+                TLLaunchLoginViewController *loginVC = [[TLLaunchLoginViewController alloc] init];
+                UIViewController *oldRootController = self.window.rootViewController;
+                self.window.rootViewController = loginVC;
+                [loginVC setCompletion:^{
+                    self.window.rootViewController = oldRootController;
+                }];
+            } else {
+                [[NSNotificationCenter defaultCenter] postNotificationName:needRepeatRequest object:nil userInfo:nil];
+            }
+        }];
+     }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

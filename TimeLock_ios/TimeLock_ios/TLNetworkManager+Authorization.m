@@ -15,9 +15,9 @@
     NSString *url = [BASE_URL stringByAppendingString:[NSString stringWithFormat:TOKEN_PATH]];
     [self requestType:GET url:url parameters:param completion:^(BOOL success, id result){
         if (success && [result isKindOfClass:[NSDictionary class]]) {
-            completion(YES, nil);
+            completion(YES, result);
         } else {
-            completion(NO, nil);
+            completion(NO, result);
         }
     }];
 }

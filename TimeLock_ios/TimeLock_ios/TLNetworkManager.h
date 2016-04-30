@@ -37,5 +37,6 @@ typedef NS_ENUM(NSInteger, HTTPStatusCode){
 + (instancetype) sharedNetworkManager;
 - (void)requestType:(RequestType)type url:(NSString *)url parameters:(NSDictionary *)parameters completion:(void (^)(BOOL success, id result))completion;
 - (BOOL)getNetworkStatus;
+- (void)startMonitoring;
 
 @end

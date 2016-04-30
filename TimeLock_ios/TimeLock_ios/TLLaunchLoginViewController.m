@@ -86,14 +86,17 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         @weakify(self);
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+        __block NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:@"" forKey:@"token"];
         [defaults setObject:self.emailTextField.text forKey:@"email"];
         [defaults setObject:self.passwordTextField.text forKey:@"password"];
+        [defaults setObject:needRelogin forKey:needRelogin];
         [defaults synchronize];
         [TLNetworkManager sharedNetworkManager].manualErrorShowing = YES;
         [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
             @strongify(self);
+            [defaults setObject:nil forKey:needRelogin];
+            [defaults synchronize];
             if (success && [object isKindOfClass:[NSDictionary class]]) {
                 NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
                 [defaults setObject:object[@"token"] forKey:@"token"];

@@ -88,13 +88,12 @@ static TLNetworkManager *networkManager;
             [defaults setObject:@"" forKey:@"token"];
             [defaults setObject:@"" forKey:@"password"];
             [defaults synchronize];
-            
-            self.parameters = parameters;
-            self.url = url;
-            self.type = type;
-            self.completion = completion;
-            NSLog(@"%@", [defaults objectForKey:needRelogin]);
+
             if (![defaults objectForKey:needRelogin]) {
+                self.parameters = parameters;
+                self.url = url;
+                self.type = type;
+                self.completion = completion;
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.0 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
                     [[NSNotificationCenter defaultCenter] postNotificationName:needRelogin object:nil userInfo:nil];
                 });

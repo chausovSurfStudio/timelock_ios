@@ -26,7 +26,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.clipsToBounds = YES;
-    self.layer.cornerRadius = 5;
+    self.layer.cornerRadius = 7;
 }
 
 @end

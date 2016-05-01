@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "Const.h"
+#import "TLUtils.h"
 #import "TLNetworkManager+Authorization.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -30,21 +31,15 @@
     UITabBarController *tabsController = (id)_window.rootViewController;
     [self initTabBarController:tabsController];
     
-    TLLaunchLoginViewController *vc = [[TLLaunchLoginViewController alloc] init];
-    UIViewController *oldRootController = self.window.rootViewController;
-    self.window.rootViewController = vc;
-    [vc setCompletion:^{
-        self.window.rootViewController = oldRootController;
-    }];
     [[TLNetworkManager sharedNetworkManager] startMonitoring];
-    
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.01f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        [self configureNotification];
-    });
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setObject:nil forKey:needRelogin];
-    [defaults synchronize];
+    [self configureNotification];
+    if ([TLUtils checkExistenceNotEmptyStringObjectForKey:@"email"] && [TLUtils checkExistenceNotEmptyStringObjectForKey:@"password"]) {
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.05f * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [[NSNotificationCenter defaultCenter] postNotificationName:needRelogin object:nil userInfo:nil];
+        });
+    } else {
+        [self openLaunchLoginScreen];
+    }
     
     return YES;
 }
@@ -63,26 +58,26 @@
     @weakify(self)
     [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:needRelogin object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
         @strongify(self)
-        __block NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:needRelogin forKey:needRelogin];
-        [defaults synchronize];
+        [TLUtils setObjectToUserSettings:needRelogin forKey:needRelogin];
         [TLNetworkManager sharedNetworkManager].manualErrorShowing = NO;
         [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
-            [defaults setObject:nil forKey:needRelogin];
-            [defaults synchronize];
+            [TLUtils setObjectToUserSettings:nil forKey:needRelogin];
             if(!success && [object isKindOfClass:[NSError class]]) {
-#warning TODO исправить повторное открытие экрана авторизации
-                TLLaunchLoginViewController *loginVC = [[TLLaunchLoginViewController alloc] init];
-                UIViewController *oldRootController = self.window.rootViewController;
-                self.window.rootViewController = loginVC;
-                [loginVC setCompletion:^{
-                    self.window.rootViewController = oldRootController;
-                }];
+                [self openLaunchLoginScreen];
             } else {
                 [[NSNotificationCenter defaultCenter] postNotificationName:needRepeatRequest object:nil userInfo:nil];
             }
         }];
      }];
+}
+
+- (void)openLaunchLoginScreen {
+    TLLaunchLoginViewController *loginVC = [[TLLaunchLoginViewController alloc] init];
+    UIViewController *oldRootController = self.window.rootViewController;
+    self.window.rootViewController = loginVC;
+    [loginVC setCompletion:^{
+        self.window.rootViewController = oldRootController;
+    }];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

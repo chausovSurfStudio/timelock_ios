@@ -8,6 +8,7 @@
 
 #import "TLLaunchLoginViewController.h"
 #import "Const.h"
+#import "TLUtils.h"
 #import "UIButton+TimeLockStyle.h"
 #import "TLNetworkManager+Authorization.h"
 
@@ -86,22 +87,16 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
     [[self.loginButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
         @weakify(self);
-        __block NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:@"" forKey:@"token"];
-        [defaults setObject:self.emailTextField.text forKey:@"email"];
-        [defaults setObject:self.passwordTextField.text forKey:@"password"];
-        [defaults setObject:needRelogin forKey:needRelogin];
-        [defaults synchronize];
+        [TLUtils setObjectToUserSettings:self.emailTextField.text forKey:@"email"];
+        [TLUtils setObjectToUserSettings:self.passwordTextField.text forKey:@"password"];
+        [TLUtils setObjectToUserSettings:needRelogin forKey:needRelogin];
         [TLNetworkManager sharedNetworkManager].manualErrorShowing = YES;
         [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
             @strongify(self);
-            [defaults setObject:nil forKey:needRelogin];
-            [defaults synchronize];
+            [TLUtils setObjectToUserSettings:nil forKey:needRelogin];
             if (success && [object isKindOfClass:[NSDictionary class]]) {
-                NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-                [defaults setObject:object[@"token"] forKey:@"token"];
-                [defaults synchronize];
-                NSLog(@"token = %@", [defaults objectForKey:@"token"]);
+                [TLUtils setObjectToUserSettings:object[@"token"] forKey:@"token"];
+                NSLog(@"token = %@", [TLUtils objectFromUserSettingsForKey:@"token"]);
                 [self complete];
             } else {
                 NSLog(@"baaaad");

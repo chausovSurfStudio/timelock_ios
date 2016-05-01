@@ -10,6 +10,7 @@
 #import "AFNetworking.h"
 #import "AFURLConnectionOperation.h"
 #import "Const.h"
+#import "TLUtils.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface TLNetworkManager()
@@ -57,12 +58,13 @@ static TLNetworkManager *networkManager;
     BOOL manualErrorShowing = _manualErrorShowing;
     _manualErrorShowing = NO;
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    if ([defaults objectForKey:@"token"] && ![[defaults objectForKey:@"token"] isEqualToString:@""]) {
-        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[defaults objectForKey:@"token"] password:@""];
-    } else if ([defaults objectForKey:@"email"] && [defaults objectForKey:@"password"] &&
-               ![[defaults objectForKey:@"email"] isEqualToString:@""] && ![[defaults objectForKey:@"password"] isEqualToString:@""]) {
-        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[defaults objectForKey:@"email"] password:[defaults objectForKey:@"password"]];
+    if ([TLUtils checkExistenceNotEmptyStringObjectForKey:@"token"]) {
+        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[TLUtils objectFromUserSettingsForKey:@"token"] password:@""];
+    } else if ([TLUtils checkExistenceNotEmptyStringObjectForKey:@"email"] && [TLUtils checkExistenceNotEmptyStringObjectForKey:@"password"]) {
+        NSString *email = [TLUtils objectFromUserSettingsForKey:@"email"];
+        NSString *password = [TLUtils objectFromUserSettingsForKey:@"password"];
+        NSLog(@"email = %@, password = %@", email, password);
+        [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:email password:password];
     }
     void (^successBlock)(AFHTTPRequestOperation * operation, id responseObject) = ^(AFHTTPRequestOperation * operation, id responseObject){
         if (!manualErrorShowing) {
@@ -84,12 +86,10 @@ static TLNetworkManager *networkManager;
             // TODO
         }
         if (statusCode == HTTPStatusNotAuthorized) {
-            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-            [defaults setObject:@"" forKey:@"token"];
-            [defaults setObject:@"" forKey:@"password"];
-            [defaults synchronize];
+            [TLUtils setObjectToUserSettings:nil forKey:@"token"];
+            [TLUtils setObjectToUserSettings:nil forKey:@"password"];
 
-            if (![defaults objectForKey:needRelogin]) {
+            if (![TLUtils checkExistenceNotEmptyStringObjectForKey:needRelogin]) {
                 self.parameters = parameters;
                 self.url = url;
                 self.type = type;
@@ -155,8 +155,10 @@ static TLNetworkManager *networkManager;
 - (void)configureRepeatRequestNotification {
     @weakify(self)
     [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:needRepeatRequest object:nil] takeUntil:[self rac_willDeallocSignal]] subscribeNext:^(id x) {
-         @strongify(self)
-         [self requestType:self.type url:self.url parameters:self.parameters completion:self.completion];
+        @strongify(self)
+        if (self.url && ![self.url isEqualToString:@""]) {
+            [self requestType:self.type url:self.url parameters:self.parameters completion:self.completion];
+        }
      }];
 }
 

@@ -49,6 +49,8 @@
         return nil;
     }
     NSDateFormatter *formatter = [NSDateFormatter new];
+    [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+    [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"ru_RU_POSIX"]];
     [formatter setDateFormat:dateFormat];
     NSLog(@"date = %@", [formatter dateFromString:s]);
     return [formatter dateFromString:s];

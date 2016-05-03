@@ -17,6 +17,8 @@
 		8446AB2F1CD8B5EA002B0C9C /* DataStorageManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB2E1CD8B5EA002B0C9C /* DataStorageManager+User.m */; };
 		8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB311CD8B5FE002B0C9C /* DataStorageManager+Post.m */; };
 		8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB351CD8C745002B0C9C /* TLNetworkManager+Post.m */; };
+		8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB391CD8F949002B0C9C /* PostTableViewCell.m */; };
+		8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */; };
 		8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448A97B1CD611AA008E4AE1 /* TLUtils.m */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
@@ -93,6 +95,9 @@
 		8446AB311CD8B5FE002B0C9C /* DataStorageManager+Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DataStorageManager+Post.m"; sourceTree = "<group>"; };
 		8446AB341CD8C745002B0C9C /* TLNetworkManager+Post.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Post.h"; sourceTree = "<group>"; };
 		8446AB351CD8C745002B0C9C /* TLNetworkManager+Post.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLNetworkManager+Post.m"; sourceTree = "<group>"; };
+		8446AB381CD8F949002B0C9C /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
+		8446AB391CD8F949002B0C9C /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
+		8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8448A97A1CD611AA008E4AE1 /* TLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUtils.h; sourceTree = "<group>"; };
 		8448A97B1CD611AA008E4AE1 /* TLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUtils.m; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
@@ -444,6 +449,9 @@
 				84E64F321CD0D715001A06A2 /* TLMainViewController.h */,
 				84E64F331CD0D715001A06A2 /* TLMainViewController.m */,
 				84E64F341CD0D715001A06A2 /* TLMainViewController.xib */,
+				8446AB381CD8F949002B0C9C /* PostTableViewCell.h */,
+				8446AB391CD8F949002B0C9C /* PostTableViewCell.m */,
+				8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */,
 			);
 			name = MainViewController;
 			sourceTree = "<group>";
@@ -644,6 +652,7 @@
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
 				84E64F281CD0D60A001A06A2 /* ic_index.png in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
+				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
 				84E64F361CD0D715001A06A2 /* TLMainViewController.xib in Resources */,
@@ -735,6 +744,7 @@
 				8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */,
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
 				8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */,
+				8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */,
 				84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */,
 				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,
 				84E64F421CD0D76B001A06A2 /* TLCheckinsViewController.m in Sources */,

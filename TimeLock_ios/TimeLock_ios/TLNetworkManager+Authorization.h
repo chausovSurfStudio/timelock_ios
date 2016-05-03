@@ -11,5 +11,6 @@
 @interface TLNetworkManager (Authorization)
 
 - (void)authorizationRequestParam:(NSDictionary *)param completion:(void (^)(BOOL success, id object))completion;
+- (void)currentUserProfileWithCompletion:(void (^)(BOOL success, id object))completion;
 
 @end

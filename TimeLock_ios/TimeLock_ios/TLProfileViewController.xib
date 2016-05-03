@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLProfileViewController">
             <connections>
+                <outlet property="tableView" destination="r9K-Hg-fal" id="ShE-mX-gIM"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,21 +16,21 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Профиль" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DZm-D0-JiF">
-                    <rect key="frame" x="117" y="229" width="86" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="86" id="LHD-kx-S84"/>
-                        <constraint firstAttribute="height" constant="21" id="Ui7-9W-1Dv"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="r9K-Hg-fal" customClass="TableViewButton">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="b7w-mv-tF9"/>
+                        <outlet property="delegate" destination="-1" id="Wfs-Fb-1uc"/>
+                    </connections>
+                </tableView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="DZm-D0-JiF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SlJ-kh-doh"/>
-                <constraint firstItem="DZm-D0-JiF" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="VmN-Q8-6vC"/>
+                <constraint firstItem="r9K-Hg-fal" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="4oY-Go-kbR"/>
+                <constraint firstAttribute="trailing" secondItem="r9K-Hg-fal" secondAttribute="trailing" id="GSQ-wF-WJn"/>
+                <constraint firstItem="r9K-Hg-fal" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Reb-87-UQo"/>
+                <constraint firstAttribute="bottom" secondItem="r9K-Hg-fal" secondAttribute="bottom" id="ylG-eg-rNI"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

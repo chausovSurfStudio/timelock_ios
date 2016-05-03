@@ -47,7 +47,7 @@ static TLNetworkManager *networkManager;
     self = [super init];
     if (self) {
         self.requestOperationManager = [AFHTTPRequestOperationManager manager];
-        self.requestOperationManager.requestSerializer = [AFHTTPRequestSerializer serializer];
+        self.requestOperationManager.requestSerializer = [AFJSONRequestSerializer serializer];
         self.requestOperationManager.responseSerializer = [AFJSONResponseSerializer serializer];
         [self.requestOperationManager.requestSerializer setCachePolicy:NSURLRequestUseProtocolCachePolicy];
     }

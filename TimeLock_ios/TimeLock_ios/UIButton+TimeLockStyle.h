@@ -11,5 +11,6 @@
 @interface UIButton (TimeLockStyle)
 
 - (void)setMainGreenStyle;
+- (void)setRedStyle;
 
 @end

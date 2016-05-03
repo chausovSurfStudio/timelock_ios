@@ -19,7 +19,6 @@
 }
 
 - (void)createAndSaveUser:(NSDictionary *)params completion:(void (^)(BOOL success, id object))completion {
-    [User MR_truncateAll];
     NSArray *storedUsers = [User MR_findAll];
     [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext){
         NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_ == %@", params[@"id"]];

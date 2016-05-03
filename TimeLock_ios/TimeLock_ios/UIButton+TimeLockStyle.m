@@ -29,4 +29,21 @@
     self.layer.cornerRadius = 7;
 }
 
+- (void)setRedStyle {
+    self.backgroundColor = [UIColor clearColor];
+    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR_PRESSED] forState:UIControlStateHighlighted];
+    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR_PRESSED] forState:UIControlStateSelected];
+    
+    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateSelected];
+    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateHighlighted];
+    
+    self.titleLabel.font = BUTTON_FONT;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    self.clipsToBounds = YES;
+    self.layer.cornerRadius = 7;
+}
+
 @end

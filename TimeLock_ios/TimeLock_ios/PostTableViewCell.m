@@ -41,6 +41,7 @@
     self.postTextLabel.text = post.body;
     [self.userAvatar setImageWithURL:[NSURL URLWithString:post.user.avatar]];
     self.userAvatar.layer.cornerRadius = self.userAvatar.width / 2;
+    self.userAvatar.layer.masksToBounds = YES;
     self.usernameLabel.text = post.user.username;
 }
 

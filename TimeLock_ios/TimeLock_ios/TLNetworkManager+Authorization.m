@@ -9,6 +9,7 @@
 #import "TLNetworkManager+Authorization.h"
 #import "Const.h"
 #import "TLUtils.h"
+#import "DataStorageManager+User.h"
 
 @implementation TLNetworkManager (Authorization)
 
@@ -18,6 +19,19 @@
     [self requestType:GET url:url parameters:param completion:^(BOOL success, id result){
         if (success && [result isKindOfClass:[NSDictionary class]]) {
             completion(YES, result);
+        } else {
+            completion(NO, result);
+        }
+    }];
+}
+
+- (void)currentUserProfileWithCompletion:(void (^)(BOOL success, id object))completion {
+    NSString *url = [BASE_URL stringByAppendingString:[NSString stringWithFormat:CURRENT_USER_PATH]];
+    [self requestType:GET url:url parameters:nil completion:^(BOOL success, id result){
+        if (success && [result isKindOfClass:[NSDictionary class]]) {
+            [[DataStorageManager sharedDataStorage] createAndSaveUser:result completion:^(BOOL success, id object) {
+                completion(success, object);
+            }];
         } else {
             completion(NO, result);
         }

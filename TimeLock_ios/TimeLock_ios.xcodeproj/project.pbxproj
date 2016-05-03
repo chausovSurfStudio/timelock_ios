@@ -20,6 +20,12 @@
 		8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB391CD8F949002B0C9C /* PostTableViewCell.m */; };
 		8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */; };
 		8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB3F1CD91231002B0C9C /* UIRefreshControl+Animation.m */; };
+		8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB421CD9252A002B0C9C /* profileTopCellImage.jpg */; };
+		8446AB481CD9260A002B0C9C /* TopProfileTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB461CD9260A002B0C9C /* TopProfileTableViewCell.m */; };
+		8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB471CD9260A002B0C9C /* TopProfileTableViewCell.xib */; };
+		8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB4B1CD92625002B0C9C /* ProfileSettingsTableViewCell.m */; };
+		8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB4C1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib */; };
+		8446AB521CD936FB002B0C9C /* TableViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB511CD936FB002B0C9C /* TableViewButton.m */; };
 		8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448A97B1CD611AA008E4AE1 /* TLUtils.m */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
@@ -101,6 +107,15 @@
 		8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
 		8446AB3E1CD91231002B0C9C /* UIRefreshControl+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+Animation.h"; sourceTree = "<group>"; };
 		8446AB3F1CD91231002B0C9C /* UIRefreshControl+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+Animation.m"; sourceTree = "<group>"; };
+		8446AB421CD9252A002B0C9C /* profileTopCellImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = profileTopCellImage.jpg; path = Resources/img/profileTopCellImage.jpg; sourceTree = "<group>"; };
+		8446AB451CD9260A002B0C9C /* TopProfileTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopProfileTableViewCell.h; sourceTree = "<group>"; };
+		8446AB461CD9260A002B0C9C /* TopProfileTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopProfileTableViewCell.m; sourceTree = "<group>"; };
+		8446AB471CD9260A002B0C9C /* TopProfileTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TopProfileTableViewCell.xib; sourceTree = "<group>"; };
+		8446AB4A1CD92625002B0C9C /* ProfileSettingsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileSettingsTableViewCell.h; sourceTree = "<group>"; };
+		8446AB4B1CD92625002B0C9C /* ProfileSettingsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileSettingsTableViewCell.m; sourceTree = "<group>"; };
+		8446AB4C1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProfileSettingsTableViewCell.xib; sourceTree = "<group>"; };
+		8446AB501CD936FB002B0C9C /* TableViewButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewButton.h; sourceTree = "<group>"; };
+		8446AB511CD936FB002B0C9C /* TableViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewButton.m; sourceTree = "<group>"; };
 		8448A97A1CD611AA008E4AE1 /* TLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUtils.h; sourceTree = "<group>"; };
 		8448A97B1CD611AA008E4AE1 /* TLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUtils.m; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
@@ -257,6 +272,36 @@
 			name = "UIRefreshControl+Animation";
 			sourceTree = "<group>";
 		};
+		8446AB411CD92520002B0C9C /* img */ = {
+			isa = PBXGroup;
+			children = (
+				8446AB421CD9252A002B0C9C /* profileTopCellImage.jpg */,
+			);
+			name = img;
+			sourceTree = "<group>";
+		};
+		8446AB441CD925E6002B0C9C /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				8446AB451CD9260A002B0C9C /* TopProfileTableViewCell.h */,
+				8446AB461CD9260A002B0C9C /* TopProfileTableViewCell.m */,
+				8446AB471CD9260A002B0C9C /* TopProfileTableViewCell.xib */,
+				8446AB4A1CD92625002B0C9C /* ProfileSettingsTableViewCell.h */,
+				8446AB4B1CD92625002B0C9C /* ProfileSettingsTableViewCell.m */,
+				8446AB4C1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		8446AB4F1CD936EB002B0C9C /* HighlightedButton */ = {
+			isa = PBXGroup;
+			children = (
+				8446AB501CD936FB002B0C9C /* TableViewButton.h */,
+				8446AB511CD936FB002B0C9C /* TableViewButton.m */,
+			);
+			name = HighlightedButton;
+			sourceTree = "<group>";
+		};
 		8448A97D1CD611AF008E4AE1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -353,6 +398,7 @@
 		84E64F161CD0D2F1001A06A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8446AB4F1CD936EB002B0C9C /* HighlightedButton */,
 				8446AB3D1CD91200002B0C9C /* UIRefreshControl+Animation */,
 				8446AB141CD8B30C002B0C9C /* NSDictionary+SafeGetters */,
 				8448A97D1CD611AF008E4AE1 /* Utils */,
@@ -390,6 +436,7 @@
 		84E64F191CD0D576001A06A2 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				8446AB411CD92520002B0C9C /* img */,
 				84E64F491CD0DD59001A06A2 /* fonts */,
 				84E64F1A1CD0D585001A06A2 /* icon */,
 				84E64F521CD0E21B001A06A2 /* Strings */,
@@ -472,6 +519,7 @@
 		84E64F381CD0D729001A06A2 /* ProfileViewController */ = {
 			isa = PBXGroup;
 			children = (
+				8446AB441CD925E6002B0C9C /* Cell */,
 				84E64F391CD0D747001A06A2 /* TLProfileViewController.h */,
 				84E64F3A1CD0D747001A06A2 /* TLProfileViewController.m */,
 				84E64F3B1CD0D747001A06A2 /* TLProfileViewController.xib */,
@@ -657,13 +705,16 @@
 				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
+				8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
 				84E64F591CD0E5E2001A06A2 /* Localizable.strings in Resources */,
 				84E64EEE1CD0C9E2001A06A2 /* Assets.xcassets in Resources */,
 				84E64F2A1CD0D60A001A06A2 /* ic_index@3x.png in Resources */,
 				84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */,
+				8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */,
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
 				84E64F281CD0D60A001A06A2 /* ic_index.png in Resources */,
+				8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
 				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
@@ -754,6 +805,7 @@
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
 				8446AB2F1CD8B5EA002B0C9C /* DataStorageManager+User.m in Sources */,
 				8446AB291CD8B58F002B0C9C /* Post.m in Sources */,
+				8446AB481CD9260A002B0C9C /* TopProfileTableViewCell.m in Sources */,
 				8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */,
 				8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */,
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
@@ -765,9 +817,11 @@
 				84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */,
 				84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */,
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
+				8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */,
 				8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */,
+				8446AB521CD936FB002B0C9C /* TableViewButton.m in Sources */,
 				84E64EEC1CD0C9E2001A06A2 /* TimeLock_ios.xcdatamodeld in Sources */,
 				8446AB281CD8B58F002B0C9C /* Post+CoreDataProperties.m in Sources */,
 			);

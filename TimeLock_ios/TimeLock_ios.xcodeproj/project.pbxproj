@@ -19,6 +19,7 @@
 		8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB351CD8C745002B0C9C /* TLNetworkManager+Post.m */; };
 		8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB391CD8F949002B0C9C /* PostTableViewCell.m */; };
 		8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */; };
+		8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB3F1CD91231002B0C9C /* UIRefreshControl+Animation.m */; };
 		8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448A97B1CD611AA008E4AE1 /* TLUtils.m */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
@@ -98,6 +99,8 @@
 		8446AB381CD8F949002B0C9C /* PostTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PostTableViewCell.h; sourceTree = "<group>"; };
 		8446AB391CD8F949002B0C9C /* PostTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PostTableViewCell.m; sourceTree = "<group>"; };
 		8446AB3A1CD8F949002B0C9C /* PostTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PostTableViewCell.xib; sourceTree = "<group>"; };
+		8446AB3E1CD91231002B0C9C /* UIRefreshControl+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+Animation.h"; sourceTree = "<group>"; };
+		8446AB3F1CD91231002B0C9C /* UIRefreshControl+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+Animation.m"; sourceTree = "<group>"; };
 		8448A97A1CD611AA008E4AE1 /* TLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUtils.h; sourceTree = "<group>"; };
 		8448A97B1CD611AA008E4AE1 /* TLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUtils.m; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
@@ -245,6 +248,15 @@
 			name = Post;
 			sourceTree = "<group>";
 		};
+		8446AB3D1CD91200002B0C9C /* UIRefreshControl+Animation */ = {
+			isa = PBXGroup;
+			children = (
+				8446AB3E1CD91231002B0C9C /* UIRefreshControl+Animation.h */,
+				8446AB3F1CD91231002B0C9C /* UIRefreshControl+Animation.m */,
+			);
+			name = "UIRefreshControl+Animation";
+			sourceTree = "<group>";
+		};
 		8448A97D1CD611AF008E4AE1 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +353,7 @@
 		84E64F161CD0D2F1001A06A2 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				8446AB3D1CD91200002B0C9C /* UIRefreshControl+Animation */,
 				8446AB141CD8B30C002B0C9C /* NSDictionary+SafeGetters */,
 				8448A97D1CD611AF008E4AE1 /* Utils */,
 				84E64F681CD14BBA001A06A2 /* UIImage+Utilities */,
@@ -741,6 +754,7 @@
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
 				8446AB2F1CD8B5EA002B0C9C /* DataStorageManager+User.m in Sources */,
 				8446AB291CD8B58F002B0C9C /* Post.m in Sources */,
+				8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */,
 				8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */,
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
 				8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */,

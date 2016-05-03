@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+
+@class MBProgressHUD;
 
 @interface TLUtils : NSObject
 
@@ -19,5 +22,12 @@
 
 /** Геттер для объекта из словаря NSUserDefaults */
 + (id)objectFromUserSettingsForKey:(NSString *)key;
+
+// Методы для работы с MBProgressHUD в контроллере
+/** Метод показывает hud-view на переданном view */
++ (void)showHudView:(MBProgressHUD *)hud onView:(UIView *)view;
+
+/** Убрать hud-view с выбранного view */
++ (void)hideHudView:(MBProgressHUD *)hud onView:(UIView *)view;
 
 @end

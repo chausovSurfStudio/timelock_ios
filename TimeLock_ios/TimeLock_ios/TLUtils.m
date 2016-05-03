@@ -7,10 +7,11 @@
 //
 
 #import "TLUtils.h"
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @implementation TLUtils
 
-// Методы для работы с NSUserDefaults
+#pragma mark - NSUserDefaults
 // Проверка на существование не пустой строки в словаре NSUSerDefaults по заданному ключу
 + (BOOL)checkExistenceNotEmptyStringObjectForKey:(NSString *)key {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -40,6 +41,22 @@
     } else {
         return nil;
     }
+}
+
+#pragma mark - HUD-view
+// Метод показывает hud-view на переданном view
++ (void)showHudView:(MBProgressHUD *)hud onView:(UIView *)view {
+    if (!hud) {
+        hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
+        hud.color = [UIColor clearColor];
+        hud.activityIndicatorColor = [UIColor grayColor];
+    }
+}
+
+// Убрать hud-view с выбранного view
++ (void)hideHudView:(MBProgressHUD *)hud onView:(UIView *)view {
+    [MBProgressHUD hideHUDForView:view animated:YES];
+    hud = nil;
 }
 
 @end

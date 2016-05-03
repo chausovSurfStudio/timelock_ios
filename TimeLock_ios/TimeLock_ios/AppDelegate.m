@@ -12,6 +12,7 @@
 #import "TLNetworkManager+Authorization.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <MagicalRecord/MagicalRecord.h>
 
 #import "TLMainViewController.h"
 #import "TLProfileViewController.h"
@@ -27,7 +28,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
 //    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
-    
+    [MagicalRecord setupCoreDataStack];
     UITabBarController *tabsController = (id)_window.rootViewController;
     [self initTabBarController:tabsController];
     
@@ -65,6 +66,7 @@
             if(!success && [object isKindOfClass:[NSError class]]) {
                 [self openLaunchLoginScreen];
             } else {
+                [TLUtils setObjectToUserSettings:(NSDictionary *)object[@"token"] forKey:@"token"];
                 [[NSNotificationCenter defaultCenter] postNotificationName:needRepeatRequest object:nil userInfo:nil];
             }
         }];

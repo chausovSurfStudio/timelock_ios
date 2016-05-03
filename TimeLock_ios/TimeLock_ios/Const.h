@@ -34,6 +34,7 @@
 static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
 
 static NSString * const TOKEN_PATH = @"/token";
+static NSString * const POST_PATH = @"/posts/";
 
 // CONST STRING
 

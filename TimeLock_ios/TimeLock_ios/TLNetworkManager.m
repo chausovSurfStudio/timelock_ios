@@ -59,6 +59,7 @@ static TLNetworkManager *networkManager;
     _manualErrorShowing = NO;
     
     if ([TLUtils checkExistenceNotEmptyStringObjectForKey:@"token"]) {
+        NSLog(@"token = %@", [TLUtils objectFromUserSettingsForKey:@"token"]);
         [self.requestOperationManager.requestSerializer setAuthorizationHeaderFieldWithUsername:[TLUtils objectFromUserSettingsForKey:@"token"] password:@""];
     } else if ([TLUtils checkExistenceNotEmptyStringObjectForKey:@"email"] && [TLUtils checkExistenceNotEmptyStringObjectForKey:@"password"]) {
         NSString *email = [TLUtils objectFromUserSettingsForKey:@"email"];
@@ -87,7 +88,7 @@ static TLNetworkManager *networkManager;
         }
         if (statusCode == HTTPStatusNotAuthorized) {
             [TLUtils setObjectToUserSettings:nil forKey:@"token"];
-            [TLUtils setObjectToUserSettings:nil forKey:@"password"];
+            //[TLUtils setObjectToUserSettings:nil forKey:@"password"];
 
             if (![TLUtils checkExistenceNotEmptyStringObjectForKey:needRelogin]) {
                 self.parameters = parameters;

@@ -18,6 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nullable, nonatomic, retain) NSString *body;
 @property (nullable, nonatomic, retain) NSNumber *postID;
 @property (nullable, nonatomic, retain) NSDate *timestamp;
+@property (nullable, nonatomic, retain) NSNumber *userID;
 @property (nullable, nonatomic, retain) User *user;
 
 @end

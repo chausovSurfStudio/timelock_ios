@@ -17,7 +17,12 @@
                 <entry key="mappedKeyName" value="timestamp"/>
             </userInfo>
         </attribute>
-        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES"/>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="author"/>
+            </userInfo>
+        </relationship>
         <userInfo>
             <entry key="relatedByAttribute" value="userID"/>
         </userInfo>
@@ -58,10 +63,14 @@
                 <entry key="mappedKeyName" value="username"/>
             </userInfo>
         </attribute>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES">
+            <userInfo>
+                <entry key="relatedByAttribute" value="postID"/>
+            </userInfo>
+        </relationship>
     </entity>
     <elements>
-        <element name="Post" positionX="-1845" positionY="-490" width="128" height="103"/>
+        <element name="Post" positionX="-1845" positionY="-490" width="128" height="118"/>
         <element name="User" positionX="-1539" positionY="-550" width="128" height="163"/>
     </elements>
 </model>

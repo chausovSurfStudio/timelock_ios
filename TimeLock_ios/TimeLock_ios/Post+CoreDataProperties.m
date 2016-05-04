@@ -16,6 +16,7 @@
 @dynamic body;
 @dynamic postID;
 @dynamic timestamp;
+@dynamic userID;
 @dynamic user;
 
 @end

@@ -77,7 +77,7 @@ static NSString *identifier = @"postTableViewCell";
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Post *post = self.posts[indexPath.row];
     User *user = post.user;
-    NSLog(@"открыть экран с описанием юзера с id %@", user.id_);
+    NSLog(@"открыть экран с описанием юзера с id %@", user.userID);
 }
 
 #pragma mark - UITableViewDataSource

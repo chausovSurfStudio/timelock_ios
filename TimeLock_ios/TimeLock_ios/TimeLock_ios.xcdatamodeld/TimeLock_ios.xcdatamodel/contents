@@ -1,19 +1,63 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="Post" representedClassName="Post" syncable="YES">
-        <attribute name="body" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="id_" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
-        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="body" optional="YES" attributeType="String" indexed="YES" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="body"/>
+            </userInfo>
+        </attribute>
+        <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
+                <entry key="mappedKeyName" value="timestamp"/>
+            </userInfo>
+        </attribute>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="userID"/>
+        </userInfo>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="companyName" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
-        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="id_" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES"/>
-        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="middleName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="username" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="avatar" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="avatar"/>
+            </userInfo>
+        </attribute>
+        <attribute name="companyName" optional="YES" attributeType="String" indexed="YES" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="company_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="firstName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="first_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="lastName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="last_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="middleName" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="middle_name"/>
+            </userInfo>
+        </attribute>
+        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" indexed="YES" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="username" optional="YES" attributeType="String" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="username"/>
+            </userInfo>
+        </attribute>
         <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
     </entity>
     <elements>

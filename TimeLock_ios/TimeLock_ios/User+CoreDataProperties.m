@@ -2,7 +2,7 @@
 //  User+CoreDataProperties.m
 //  TimeLock_ios
 //
-//  Created by Александр Чаусов on 03.05.16.
+//  Created by Александр Чаусов on 04.05.16.
 //  Copyright © 2016 Александр Чаусов. All rights reserved.
 //
 //  Choose "Create NSManagedObject Subclass…" from the Core Data editor menu
@@ -13,13 +13,13 @@
 
 @implementation User (CoreDataProperties)
 
-@dynamic id_;
 @dynamic avatar;
 @dynamic companyName;
-@dynamic username;
 @dynamic firstName;
+@dynamic userID;
 @dynamic lastName;
 @dynamic middleName;
+@dynamic username;
 @dynamic posts;
 
 @end

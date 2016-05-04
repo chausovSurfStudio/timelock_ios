@@ -27,7 +27,6 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-//    [[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
     [MagicalRecord setupCoreDataStack];
     UITabBarController *tabsController = (id)_window.rootViewController;
     [self initTabBarController:tabsController];

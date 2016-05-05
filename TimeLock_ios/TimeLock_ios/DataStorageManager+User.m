@@ -20,7 +20,7 @@
 
 - (void)createAndSaveUser:(NSDictionary *)params completion:(void (^)(BOOL success, id object))completion {
     NSArray *array = [User MR_findAll];
-    NSLog(@"COUNT = %ld", array.count);
+    NSLog(@"COUNT = %ld", (unsigned long)array.count);
     User *user = [User MR_importFromObject:params];
     completion(YES, user);
 //    NSArray *storedUsers = [User MR_findAll];

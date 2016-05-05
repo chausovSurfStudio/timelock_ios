@@ -19,7 +19,8 @@ static NSString * const dateFormatString = @"dd.MM.yyyy HH:mm:ss";
 @implementation DataStorageManager (Post)
 
 - (void)createAndSavePosts:(NSArray *)params completion:(void (^)(BOOL success, id object))completion {
-    [Post MR_truncateAll];
+    NSArray *array = [Post MR_findAll];
+    NSLog(@"COUNT = %ld", (unsigned long)array.count);
     for (NSDictionary *dict in params) {
         [Post MR_importFromObject:dict];
     }

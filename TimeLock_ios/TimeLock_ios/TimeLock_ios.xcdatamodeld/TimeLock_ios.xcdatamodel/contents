@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Automatic">
     <entity name="Post" representedClassName="Post" syncable="YES">
-        <attribute name="body" optional="YES" attributeType="String" indexed="YES" syncable="YES">
-            <userInfo>
-                <entry key="mappedKeyName" value="body"/>
-            </userInfo>
-        </attribute>
+        <attribute name="body" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="id"/>
@@ -14,17 +10,16 @@
         <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES">
             <userInfo>
                 <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
-                <entry key="mappedKeyName" value="timestamp"/>
             </userInfo>
         </attribute>
-        <attribute name="userID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
         <relationship name="user" optional="YES" maxCount="1" deletionRule="No Action" destinationEntity="User" inverseName="posts" inverseEntity="User" syncable="YES">
             <userInfo>
                 <entry key="mappedKeyName" value="author"/>
+                <entry key="relatedByAttribute" value="userID"/>
             </userInfo>
         </relationship>
         <userInfo>
-            <entry key="relatedByAttribute" value="userID"/>
+            <entry key="relatedByAttribute" value="postID"/>
         </userInfo>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
@@ -63,14 +58,13 @@
                 <entry key="mappedKeyName" value="username"/>
             </userInfo>
         </attribute>
-        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES">
-            <userInfo>
-                <entry key="relatedByAttribute" value="postID"/>
-            </userInfo>
-        </relationship>
+        <relationship name="posts" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Post" inverseName="user" inverseEntity="Post" syncable="YES"/>
+        <userInfo>
+            <entry key="relatedByAttribute" value="userID"/>
+        </userInfo>
     </entity>
     <elements>
-        <element name="Post" positionX="-1845" positionY="-490" width="128" height="118"/>
+        <element name="Post" positionX="-1845" positionY="-490" width="128" height="103"/>
         <element name="User" positionX="-1539" positionY="-550" width="128" height="163"/>
     </elements>
 </model>

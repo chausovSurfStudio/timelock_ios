@@ -56,18 +56,21 @@ static NSString * const settingsCellIdentifier = @"settingsCellIdentifier";
 }
 
 - (void)refresh {
-    if (!self.user) {
-        [self showHudView];
-    }
+    @weakify(self);
     [[TLNetworkManager sharedNetworkManager] currentUserProfileWithCompletion:^(BOOL success, id object) {
-        [self hideHudView];
-        if (success) {
-            self.user = (User *)object;
-            [self.tableView reloadData];
-            [self.refreshControl smoothEndRefreshing];
-        } else {
-            NSLog(@"some error with posts");
-        }
+        [CATransaction begin];
+        [CATransaction setCompletionBlock:^{
+            @strongify(self);
+            if (success) {
+                self.user = (User *)object;
+                [self.tableView reloadData];
+            } else {
+                self.user = nil;
+                [self.tableView reloadData];
+            }
+        }];
+        [self.refreshControl smoothEndRefreshing];
+        [CATransaction commit];
     }];
 }
 

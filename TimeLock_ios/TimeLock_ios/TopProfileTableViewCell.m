@@ -21,7 +21,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
+    self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2;
+    self.userAvatar.layer.masksToBounds = YES;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -29,10 +30,13 @@
 }
 
 - (void)configCellWithUser:(User *)user {
-    [self.userAvatar setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"user_placeholder.png"]];
-    self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2;
-    self.userAvatar.layer.masksToBounds = YES;
-    self.usernameLabel.text = user.username;
+    if (user) {
+        [self.userAvatar setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"user_placeholder.png"]];
+        self.usernameLabel.text = [NSString stringWithFormat:@"%@ %@", user.lastName, user.firstName];
+    } else {
+        self.userAvatar.image = [UIImage imageNamed:@"user_placeholder.png"];
+        self.usernameLabel.text = @"";
+    }
 }
 
 @end

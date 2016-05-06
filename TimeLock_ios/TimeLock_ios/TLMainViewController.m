@@ -65,9 +65,6 @@ static NSString *identifier = @"postTableViewCell";
     }
     @weakify(self);
     [[TLNetworkManager sharedNetworkManager] postsRequestWithParam:nil completion:^(BOOL success, id object) {
-        @strongify(self);
-        [self hideHudView];
-        @weakify(self);
         [CATransaction begin];
         [CATransaction setCompletionBlock:^{
             @strongify(self);

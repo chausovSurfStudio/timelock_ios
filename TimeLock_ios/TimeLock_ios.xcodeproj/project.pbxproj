@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		410043D9733188293DFE6FAE /* libPods-TimeLock_ios.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 67A18EA854D8B86ABB749E27 /* libPods-TimeLock_ios.a */; };
+		84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84097FE31CDCD9C80050FCE6 /* EmptyScreenView.xib */; };
+		84097FE81CDCDAC30050FCE6 /* ic_arrow_down.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FE51CDCDAC30050FCE6 /* ic_arrow_down.png */; };
+		84097FE91CDCDAC30050FCE6 /* ic_arrow_down@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FE61CDCDAC30050FCE6 /* ic_arrow_down@2x.png */; };
+		84097FEA1CDCDAC30050FCE6 /* ic_arrow_down@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FE71CDCDAC30050FCE6 /* ic_arrow_down@3x.png */; };
+		84097FEE1CDCDB640050FCE6 /* ic_sad_smile.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FEB1CDCDB640050FCE6 /* ic_sad_smile.png */; };
+		84097FEF1CDCDB640050FCE6 /* ic_sad_smile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FEC1CDCDB640050FCE6 /* ic_sad_smile@2x.png */; };
+		84097FF01CDCDB640050FCE6 /* ic_sad_smile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84097FED1CDCDB640050FCE6 /* ic_sad_smile@3x.png */; };
+		84097FF31CDCDDE90050FCE6 /* EmptyScreenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84097FF21CDCDDE80050FCE6 /* EmptyScreenView.m */; };
+		84097FF71CDCE4E70050FCE6 /* UIRefreshControl+Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 84097FF61CDCE4E70050FCE6 /* UIRefreshControl+Utils.m */; };
 		8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB101CD8B10B002B0C9C /* DataStorageManager.m */; };
 		8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB161CD8B31C002B0C9C /* NSDictionary+SafeGetters.m */; };
 		8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB191CD8B52E002B0C9C /* User+CoreDataProperties.m */; };
@@ -62,6 +71,13 @@
 		84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84E64F611CD10C8E001A06A2 /* TLLaunchLoginViewController.xib */; };
 		84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64F661CD1139F001A06A2 /* UIButton+TimeLockStyle.m */; };
 		84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64F6A1CD14BCF001A06A2 /* UIImage+Utilities.m */; };
+		84FDCFE91CDBEFFC006A9039 /* user_placeholder.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFE61CDBEFFB006A9039 /* user_placeholder.png */; };
+		84FDCFEA1CDBEFFC006A9039 /* user_placeholder@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFE71CDBEFFC006A9039 /* user_placeholder@2x.png */; };
+		84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFE81CDBEFFC006A9039 /* user_placeholder@3x.png */; };
+		84FDCFF51CDBF252006A9039 /* AlertViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84FDCFF31CDBF252006A9039 /* AlertViewController.m */; };
+		84FDCFF61CDBF252006A9039 /* AlertViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFF41CDBF252006A9039 /* AlertViewController.xib */; };
+		84FDCFF91CDBF65B006A9039 /* ic_alert@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFF71CDBF65B006A9039 /* ic_alert@2x.png */; };
+		84FDCFFA1CDBF65B006A9039 /* ic_alert@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84FDCFF81CDBF65B006A9039 /* ic_alert@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +100,17 @@
 /* Begin PBXFileReference section */
 		4BCCE95DC71BC71C140984B0 /* Pods-TimeLock_ios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLock_ios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLock_ios/Pods-TimeLock_ios.debug.xcconfig"; sourceTree = "<group>"; };
 		67A18EA854D8B86ABB749E27 /* libPods-TimeLock_ios.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-TimeLock_ios.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		84097FE31CDCD9C80050FCE6 /* EmptyScreenView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyScreenView.xib; sourceTree = "<group>"; };
+		84097FE51CDCDAC30050FCE6 /* ic_arrow_down.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_arrow_down.png; path = Resources/icon/ic_arrow_down.png; sourceTree = "<group>"; };
+		84097FE61CDCDAC30050FCE6 /* ic_arrow_down@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_arrow_down@2x.png"; path = "Resources/icon/ic_arrow_down@2x.png"; sourceTree = "<group>"; };
+		84097FE71CDCDAC30050FCE6 /* ic_arrow_down@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_arrow_down@3x.png"; path = "Resources/icon/ic_arrow_down@3x.png"; sourceTree = "<group>"; };
+		84097FEB1CDCDB640050FCE6 /* ic_sad_smile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_sad_smile.png; path = Resources/icon/ic_sad_smile.png; sourceTree = "<group>"; };
+		84097FEC1CDCDB640050FCE6 /* ic_sad_smile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_sad_smile@2x.png"; path = "Resources/icon/ic_sad_smile@2x.png"; sourceTree = "<group>"; };
+		84097FED1CDCDB640050FCE6 /* ic_sad_smile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_sad_smile@3x.png"; path = "Resources/icon/ic_sad_smile@3x.png"; sourceTree = "<group>"; };
+		84097FF11CDCDDE80050FCE6 /* EmptyScreenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EmptyScreenView.h; sourceTree = "<group>"; };
+		84097FF21CDCDDE80050FCE6 /* EmptyScreenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EmptyScreenView.m; sourceTree = "<group>"; };
+		84097FF51CDCE4E70050FCE6 /* UIRefreshControl+Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+Utils.h"; sourceTree = "<group>"; };
+		84097FF61CDCE4E70050FCE6 /* UIRefreshControl+Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+Utils.m"; sourceTree = "<group>"; };
 		8446AB0F1CD8B10B002B0C9C /* DataStorageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataStorageManager.h; sourceTree = "<group>"; };
 		8446AB101CD8B10B002B0C9C /* DataStorageManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataStorageManager.m; sourceTree = "<group>"; };
 		8446AB151CD8B31C002B0C9C /* NSDictionary+SafeGetters.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+SafeGetters.h"; sourceTree = "<group>"; };
@@ -173,6 +200,14 @@
 		84E64F661CD1139F001A06A2 /* UIButton+TimeLockStyle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+TimeLockStyle.m"; sourceTree = "<group>"; };
 		84E64F691CD14BCF001A06A2 /* UIImage+Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+Utilities.h"; sourceTree = "<group>"; };
 		84E64F6A1CD14BCF001A06A2 /* UIImage+Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+Utilities.m"; sourceTree = "<group>"; };
+		84FDCFE61CDBEFFB006A9039 /* user_placeholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = user_placeholder.png; path = Resources/img/user_placeholder.png; sourceTree = "<group>"; };
+		84FDCFE71CDBEFFC006A9039 /* user_placeholder@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_placeholder@2x.png"; path = "Resources/img/user_placeholder@2x.png"; sourceTree = "<group>"; };
+		84FDCFE81CDBEFFC006A9039 /* user_placeholder@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "user_placeholder@3x.png"; path = "Resources/img/user_placeholder@3x.png"; sourceTree = "<group>"; };
+		84FDCFF21CDBF252006A9039 /* AlertViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertViewController.h; sourceTree = "<group>"; };
+		84FDCFF31CDBF252006A9039 /* AlertViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertViewController.m; sourceTree = "<group>"; };
+		84FDCFF41CDBF252006A9039 /* AlertViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertViewController.xib; sourceTree = "<group>"; };
+		84FDCFF71CDBF65B006A9039 /* ic_alert@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_alert@2x.png"; path = "Resources/icon/ic_alert@2x.png"; sourceTree = "<group>"; };
+		84FDCFF81CDBF65B006A9039 /* ic_alert@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_alert@3x.png"; path = "Resources/icon/ic_alert@3x.png"; sourceTree = "<group>"; };
 		D4C3556512062F74C2EE573D /* Pods-TimeLock_ios.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TimeLock_ios.release.xcconfig"; path = "Pods/Target Support Files/Pods-TimeLock_ios/Pods-TimeLock_ios.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -217,6 +252,25 @@
 				67A18EA854D8B86ABB749E27 /* libPods-TimeLock_ios.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		84097FE21CDCD98B0050FCE6 /* EmptyStub */ = {
+			isa = PBXGroup;
+			children = (
+				84097FF11CDCDDE80050FCE6 /* EmptyScreenView.h */,
+				84097FF21CDCDDE80050FCE6 /* EmptyScreenView.m */,
+				84097FE31CDCD9C80050FCE6 /* EmptyScreenView.xib */,
+			);
+			name = EmptyStub;
+			sourceTree = "<group>";
+		};
+		84097FF41CDCE4B70050FCE6 /* UIRefreshControl+Utils */ = {
+			isa = PBXGroup;
+			children = (
+				84097FF51CDCE4E70050FCE6 /* UIRefreshControl+Utils.h */,
+				84097FF61CDCE4E70050FCE6 /* UIRefreshControl+Utils.m */,
+			);
+			name = "UIRefreshControl+Utils";
 			sourceTree = "<group>";
 		};
 		8446AB121CD8B14C002B0C9C /* Entity */ = {
@@ -275,6 +329,9 @@
 		8446AB411CD92520002B0C9C /* img */ = {
 			isa = PBXGroup;
 			children = (
+				84FDCFE61CDBEFFB006A9039 /* user_placeholder.png */,
+				84FDCFE71CDBEFFC006A9039 /* user_placeholder@2x.png */,
+				84FDCFE81CDBEFFC006A9039 /* user_placeholder@3x.png */,
 				8446AB421CD9252A002B0C9C /* profileTopCellImage.jpg */,
 			);
 			name = img;
@@ -391,6 +448,8 @@
 		84E64F151CD0D2E9001A06A2 /* ReusableLayer */ = {
 			isa = PBXGroup;
 			children = (
+				84097FE21CDCD98B0050FCE6 /* EmptyStub */,
+				84FDCFEC1CDBF213006A9039 /* AlertViewController */,
 			);
 			name = ReusableLayer;
 			sourceTree = "<group>";
@@ -400,6 +459,7 @@
 			children = (
 				8446AB4F1CD936EB002B0C9C /* HighlightedButton */,
 				8446AB3D1CD91200002B0C9C /* UIRefreshControl+Animation */,
+				84097FF41CDCE4B70050FCE6 /* UIRefreshControl+Utils */,
 				8446AB141CD8B30C002B0C9C /* NSDictionary+SafeGetters */,
 				8448A97D1CD611AF008E4AE1 /* Utils */,
 				84E64F681CD14BBA001A06A2 /* UIImage+Utilities */,
@@ -448,6 +508,14 @@
 			isa = PBXGroup;
 			children = (
 				84E64F1B1CD0D58A001A06A2 /* tabbar */,
+				84FDCFF71CDBF65B006A9039 /* ic_alert@2x.png */,
+				84FDCFF81CDBF65B006A9039 /* ic_alert@3x.png */,
+				84097FE51CDCDAC30050FCE6 /* ic_arrow_down.png */,
+				84097FE61CDCDAC30050FCE6 /* ic_arrow_down@2x.png */,
+				84097FE71CDCDAC30050FCE6 /* ic_arrow_down@3x.png */,
+				84097FEB1CDCDB640050FCE6 /* ic_sad_smile.png */,
+				84097FEC1CDCDB640050FCE6 /* ic_sad_smile@2x.png */,
+				84097FED1CDCDB640050FCE6 /* ic_sad_smile@3x.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -593,6 +661,16 @@
 			name = "UIImage+Utilities";
 			sourceTree = "<group>";
 		};
+		84FDCFEC1CDBF213006A9039 /* AlertViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84FDCFF21CDBF252006A9039 /* AlertViewController.h */,
+				84FDCFF31CDBF252006A9039 /* AlertViewController.m */,
+				84FDCFF41CDBF252006A9039 /* AlertViewController.xib */,
+			);
+			name = AlertViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -701,6 +779,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E64F4E1CD0DEC0001A06A2 /* PT_Sans-Web-Bold.ttf in Resources */,
+				84FDCFF91CDBF65B006A9039 /* ic_alert@2x.png in Resources */,
 				84E64F4F1CD0DEC0001A06A2 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
 				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
@@ -708,23 +787,35 @@
 				8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
 				84E64F591CD0E5E2001A06A2 /* Localizable.strings in Resources */,
+				84FDCFEA1CDBEFFC006A9039 /* user_placeholder@2x.png in Resources */,
 				84E64EEE1CD0C9E2001A06A2 /* Assets.xcassets in Resources */,
 				84E64F2A1CD0D60A001A06A2 /* ic_index@3x.png in Resources */,
 				84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */,
 				8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */,
+				84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */,
+				84097FEE1CDCDB640050FCE6 /* ic_sad_smile.png in Resources */,
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
 				84E64F281CD0D60A001A06A2 /* ic_index.png in Resources */,
+				84097FE81CDCDAC30050FCE6 /* ic_arrow_down.png in Resources */,
 				8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
 				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
+				84FDCFE91CDBEFFC006A9039 /* user_placeholder.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
 				84E64F361CD0D715001A06A2 /* TLMainViewController.xib in Resources */,
+				84097FEA1CDCDAC30050FCE6 /* ic_arrow_down@3x.png in Resources */,
+				84FDCFFA1CDBF65B006A9039 /* ic_alert@3x.png in Resources */,
 				84E64F3D1CD0D747001A06A2 /* TLProfileViewController.xib in Resources */,
+				84FDCFF61CDBF252006A9039 /* AlertViewController.xib in Resources */,
+				84097FEF1CDCDB640050FCE6 /* ic_sad_smile@2x.png in Resources */,
 				84E64F251CD0D60A001A06A2 /* ic_catalog.png in Resources */,
 				84E64F431CD0D76B001A06A2 /* TLCheckinsViewController.xib in Resources */,
+				84097FE91CDCDAC30050FCE6 /* ic_arrow_down@2x.png in Resources */,
 				84E64F291CD0D60A001A06A2 /* ic_index@2x.png in Resources */,
+				84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */,
 				84E64F2D1CD0D60A001A06A2 /* ic_profile@3x.png in Resources */,
+				84097FF01CDCDB640050FCE6 /* ic_sad_smile@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -801,11 +892,13 @@
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
 				84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */,
 				8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */,
+				84097FF31CDCDDE90050FCE6 /* EmptyScreenView.m in Sources */,
 				8446AB211CD8B52E002B0C9C /* User.m in Sources */,
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
 				8446AB2F1CD8B5EA002B0C9C /* DataStorageManager+User.m in Sources */,
 				8446AB291CD8B58F002B0C9C /* Post.m in Sources */,
 				8446AB481CD9260A002B0C9C /* TopProfileTableViewCell.m in Sources */,
+				84097FF71CDCE4E70050FCE6 /* UIRefreshControl+Utils.m in Sources */,
 				8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */,
 				8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */,
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
@@ -820,6 +913,7 @@
 				8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */,
 				8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
+				84FDCFF51CDBF252006A9039 /* AlertViewController.m in Sources */,
 				8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */,
 				8446AB521CD936FB002B0C9C /* TableViewButton.m in Sources */,
 				84E64EEC1CD0C9E2001A06A2 /* TimeLock_ios.xcdatamodeld in Sources */,

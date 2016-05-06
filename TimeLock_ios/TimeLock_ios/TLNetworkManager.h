@@ -24,6 +24,7 @@ typedef NS_ENUM(NSInteger, HTTPStatusCode){
     HTTPStatusForbidden = 403,
     HTTPStatusNotFound = 404,
     HTTPStatusServerError = 500,
+    HTTPStatusNotConnectToTheServer = 0,
     HTTPStatusNoInternetConnection = -1009
 };
 

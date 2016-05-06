@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Web-Regular.ttf">
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyScreenView">
+            <connections>
+                <outlet property="contents" destination="iN0-l3-epB" id="Izv-pu-bXg"/>
+                <outlet property="errorText" destination="8zi-6O-3Dx" id="vnx-kJ-YfA"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Попробуйте повторить запрос позже" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jcu-ac-6TP">
+                    <rect key="frame" x="15" y="280" width="290" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="J9u-bM-lVy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="15"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sad_smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="bTI-l7-SPm">
+                    <rect key="frame" x="129" y="121" width="62" height="62"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="62" id="hRz-kI-33K"/>
+                        <constraint firstAttribute="height" constant="62" id="sLc-L3-gdB"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_arrow_down.png" translatesAutoresizingMaskIntoConstraints="NO" id="oIf-s7-L3N">
+                    <rect key="frame" x="153" y="318" width="15" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="15" id="6lF-d9-oEv"/>
+                        <constraint firstAttribute="height" constant="32" id="b65-sf-dHk"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="На данный момент данные отсутствуют" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8zi-6O-3Dx">
+                    <rect key="frame" x="15" y="208" width="290" height="64"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="290" id="tAL-C4-GT5"/>
+                        <constraint firstAttribute="height" constant="64" id="ul0-Lk-DD4"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="18"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="Jcu-ac-6TP" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="15" id="4hr-D2-TT7"/>
+                <constraint firstItem="Jcu-ac-6TP" firstAttribute="top" secondItem="8zi-6O-3Dx" secondAttribute="bottom" constant="8" id="7pC-IG-vj2"/>
+                <constraint firstAttribute="trailing" secondItem="Jcu-ac-6TP" secondAttribute="trailing" constant="15" id="AXj-wh-UCd"/>
+                <constraint firstItem="8zi-6O-3Dx" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QAv-NJ-TQL"/>
+                <constraint firstItem="8zi-6O-3Dx" firstAttribute="top" secondItem="bTI-l7-SPm" secondAttribute="bottom" constant="25" id="ZhQ-ao-fJ2"/>
+                <constraint firstItem="bTI-l7-SPm" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="bXZ-7Q-lEJ"/>
+                <constraint firstItem="oIf-s7-L3N" firstAttribute="top" secondItem="Jcu-ac-6TP" secondAttribute="bottom" constant="8" id="jnf-ji-8gV"/>
+                <constraint firstItem="oIf-s7-L3N" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="k60-dE-nQh"/>
+                <constraint firstItem="8zi-6O-3Dx" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="lav-bH-5DG"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_arrow_down.png" width="15" height="32"/>
+        <image name="ic_sad_smile.png" width="62" height="62"/>
+    </resources>
+</document>

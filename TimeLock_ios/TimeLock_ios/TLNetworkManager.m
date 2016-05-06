@@ -12,6 +12,7 @@
 #import "Const.h"
 #import "TLUtils.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import "AlertViewController.h"
 
 @interface TLNetworkManager()
 
@@ -80,15 +81,11 @@ static TLNetworkManager *networkManager;
         NSLog(@"error: %@",  error);
         
         NSInteger statusCode = [error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
-        if (!manualErrorShowing) {
-            // TODO
-        }
         if (!manualErrorShowing && statusCode != HTTPStatusNotAuthorized) {
-            // TODO
+            [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
         }
         if (statusCode == HTTPStatusNotAuthorized) {
             [TLUtils setObjectToUserSettings:nil forKey:@"token"];
-            //[TLUtils setObjectToUserSettings:nil forKey:@"password"];
 
             if (![TLUtils checkExistenceNotEmptyStringObjectForKey:needRelogin]) {
                 self.parameters = parameters;
@@ -99,9 +96,15 @@ static TLNetworkManager *networkManager;
                     [[NSNotificationCenter defaultCenter] postNotificationName:needRelogin object:nil userInfo:nil];
                 });
             } else {
+                if (!manualErrorShowing) {
+                    [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
+                }
                 completion(NO, error);
             }
         } else {
+            if (!manualErrorShowing) {
+                [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
+            }
             completion(NO, error);
         }
         return;

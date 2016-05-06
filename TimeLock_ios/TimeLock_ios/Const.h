@@ -25,13 +25,18 @@
 #define GREEN_BUTTON_TEXT_COLOR     [UIColor whiteColor]
 #define RED_BUTTON_TEXT_COLOR       [UIColor whiteColor]
 
+#define ALERT_ERROR_COLOR [UIColor colorWithRed:199./255 green:30./255 blue:30./255 alpha:0.9]
+#define ALERT_INFO_COLOR      [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]
+
+
 // FONTS
 
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
 
 // URL PATH
 
-static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
+//static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
+static NSString * const BASE_URL = @"http://1d6dfd94.ngrok.io/api/v1.0";
 
 static NSString * const TOKEN_PATH = @"/token";
 static NSString * const POST_PATH = @"/posts/";
@@ -41,5 +46,27 @@ static NSString * const CURRENT_USER_PATH = @"/users/";
 
 static NSString * const needRelogin = @"needReloginNotification";
 static NSString * const needRepeatRequest = @"needRepeatRequestNotification";
+
+// IPHONE
+
+#define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
+#define IS_IPHONE (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPhone)
+#define IS_RETINA ([[UIScreen mainScreen] scale] >= 2.0)
+
+
+#define SCREEN_WIDTH ([[UIScreen mainScreen] bounds].size.width)
+#define SCREEN_HEIGHT ([[UIScreen mainScreen] bounds].size.height)
+#define SCREEN_MAX_LENGTH (MAX(SCREEN_WIDTH, SCREEN_HEIGHT))
+#define SCREEN_MIN_LENGTH (MIN(SCREEN_WIDTH, SCREEN_HEIGHT))
+
+#define IS_IPHONE_4_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH < 568.0)
+#define IS_IPHONE_5 (IS_IPHONE && SCREEN_MAX_LENGTH == 568.0)
+#define IS_IPHONE_6 (IS_IPHONE && SCREEN_MAX_LENGTH == 667.0)
+#define IS_IPHONE_6_OR_LESS (IS_IPHONE && SCREEN_MAX_LENGTH <= 667.0)
+#define IS_IPHONE_6P (IS_IPHONE && SCREEN_MAX_LENGTH == 736.0)
+
+// OTHER
+
+static NSInteger const NAVIGATION_BAR_HEIGHT  = 64;
 
 #endif

@@ -13,8 +13,9 @@
 #import "User.h"
 #import "Post.h"
 #import "TLUtils.h"
+#import "EmptyScreenView.h"
 
-#import "UIRefreshControl+Animation.h"
+#import "UIRefreshControl+Utils.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -23,6 +24,7 @@
 @interface TLMainViewController () <UITableViewDelegate, UITableViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+@property (nonatomic, strong) IBOutlet UIScrollView *emptyScreenView;
 
 @property (nonatomic,readwrite,strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *posts;
@@ -42,29 +44,48 @@ static NSString *identifier = @"postTableViewCell";
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
-    self.refreshControl = [[UIRefreshControl alloc] init];
-    [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
-    [self.tableView addSubview:self.refreshControl];
-    [self refresh];
+    self.tableView.manualRefreshControl = [[UIRefreshControl alloc] init];
+    for (UIRefreshControl *ptr in @[_tableView.manualRefreshControl,
+                                    _emptyScreenView.manualRefreshControl]) {
+        [ptr addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
+        ptr.backgroundColor = [UIColor clearColor];
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self refresh];
 }
 
 - (void)refresh {
     if (!self.posts || self.posts.count == 0) {
         [self showHudView];
+        self.tableView.hidden = YES;
+        self.emptyScreenView.hidden = YES;
     }
+    @weakify(self);
     [[TLNetworkManager sharedNetworkManager] postsRequestWithParam:nil completion:^(BOOL success, id object) {
+        @strongify(self);
         [self hideHudView];
-        if (success) {
-            self.posts = (NSArray *)object;
-            [self.tableView reloadData];
-            [self.refreshControl smoothEndRefreshing];
-        } else {
-            NSLog(@"some error with posts");
-        }
+        @weakify(self);
+        [CATransaction begin];
+        [CATransaction setCompletionBlock:^{
+            @strongify(self);
+            [self hideHudView];
+            if (success) {
+                self.posts = (NSArray *)object;
+                [self.tableView reloadData];
+                self.tableView.hidden = NO;
+                self.emptyScreenView.hidden = YES;
+            } else {
+                self.posts = nil;
+                self.tableView.hidden = YES;
+                self.emptyScreenView.hidden = NO;
+            }
+        }];
+        for (UIScrollView *v in @[self.tableView, self.emptyScreenView])
+            v.manualRefreshControl.refreshing = NO;
+        [CATransaction commit];
     }];
 }
 
@@ -93,12 +114,10 @@ static NSString *identifier = @"postTableViewCell";
 
 #pragma mark - HUDView
 - (void)showHudView {
-    self.tableView.hidden = YES;
     [TLUtils showHudView:self.hud onView:self.view];
 }
 
 - (void)hideHudView {
-    self.tableView.hidden = NO;
     [TLUtils hideHudView:self.hud onView:self.view];
 }
 

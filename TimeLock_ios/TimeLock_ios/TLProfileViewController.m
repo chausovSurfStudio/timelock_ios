@@ -46,6 +46,7 @@ static NSString * const settingsCellIdentifier = @"settingsCellIdentifier";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     self.refreshControl = [[UIRefreshControl alloc] init];
+    self.refreshControl.backgroundColor = [UIColor clearColor];
     [self.refreshControl addTarget:self action:@selector(refresh) forControlEvents:UIControlEventValueChanged];
     [self.tableView addSubview:self.refreshControl];
 }

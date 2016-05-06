@@ -23,30 +23,6 @@
     NSLog(@"COUNT = %ld", (unsigned long)array.count);
     User *user = [User MR_importFromObject:params];
     completion(YES, user);
-//    NSArray *storedUsers = [User MR_findAll];
-//    [MagicalRecord saveWithBlock:^(NSManagedObjectContext *localContext){
-//        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"id_ == %@", params[@"id"]];
-//        User *user = [[[storedUsers filteredArrayUsingPredicate:predicate] firstObject] MR_inContext:localContext];
-//        if (!user) {
-//            user = [User MR_createEntityInContext:localContext];
-//        }
-//        [self storeInfoFromDict:params forUser:user];
-//    } completion:^(BOOL success, NSError *error) {
-//        if(success || (!success && !error)) {
-//            completion(YES, [User MR_findFirstByAttribute:@"id_" withValue:params[@"id"]]);
-//        }
-//        else completion(success, error);
-//    }];
-}
-
-- (void)storeInfoFromDict:(NSDictionary *)dict forUser:(User *)user {
-    user.userID        = [dict safeGetLongLongNumberFromStringByKey:@"id"];
-    user.firstName  = [dict safeGetStringByKey:@"first_name"];
-    user.lastName   = [dict safeGetStringByKey:@"last_name"];
-    user.middleName = [dict safeGetStringByKey:@"middle_name"];
-    user.username   = [dict safeGetStringByKey:@"username"];
-    user.companyName = [dict safeGetStringByKey:@"company_name"];
-    user.avatar     = [dict safeGetStringByKey:@"avatar"];
 }
 
 @end

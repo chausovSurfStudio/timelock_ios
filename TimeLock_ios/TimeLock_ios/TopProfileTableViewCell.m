@@ -29,7 +29,7 @@
 }
 
 - (void)configCellWithUser:(User *)user {
-    [self.userAvatar setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:nil];
+    [self.userAvatar setImageWithURL:[NSURL URLWithString:user.avatar] placeholderImage:[UIImage imageNamed:@"user_placeholder.png"]];
     self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2;
     self.userAvatar.layer.masksToBounds = YES;
     self.usernameLabel.text = user.username;

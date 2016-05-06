@@ -7,6 +7,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLMainViewController">
             <connections>
+                <outlet property="emptyScreenView" destination="FsO-Dg-v6n" id="oqV-jU-yTC"/>
                 <outlet property="tableView" destination="xgq-Ch-f9f" id="4O4-iz-TQc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -24,12 +25,22 @@
                         <outlet property="delegate" destination="-1" id="tqv-lL-ixr"/>
                     </connections>
                 </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FsO-Dg-v6n" customClass="EmptyScreenView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibName" value="EmptyScreenView"/>
+                    </userDefinedRuntimeAttributes>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="xgq-Ch-f9f" secondAttribute="trailing" id="6NT-0S-YnF"/>
+                <constraint firstItem="FsO-Dg-v6n" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6tF-tB-tQ1"/>
                 <constraint firstItem="xgq-Ch-f9f" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="SSn-j0-1Ki"/>
+                <constraint firstItem="FsO-Dg-v6n" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="WKG-Eh-4mO"/>
                 <constraint firstAttribute="bottom" secondItem="xgq-Ch-f9f" secondAttribute="bottom" id="Whb-t0-oE0"/>
+                <constraint firstAttribute="bottom" secondItem="FsO-Dg-v6n" secondAttribute="bottom" id="Y23-BU-Z9O"/>
+                <constraint firstAttribute="trailing" secondItem="FsO-Dg-v6n" secondAttribute="trailing" id="wNa-XJ-4zn"/>
                 <constraint firstItem="xgq-Ch-f9f" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="ypG-E0-th0"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>

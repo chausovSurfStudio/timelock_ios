@@ -25,6 +25,26 @@
                             <constraint firstAttribute="height" constant="199" id="YbH-uB-uMV"/>
                         </constraints>
                     </imageView>
+                    <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GJj-Tr-Cfy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="5zr-JV-xjB">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="199"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <subviews>
+                                <visualEffectView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4yz-l2-8wH">
+                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" id="emh-ro-oSq">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    </view>
+                                    <vibrancyEffect>
+                                        <blurEffect style="light"/>
+                                    </vibrancyEffect>
+                                </visualEffectView>
+                            </subviews>
+                        </view>
+                        <blurEffect style="light"/>
+                    </visualEffectView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgc-Tq-Tj6">
                         <rect key="frame" x="15" y="163" width="290" height="21"/>
                         <constraints>
@@ -50,7 +70,11 @@
                     <constraint firstAttribute="bottom" secondItem="sTc-Jj-YVK" secondAttribute="bottom" id="LFq-ei-LnJ"/>
                     <constraint firstItem="sTc-Jj-YVK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="OfH-KX-ADB"/>
                     <constraint firstItem="Q1h-Ha-pBZ" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="hfW-eZ-rz5"/>
+                    <constraint firstAttribute="bottom" secondItem="GJj-Tr-Cfy" secondAttribute="bottom" id="hqF-Mv-z4o"/>
                     <constraint firstItem="Rgc-Tq-Tj6" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jne-ov-gPF"/>
+                    <constraint firstItem="GJj-Tr-Cfy" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lx4-AY-ZAB"/>
+                    <constraint firstAttribute="trailing" secondItem="GJj-Tr-Cfy" secondAttribute="trailing" id="rgk-9G-oam"/>
+                    <constraint firstItem="GJj-Tr-Cfy" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="sGG-13-icc"/>
                     <constraint firstAttribute="trailing" secondItem="Rgc-Tq-Tj6" secondAttribute="trailing" constant="15" id="tz7-qn-7KC"/>
                 </constraints>
             </tableViewCellContentView>

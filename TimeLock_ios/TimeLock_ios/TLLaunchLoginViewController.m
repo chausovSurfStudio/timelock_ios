@@ -90,7 +90,6 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
         [TLUtils setObjectToUserSettings:self.emailTextField.text forKey:@"email"];
         [TLUtils setObjectToUserSettings:self.passwordTextField.text forKey:@"password"];
         [TLUtils setObjectToUserSettings:needRelogin forKey:needRelogin];
-        [TLNetworkManager sharedNetworkManager].manualErrorShowing = YES;
         [[TLNetworkManager sharedNetworkManager] authorizationRequestParam:nil completion:^(BOOL success, id object) {
             @strongify(self);
             [TLUtils setObjectToUserSettings:nil forKey:needRelogin];

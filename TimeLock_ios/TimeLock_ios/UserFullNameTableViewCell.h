@@ -1,5 +1,5 @@
 //
-//  UserViewController.h
+//  UserFullNameTableViewCell.h
 //  TimeLock_ios
 //
 //  Created by Александр Чаусов on 07.05.16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface UserViewController : UIViewController
-
-- (instancetype)initWithUserID:(NSNumber *)userID username:(NSString *)username;
+@interface UserFullNameTableViewCell : UITableViewCell
 
 @end

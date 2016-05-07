@@ -35,6 +35,8 @@
 #define TEXT_FIELD_TEXT_COLOR   TEXT_COLOR
 #define TEXT_FIELD_TINT_COLOR   MAIN_THEME_COLOR
 
+#define SEPARATOR_COLOR [UIColor colorWithRed:173/255.0 green:173/255.0  blue:173/255.0  alpha:1.0]
+
 // FONTS
 
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
@@ -47,6 +49,7 @@ static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
 static NSString * const TOKEN_PATH = @"/token";
 static NSString * const POST_PATH = @"/posts/";
 static NSString * const CURRENT_USER_PATH = @"/users/";
+static NSString * const USER_PATH = @"/users/%@";
 
 // CONST STRING
 

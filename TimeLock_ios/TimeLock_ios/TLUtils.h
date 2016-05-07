@@ -27,4 +27,8 @@
 /** Убрать hud-view с выбранного view */
 + (void)hideHudView:(MBProgressHUD *)hud onView:(UIView *)view;
 
+// Разное
+/** Проверить существует ли строка и не пустая ли она */
++ (BOOL)checkExistenceOfString:(NSString *)string;
+
 @end

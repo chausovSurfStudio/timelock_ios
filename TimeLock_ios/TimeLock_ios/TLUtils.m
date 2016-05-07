@@ -59,4 +59,10 @@
     hud = nil;
 }
 
+#pragma mark - Others
+// Проверить существует ли строка и не пустая ли она
++ (BOOL)checkExistenceOfString:(NSString *)string {
+    return (string && ![string isEqualToString:@""]);
+}
+
 @end

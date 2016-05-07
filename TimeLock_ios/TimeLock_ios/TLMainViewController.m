@@ -7,6 +7,7 @@
 //
 
 #import "TLMainViewController.h"
+#import "UserViewController.h"
 #import "TLNetworkManager+Post.h"
 
 #import "PostTableViewCell.h"
@@ -92,9 +93,7 @@ static NSString *identifier = @"postTableViewCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    Post *post = self.posts[indexPath.row];
-    User *user = post.user;
-    NSLog(@"открыть экран с описанием юзера с id %@", user.userID);
+    [self openUserScreenForIndexPath:indexPath];
 }
 
 #pragma mark - UITableViewDataSource
@@ -115,6 +114,14 @@ static NSString *identifier = @"postTableViewCell";
 
 - (void)hideHudView {
     [TLUtils hideHudView:self.hud onView:self.view];
+}
+
+#pragma mark - Others
+- (void)openUserScreenForIndexPath:(NSIndexPath *)indexPath {
+    Post *post = self.posts[indexPath.row];
+    User *user = post.user;
+    UserViewController *vc = [[UserViewController alloc] initWithUserID:user.userID username:user.username];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 

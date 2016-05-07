@@ -38,6 +38,13 @@
 		8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448A97B1CD611AA008E4AE1 /* TLUtils.m */; };
 		844F94521CDE24D80033647F /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94501CDE24D80033647F /* UserViewController.m */; };
 		844F94531CDE24D80033647F /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F94511CDE24D80033647F /* UserViewController.xib */; };
+		844F94591CDE324B0033647F /* UserTopTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94571CDE324B0033647F /* UserTopTableViewCell.m */; };
+		844F945A1CDE324B0033647F /* UserTopTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F94581CDE324B0033647F /* UserTopTableViewCell.xib */; };
+		844F945E1CDE32620033647F /* UserFullNameTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F945C1CDE32620033647F /* UserFullNameTableViewCell.m */; };
+		844F945F1CDE32620033647F /* UserFullNameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F945D1CDE32620033647F /* UserFullNameTableViewCell.xib */; };
+		844F94681CDE36110033647F /* TLNetworkManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94671CDE36110033647F /* TLNetworkManager+User.m */; };
+		844F946C1CDE3FE20033647F /* UserCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */; };
+		844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
@@ -151,6 +158,17 @@
 		844F94501CDE24D80033647F /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
 		844F94511CDE24D80033647F /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
 		844F94541CDE264D0033647F /* TimeLockPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLockPrefixHeader.pch; sourceTree = "<group>"; };
+		844F94561CDE324B0033647F /* UserTopTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserTopTableViewCell.h; sourceTree = "<group>"; };
+		844F94571CDE324B0033647F /* UserTopTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserTopTableViewCell.m; sourceTree = "<group>"; };
+		844F94581CDE324B0033647F /* UserTopTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserTopTableViewCell.xib; sourceTree = "<group>"; };
+		844F945B1CDE32620033647F /* UserFullNameTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserFullNameTableViewCell.h; sourceTree = "<group>"; };
+		844F945C1CDE32620033647F /* UserFullNameTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserFullNameTableViewCell.m; sourceTree = "<group>"; };
+		844F945D1CDE32620033647F /* UserFullNameTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserFullNameTableViewCell.xib; sourceTree = "<group>"; };
+		844F94661CDE36110033647F /* TLNetworkManager+User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+User.h"; sourceTree = "<group>"; };
+		844F94671CDE36110033647F /* TLNetworkManager+User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLNetworkManager+User.m"; sourceTree = "<group>"; };
+		844F94691CDE3FE20033647F /* UserCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCompanyTableViewCell.h; sourceTree = "<group>"; };
+		844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCompanyTableViewCell.m; sourceTree = "<group>"; };
+		844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCompanyTableViewCell.xib; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
 		84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNetworkManager.m; sourceTree = "<group>"; };
 		84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Authorization.h"; sourceTree = "<group>"; };
@@ -377,11 +395,37 @@
 		844F944E1CDE24AF0033647F /* UserViewController */ = {
 			isa = PBXGroup;
 			children = (
+				844F94551CDE32280033647F /* Cell */,
 				844F944F1CDE24D80033647F /* UserViewController.h */,
 				844F94501CDE24D80033647F /* UserViewController.m */,
 				844F94511CDE24D80033647F /* UserViewController.xib */,
 			);
 			name = UserViewController;
+			sourceTree = "<group>";
+		};
+		844F94551CDE32280033647F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				844F94561CDE324B0033647F /* UserTopTableViewCell.h */,
+				844F94571CDE324B0033647F /* UserTopTableViewCell.m */,
+				844F94581CDE324B0033647F /* UserTopTableViewCell.xib */,
+				844F945B1CDE32620033647F /* UserFullNameTableViewCell.h */,
+				844F945C1CDE32620033647F /* UserFullNameTableViewCell.m */,
+				844F945D1CDE32620033647F /* UserFullNameTableViewCell.xib */,
+				844F94691CDE3FE20033647F /* UserCompanyTableViewCell.h */,
+				844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */,
+				844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		844F94651CDE35F50033647F /* User */ = {
+			isa = PBXGroup;
+			children = (
+				844F94661CDE36110033647F /* TLNetworkManager+User.h */,
+				844F94671CDE36110033647F /* TLNetworkManager+User.m */,
+			);
+			name = User;
 			sourceTree = "<group>";
 		};
 		84B9F9661CD3B6560088D718 /* Authorization */ = {
@@ -490,6 +534,7 @@
 		84E64F171CD0D312001A06A2 /* NetworkManager */ = {
 			isa = PBXGroup;
 			children = (
+				844F94651CDE35F50033647F /* User */,
 				8446AB331CD8C728002B0C9C /* Post */,
 				84B9F9661CD3B6560088D718 /* Authorization */,
 				84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */,
@@ -797,8 +842,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				84E64F4E1CD0DEC0001A06A2 /* PT_Sans-Web-Bold.ttf in Resources */,
+				844F945F1CDE32620033647F /* UserFullNameTableViewCell.xib in Resources */,
 				84FDCFF91CDBF65B006A9039 /* ic_alert@2x.png in Resources */,
 				84E64F4F1CD0DEC0001A06A2 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
+				844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */,
 				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
@@ -810,6 +857,7 @@
 				84E64F2A1CD0D60A001A06A2 /* ic_index@3x.png in Resources */,
 				84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */,
 				8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */,
+				844F945A1CDE324B0033647F /* UserTopTableViewCell.xib in Resources */,
 				84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */,
 				84097FEE1CDCDB640050FCE6 /* ic_sad_smile.png in Resources */,
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
@@ -913,15 +961,19 @@
 				8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */,
 				84097FF31CDCDDE90050FCE6 /* EmptyScreenView.m in Sources */,
 				8446AB211CD8B52E002B0C9C /* User.m in Sources */,
+				844F94591CDE324B0033647F /* UserTopTableViewCell.m in Sources */,
 				84E64F351CD0D715001A06A2 /* TLMainViewController.m in Sources */,
 				8446AB2F1CD8B5EA002B0C9C /* DataStorageManager+User.m in Sources */,
 				8446AB291CD8B58F002B0C9C /* Post.m in Sources */,
 				8446AB481CD9260A002B0C9C /* TopProfileTableViewCell.m in Sources */,
+				844F946C1CDE3FE20033647F /* UserCompanyTableViewCell.m in Sources */,
 				84097FF71CDCE4E70050FCE6 /* UIRefreshControl+Utils.m in Sources */,
 				8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */,
+				844F94681CDE36110033647F /* TLNetworkManager+User.m in Sources */,
 				8446AB171CD8B31C002B0C9C /* NSDictionary+SafeGetters.m in Sources */,
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
 				8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */,
+				844F945E1CDE32620033647F /* UserFullNameTableViewCell.m in Sources */,
 				8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */,
 				84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */,
 				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,

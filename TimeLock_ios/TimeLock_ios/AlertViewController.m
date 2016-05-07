@@ -7,8 +7,6 @@
 //
 
 #import "AlertViewController.h"
-#import "Const.h"
-#import "FrameAccessor.h"
 #import "AppDelegate.h"
 
 static NSInteger const alertHeight = 100;

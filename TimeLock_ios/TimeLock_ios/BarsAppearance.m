@@ -8,7 +8,6 @@
 
 #import "BarsAppearance.h"
 #import <UIKit/UIKit.h>
-#import "Const.h"
 
 @implementation UIViewController (BarsAppearance)
 

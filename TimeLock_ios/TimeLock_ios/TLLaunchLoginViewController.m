@@ -7,13 +7,11 @@
 //
 
 #import "TLLaunchLoginViewController.h"
-#import "Const.h"
-#import "TLUtils.h"
+
 #import "UIButton+TimeLockStyle.h"
 #import "TLNetworkManager+Authorization.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "FrameAccessor.h"
 
 static const CGFloat ANIMATION_DURATION = 0.5f;
 

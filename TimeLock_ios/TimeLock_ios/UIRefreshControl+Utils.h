@@ -6,8 +6,6 @@
 //  Copyright © 2016 Александр Чаусов. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface UIRefreshControl (Utils)
 
 @property (nonatomic,readwrite) BOOL refreshing;

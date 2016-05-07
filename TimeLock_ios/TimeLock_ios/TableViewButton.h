@@ -6,8 +6,6 @@
 //  Copyright © 2015 SurfStudio. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
-
 @interface TableViewButton : UITableView
 
 @end

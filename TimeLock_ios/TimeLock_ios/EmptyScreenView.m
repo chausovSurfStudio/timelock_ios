@@ -8,7 +8,6 @@
 
 #import "EmptyScreenView.h"
 #import "UIRefreshControl+Utils.h"
-#import "Const.h"
 
 @interface EmptyScreenView()
 

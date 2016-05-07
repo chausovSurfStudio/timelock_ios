@@ -8,7 +8,6 @@
 
 #import "UIButton+TimeLockStyle.h"
 #import "UIImage+Utilities.h"
-#import "Const.h"
 #import <QuartzCore/QuartzCore.h>
 
 @implementation UIButton (TimeLockStyle)

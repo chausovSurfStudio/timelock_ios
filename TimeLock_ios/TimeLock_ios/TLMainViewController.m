@@ -12,7 +12,6 @@
 #import "PostTableViewCell.h"
 #import "User.h"
 #import "Post.h"
-#import "TLUtils.h"
 #import "EmptyScreenView.h"
 
 #import "UIRefreshControl+Utils.h"

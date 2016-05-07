@@ -6,8 +6,6 @@
 //  Copyright © 2016 Александр Чаусов. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface DataStorageManager : NSObject
 
 + (instancetype)sharedDataStorage;

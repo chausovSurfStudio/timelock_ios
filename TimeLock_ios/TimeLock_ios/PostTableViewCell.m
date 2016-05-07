@@ -9,10 +9,8 @@
 #import "PostTableViewCell.h"
 #import "Post.h"
 #import "User.h"
-#import "Const.h"
 
 #import <UIImageView+AFNetworking.h>
-#import "FrameAccessor.h"
 
 @interface PostTableViewCell()
 

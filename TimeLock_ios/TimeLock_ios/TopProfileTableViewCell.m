@@ -8,7 +8,6 @@
 
 #import "TopProfileTableViewCell.h"
 #import "User.h"
-#import "Const.h"
 #import <UIImageView+AFNetworking.h>
 
 @interface TopProfileTableViewCell()

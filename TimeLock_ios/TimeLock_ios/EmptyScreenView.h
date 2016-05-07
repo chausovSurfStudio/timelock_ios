@@ -6,9 +6,6 @@
 //  Copyright © 2016 Александр Чаусов. All rights reserved.
 //
 
-
-#import <UIKit/UIKit.h>
-
 @interface EmptyScreenView : UIScrollView
 
 @property (nonatomic, strong, readwrite) IBInspectable NSString *xibName;

@@ -6,8 +6,6 @@
 //  Copyright (c) 2015 SurfStudio. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
-
 @interface NSDictionary (SafeGetters)
 
 -(NSString *)safeGetStringByKey:(NSString *)key;

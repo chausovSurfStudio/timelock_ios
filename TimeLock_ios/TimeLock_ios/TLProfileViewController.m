@@ -11,7 +11,6 @@
 #import "ProfileSettingsTableViewCell.h"
 #import "User.h"
 
-#import "TLUtils.h"
 #import "TLNetworkManager+Authorization.h"
 #import "TLNetworkManager+Post.h"
 #import "UIRefreshControl+Animation.h"

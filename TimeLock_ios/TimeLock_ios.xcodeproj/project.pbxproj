@@ -36,6 +36,8 @@
 		8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8446AB4C1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib */; };
 		8446AB521CD936FB002B0C9C /* TableViewButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8446AB511CD936FB002B0C9C /* TableViewButton.m */; };
 		8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8448A97B1CD611AA008E4AE1 /* TLUtils.m */; };
+		844F94521CDE24D80033647F /* UserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94501CDE24D80033647F /* UserViewController.m */; };
+		844F94531CDE24D80033647F /* UserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F94511CDE24D80033647F /* UserViewController.xib */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
@@ -145,6 +147,10 @@
 		8446AB511CD936FB002B0C9C /* TableViewButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewButton.m; sourceTree = "<group>"; };
 		8448A97A1CD611AA008E4AE1 /* TLUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLUtils.h; sourceTree = "<group>"; };
 		8448A97B1CD611AA008E4AE1 /* TLUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLUtils.m; sourceTree = "<group>"; };
+		844F944F1CDE24D80033647F /* UserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserViewController.h; sourceTree = "<group>"; };
+		844F94501CDE24D80033647F /* UserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserViewController.m; sourceTree = "<group>"; };
+		844F94511CDE24D80033647F /* UserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserViewController.xib; sourceTree = "<group>"; };
+		844F94541CDE264D0033647F /* TimeLockPrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TimeLockPrefixHeader.pch; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
 		84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNetworkManager.m; sourceTree = "<group>"; };
 		84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Authorization.h"; sourceTree = "<group>"; };
@@ -368,6 +374,16 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
+		844F944E1CDE24AF0033647F /* UserViewController */ = {
+			isa = PBXGroup;
+			children = (
+				844F944F1CDE24D80033647F /* UserViewController.h */,
+				844F94501CDE24D80033647F /* UserViewController.m */,
+				844F94511CDE24D80033647F /* UserViewController.xib */,
+			);
+			name = UserViewController;
+			sourceTree = "<group>";
+		};
 		84B9F9661CD3B6560088D718 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -423,6 +439,7 @@
 			isa = PBXGroup;
 			children = (
 				84E64EDF1CD0C9E2001A06A2 /* main.m */,
+				844F94541CDE264D0033647F /* TimeLockPrefixHeader.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -550,6 +567,7 @@
 		84E64F2F1CD0D6B9001A06A2 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				844F944E1CDE24AF0033647F /* UserViewController */,
 				84E64F371CD0D71D001A06A2 /* MainViewController */,
 			);
 			name = Main;
@@ -815,6 +833,7 @@
 				84E64F291CD0D60A001A06A2 /* ic_index@2x.png in Resources */,
 				84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */,
 				84E64F2D1CD0D60A001A06A2 /* ic_profile@3x.png in Resources */,
+				844F94531CDE24D80033647F /* UserViewController.xib in Resources */,
 				84097FF01CDCDB640050FCE6 /* ic_sad_smile@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -912,6 +931,7 @@
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
 				8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */,
 				8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */,
+				844F94521CDE24D80033647F /* UserViewController.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				84FDCFF51CDBF252006A9039 /* AlertViewController.m in Sources */,
 				8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */,
@@ -1071,6 +1091,8 @@
 			baseConfigurationReference = 4BCCE95DC71BC71C140984B0 /* Pods-TimeLock_ios.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = TimeLock_ios/TimeLockPrefixHeader.pch;
 				INFOPLIST_FILE = TimeLock_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chausov.TimeLock-ios";
@@ -1083,6 +1105,8 @@
 			baseConfigurationReference = D4C3556512062F74C2EE573D /* Pods-TimeLock_ios.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = TimeLock_ios/TimeLockPrefixHeader.pch;
 				INFOPLIST_FILE = TimeLock_ios/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "chausov.TimeLock-ios";

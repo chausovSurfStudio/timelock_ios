@@ -7,8 +7,6 @@
 //
 //  Класс всплывающих сообщений
 
-#import <UIKit/UIKit.h>
-#import <Foundation/Foundation.h>
 #import "TLNetworkManager.h"
 
 @interface AlertViewController : UIViewController

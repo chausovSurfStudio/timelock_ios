@@ -1,0 +1,22 @@
+//
+//  TimeLockPrefixHeader.pch
+//  TimeLock_ios
+//
+//  Created by Александр Чаусов on 07.05.16.
+//  Copyright © 2016 Александр Чаусов. All rights reserved.
+//
+
+#ifndef TimeLock_PrefixHeader_pch
+#define TimeLock_PrefixHeader_pch
+#endif
+
+#ifdef __OBJC__
+#import <CoreData/CoreData.h>
+#import <Foundation/Foundation.h>
+#import "FrameAccessor.h"
+#import "AlertViewController.h"
+#import "Const.h"
+#import "TLUtils.h"
+#import <UIKit/UIKit.h>
+
+#endif /* TimeLockPrefixHeader_pch */

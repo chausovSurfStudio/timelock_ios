@@ -8,11 +8,7 @@
 
 #import "TLNetworkManager.h"
 #import "AFNetworking.h"
-#import "AFURLConnectionOperation.h"
-#import "Const.h"
-#import "TLUtils.h"
 #import <ReactiveCocoa/ReactiveCocoa.h>
-#import "AlertViewController.h"
 
 @interface TLNetworkManager()
 

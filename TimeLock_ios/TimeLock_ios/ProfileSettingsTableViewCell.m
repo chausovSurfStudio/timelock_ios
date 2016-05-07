@@ -22,8 +22,8 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    [self.changeProfileButton setMainGreenStyle];
-    [self.exitButton setRedStyle];
+    [self.changeProfileButton setButtonWithBorderStyle];
+    [self.exitButton setMainButtonStyle];
     [self configButton];
 }
 

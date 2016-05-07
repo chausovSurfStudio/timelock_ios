@@ -47,6 +47,7 @@ static CGFloat const alertLaberlHeightOffset = 12;
     self.view.frame = CGRectMake(0, -alertHeight, SCREEN_WIDTH, alertHeight);
     self.alertLabel.numberOfLines = 0;
     [self.alertLabel sizeToFit];
+    self.alertLabel.textColor = TEXT_COLOR_LIGHT;
     
     //gest для закрытия окна (tap и swipe)
     UITapGestureRecognizer *tapGestr = [[UITapGestureRecognizer alloc] initWithTarget:self

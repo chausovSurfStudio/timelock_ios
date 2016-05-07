@@ -9,41 +9,45 @@
 #import "UIButton+TimeLockStyle.h"
 #import "UIImage+Utilities.h"
 #import "Const.h"
+#import <QuartzCore/QuartzCore.h>
 
 @implementation UIButton (TimeLockStyle)
 
-- (void)setMainGreenStyle {
-    self.backgroundColor = [UIColor clearColor];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_GREEN_COLOR] forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_GREEN_COLOR_PRESSED] forState:UIControlStateHighlighted];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_GREEN_COLOR_PRESSED] forState:UIControlStateSelected];
+- (void)setButtonWithBorderStyle {
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundImage:[UIImage imageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageFromColor:EXTRA_THEME_COLOR_PRESSED] forState:UIControlStateHighlighted];
+    [self setBackgroundImage:[UIImage imageFromColor:EXTRA_THEME_COLOR_PRESSED] forState:UIControlStateSelected];
     
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateSelected];
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateHighlighted];
+    [self setTitleColor:BORDER_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+    [self setTitleColor:BORDER_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateSelected];
+    [self setTitleColor:BORDER_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateHighlighted];
+    
+    [self.layer setBorderWidth:1.0f];
+    [self.layer setBorderColor:EXTRA_THEME_COLOR.CGColor];
     
     self.titleLabel.font = BUTTON_FONT;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.clipsToBounds = YES;
-    self.layer.cornerRadius = 7;
+    self.layer.cornerRadius = 5;
 }
 
-- (void)setRedStyle {
-    self.backgroundColor = [UIColor clearColor];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR] forState:UIControlStateNormal];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR_PRESSED] forState:UIControlStateHighlighted];
-    [self setBackgroundImage:[UIImage imageFromColor:MAIN_RED_COLOR_PRESSED] forState:UIControlStateSelected];
+- (void)setMainButtonStyle {
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundImage:[UIImage imageFromColor:EXTRA_THEME_COLOR] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageFromColor:EXTRA_THEME_COLOR_PRESSED] forState:UIControlStateHighlighted];
+    [self setBackgroundImage:[UIImage imageFromColor:EXTRA_THEME_COLOR_PRESSED] forState:UIControlStateSelected];
     
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateSelected];
-    [self setTitleColor:GREEN_BUTTON_TEXT_COLOR forState:UIControlStateHighlighted];
+    [self setTitleColor:MAIN_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+    [self setTitleColor:MAIN_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateSelected];
+    [self setTitleColor:MAIN_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateHighlighted];
     
     self.titleLabel.font = BUTTON_FONT;
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.clipsToBounds = YES;
-    self.layer.cornerRadius = 7;
+    self.layer.cornerRadius = 5;
 }
 
 @end

@@ -8,6 +8,7 @@
 
 #import "TopProfileTableViewCell.h"
 #import "User.h"
+#import "Const.h"
 #import <UIImageView+AFNetworking.h>
 
 @interface TopProfileTableViewCell()
@@ -23,6 +24,7 @@
     [super awakeFromNib];
     self.userAvatar.layer.cornerRadius = self.userAvatar.frame.size.width / 2;
     self.userAvatar.layer.masksToBounds = YES;
+    self.usernameLabel.textColor = TEXT_COLOR_LIGHT;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

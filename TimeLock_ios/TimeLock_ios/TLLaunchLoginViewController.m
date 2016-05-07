@@ -71,9 +71,14 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
 }
 
 - (void)configStyle {
-    self.view.backgroundColor = MAIN_BLUE_COLOR;
-    self.loginView.backgroundColor = MAIN_BLUE_COLOR;
-    [self.loginButton setMainGreenStyle];
+    self.view.backgroundColor = MAIN_THEME_COLOR;
+    self.loginView.backgroundColor = MAIN_THEME_COLOR;
+    [self.loginButton setMainButtonStyle];
+    self.emailTextField.tintColor = TEXT_FIELD_TINT_COLOR;
+    self.passwordTextField.tintColor = TEXT_FIELD_TINT_COLOR;
+    self.emailTextField.textColor = TEXT_FIELD_TEXT_COLOR;
+    self.passwordTextField.textColor = TEXT_FIELD_TEXT_COLOR;
+    
 }
 
 - (void)configTitles {

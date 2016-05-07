@@ -11,23 +11,29 @@
 
 // COLOR
 
-#define NAVIGATION_BAR_COLOR    MAIN_BLUE_COLOR
-#define TAB_BAR_COLOR           MAIN_RED_COLOR
+#define NAVIGATION_BAR_COLOR    MAIN_THEME_COLOR
+#define TAB_BAR_COLOR           EXTRA_THEME_COLOR
 
-#define MAIN_BLUE_COLOR     [UIColor colorWithRed:149/255.0 green:151/255.0  blue:150/255.0  alpha:1.0]
-#define MAIN_GREEN_COLOR    [UIColor colorWithRed:113/255.0 green:122/255.0  blue:39/255.0  alpha:1.0]
-#define MAIN_RED_COLOR      [UIColor colorWithRed:168/255.0 green:91/255.0  blue:111/255.0  alpha:1.0]
+#define MAIN_THEME_COLOR    [UIColor colorWithRed:74/255.0 green:74/255.0  blue:74/255.0  alpha:1.0]            //серый
+#define EXTRA_THEME_COLOR   [UIColor colorWithRed:189/255.0 green:89/255.0  blue:0/255.0  alpha:1.0]            //оранжевый
 
-#define MAIN_BLUE_COLOR_PRESSED     [UIColor colorWithRed:49/255.0 green:44/255.0  blue:72/255.0  alpha:1.0]
-#define MAIN_GREEN_COLOR_PRESSED    [UIColor colorWithRed:66/255.0 green:92/255.0  blue:50/255.0  alpha:1.0]
-#define MAIN_RED_COLOR_PRESSED      [UIColor colorWithRed:105/255.0 green:59/255.0  blue:58/255.0  alpha:1.0]
+#define MAIN_THEME_COLOR_PRESSED    [UIColor colorWithRed:74/255.0 green:74/255.0  blue:74/255.0  alpha:0.7]
+#define EXTRA_THEME_COLOR_PRESSED   [UIColor blackColor]
 
-#define GREEN_BUTTON_TEXT_COLOR     [UIColor whiteColor]
-#define RED_BUTTON_TEXT_COLOR       [UIColor whiteColor]
+#define BORDER_BUTTON_TEXT_COLOR            TEXT_COLOR
+#define BORDER_BUTTON_TEXT_COLOR_PRESSED    TEXT_COLOR_LIGHT
+#define MAIN_BUTTON_TEXT_COLOR              TEXT_COLOR_LIGHT
+#define MAIN_BUTTON_TEXT_COLOR_PRESSED      TEXT_COLOR_LIGHT
 
-#define ALERT_ERROR_COLOR [UIColor colorWithRed:199./255 green:30./255 blue:30./255 alpha:0.9]
-#define ALERT_INFO_COLOR      [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]
+#define ALERT_ERROR_COLOR   [UIColor colorWithRed:199./255 green:30./255 blue:30./255 alpha:0.9]
+#define ALERT_INFO_COLOR    [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]
 
+#define TEXT_COLOR          [UIColor colorWithRed:43./255 green:43./255 blue:43./255 alpha:0.9]
+#define TEXT_COLOR_EXTRA    [UIColor colorWithRed:93./255 green:93./255 blue:93./255 alpha:0.9]
+#define TEXT_COLOR_LIGHT    [UIColor whiteColor]
+
+#define TEXT_FIELD_TEXT_COLOR   TEXT_COLOR
+#define TEXT_FIELD_TINT_COLOR   MAIN_THEME_COLOR
 
 // FONTS
 
@@ -35,8 +41,8 @@
 
 // URL PATH
 
-//static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
-static NSString * const BASE_URL = @"http://1d6dfd94.ngrok.io/api/v1.0";
+static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
+//static NSString * const BASE_URL = @"http://1d6dfd94.ngrok.io/api/v1.0";
 
 static NSString * const TOKEN_PATH = @"/token";
 static NSString * const POST_PATH = @"/posts/";

@@ -9,6 +9,7 @@
 #import "PostTableViewCell.h"
 #import "Post.h"
 #import "User.h"
+#import "Const.h"
 
 #import <UIImageView+AFNetworking.h>
 #import "FrameAccessor.h"
@@ -26,6 +27,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.timeLabel.textColor = TEXT_COLOR_EXTRA;
+    self.usernameLabel.textColor = TEXT_COLOR;
+    self.postTextLabel.textColor = TEXT_COLOR;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

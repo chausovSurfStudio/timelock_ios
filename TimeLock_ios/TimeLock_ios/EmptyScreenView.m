@@ -12,8 +12,9 @@
 
 @interface EmptyScreenView()
 
-@property (nonatomic,readwrite,strong) IBOutlet UIView *contents;
-@property (nonatomic,strong) IBOutlet UILabel *errorText;
+@property (nonatomic, readwrite, strong) IBOutlet UIView *contents;
+@property (nonatomic, strong) IBOutlet UILabel *errorText;
+@property (nonatomic, strong) IBOutlet UILabel *helpInfoLabel;
 
 @end
 
@@ -21,6 +22,8 @@
 
 -(void)awakeFromNib {
     [super awakeFromNib];
+    self.errorText.textColor = TEXT_COLOR;
+    self.helpInfoLabel.textColor = TEXT_COLOR;
     self.alwaysBounceVertical = YES;
     self.clipsToBounds = YES;
     if (_xibName)

@@ -33,7 +33,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwX-x7-Eul">
-                        <rect key="frame" x="15" y="128" width="290" height="1"/>
+                        <rect key="frame" x="15" y="129" width="290" height="1"/>
                         <color key="backgroundColor" red="0.67843137254901964" green="0.67843137254901964" blue="0.67843137254901964" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="1" id="Znr-cg-AuW"/>
@@ -43,7 +43,7 @@
                 <constraints>
                     <constraint firstItem="5kB-K4-bka" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="42s-TV-ZlJ"/>
                     <constraint firstItem="8Fj-tL-wIF" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="LUu-t8-2d8"/>
-                    <constraint firstAttribute="bottom" secondItem="NwX-x7-Eul" secondAttribute="bottom" id="LdF-n0-E4u"/>
+                    <constraint firstAttribute="bottom" secondItem="NwX-x7-Eul" secondAttribute="bottom" constant="-1" id="LdF-n0-E4u"/>
                     <constraint firstItem="NwX-x7-Eul" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="jel-Fe-2hG"/>
                     <constraint firstAttribute="bottom" secondItem="5kB-K4-bka" secondAttribute="bottom" constant="14" id="oHU-tw-ARq"/>
                     <constraint firstItem="5kB-K4-bka" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="sOp-nf-g4V"/>

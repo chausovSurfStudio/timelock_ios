@@ -8,6 +8,8 @@
 
 #import "UserViewController.h"
 #import "UserTopTableViewCell.h"
+#import "UserFullNameTableViewCell.h"
+#import "UserCompanyTableViewCell.h"
 #import "User.h"
 
 #import "UIRefreshControl+Utils.h"
@@ -30,6 +32,8 @@
 @end
 
 static NSString *topCellIdentifier = @"topCellIdentifier";
+static NSString *fullNameCellIdentifier = @"fullNameCellIdentifier";
+static NSString *companyNameCellIdentifier = @"companyNameCellIdentifier";
 
 @implementation UserViewController
 
@@ -47,6 +51,8 @@ static NSString *topCellIdentifier = @"topCellIdentifier";
     self.navigationItem.title = self.username;
     
     [self.tableView registerNib:[UINib nibWithNibName:@"UserTopTableViewCell" bundle:nil] forCellReuseIdentifier:topCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UserFullNameTableViewCell" bundle:nil] forCellReuseIdentifier:fullNameCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"UserCompanyTableViewCell" bundle:nil] forCellReuseIdentifier:companyNameCellIdentifier];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     
@@ -103,15 +109,27 @@ static NSString *topCellIdentifier = @"topCellIdentifier";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if ([TLUtils checkExistenceOfString:self.user.firstName] || [TLUtils checkExistenceOfString:self.user.lastName] || [TLUtils checkExistenceOfString:self.user.middleName]) {
-        return 1;
+    if (!self.user) {
+        return 0;
+    }
+    if ([self userHaveName]) {
+        return 3;
     } else {
-        return 1;
+        return 2;
     }
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UserTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:topCellIdentifier];
+    if (indexPath.row == 0) {
+        UserTopTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:topCellIdentifier];
+        [cell configCellWithUser:self.user];
+        return cell;
+    } else if (indexPath.row == 1 && [self userHaveName]) {
+        UserFullNameTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:fullNameCellIdentifier];
+        [cell configCellWithUser:self.user];
+        return cell;
+    }
+    UserCompanyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:companyNameCellIdentifier];
     [cell configCellWithUser:self.user];
     return cell;
 }
@@ -123,6 +141,11 @@ static NSString *topCellIdentifier = @"topCellIdentifier";
 
 - (void)hideHudView {
     [TLUtils hideHudView:self.hud onView:self.view];
+}
+
+#pragma mark - Others
+- (BOOL)userHaveName {
+    return ([TLUtils checkExistenceOfString:self.user.firstName] || [TLUtils checkExistenceOfString:self.user.lastName] || [TLUtils checkExistenceOfString:self.user.middleName]);
 }
 
 

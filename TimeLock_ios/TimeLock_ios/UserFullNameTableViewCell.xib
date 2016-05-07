@@ -1,18 +1,156 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Web-Regular.ttf">
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+            <string>PTSans-Regular</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="KGk-i7-Jjw" customClass="UserFullNameTableViewCell">
-            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="123" id="KGk-i7-Jjw" customClass="UserFullNameTableViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="123"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
-                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <rect key="frame" x="0.0" y="0.0" width="320" height="122"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBZ-ZS-7Pr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Петров" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-ge-e6S">
+                                <rect key="frame" x="106" y="15" width="206" height="21"/>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Фамилия" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1gh-7k-PmU">
+                                <rect key="frame" x="15" y="17" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="EYJ-q2-g6l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="14"/>
+                                <color key="textColor" red="0.4431372549" green="0.4431372549" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="jd7-ge-e6S" secondAttribute="bottom" id="L9Q-pJ-IEV"/>
+                            <constraint firstAttribute="bottom" secondItem="1gh-7k-PmU" secondAttribute="bottom" constant="-2" id="MYU-Qc-ACa"/>
+                            <constraint firstItem="1gh-7k-PmU" firstAttribute="top" secondItem="nBZ-ZS-7Pr" secondAttribute="top" constant="17" id="SCq-k2-X5K"/>
+                            <constraint firstItem="jd7-ge-e6S" firstAttribute="leading" secondItem="1gh-7k-PmU" secondAttribute="trailing" constant="8" id="SdG-9g-HlY"/>
+                            <constraint firstItem="1gh-7k-PmU" firstAttribute="leading" secondItem="nBZ-ZS-7Pr" secondAttribute="leading" constant="15" id="jRV-xs-RAp"/>
+                            <constraint firstAttribute="height" constant="36" id="m5x-aF-No8"/>
+                            <constraint firstAttribute="trailing" secondItem="jd7-ge-e6S" secondAttribute="trailing" constant="8" id="wlT-5s-prc"/>
+                            <constraint firstItem="jd7-ge-e6S" firstAttribute="top" secondItem="nBZ-ZS-7Pr" secondAttribute="top" constant="15" id="xhg-sd-yRJ"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBL-W1-0Jz">
+                        <rect key="frame" x="0.0" y="36" width="320" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Петр" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2hw-Uz-qnS">
+                                <rect key="frame" x="106" y="15" width="206" height="21"/>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Имя" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E82-gf-tQg">
+                                <rect key="frame" x="15" y="16" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="Xa3-JY-2zt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="14"/>
+                                <color key="textColor" red="0.44313725490196076" green="0.44313725490196076" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="2hw-Uz-qnS" firstAttribute="leading" secondItem="E82-gf-tQg" secondAttribute="trailing" constant="8" id="3ik-Ta-dHB"/>
+                            <constraint firstItem="E82-gf-tQg" firstAttribute="top" secondItem="nBL-W1-0Jz" secondAttribute="top" constant="16" id="IsT-q8-vsa"/>
+                            <constraint firstAttribute="bottom" secondItem="E82-gf-tQg" secondAttribute="bottom" constant="-1" id="JGJ-jB-otL"/>
+                            <constraint firstItem="E82-gf-tQg" firstAttribute="leading" secondItem="nBL-W1-0Jz" secondAttribute="leading" constant="15" id="aXs-j9-qnd"/>
+                            <constraint firstAttribute="trailing" secondItem="2hw-Uz-qnS" secondAttribute="trailing" constant="8" id="bwG-pa-hLr"/>
+                            <constraint firstAttribute="height" constant="36" id="eEl-RM-LfH"/>
+                            <constraint firstItem="2hw-Uz-qnS" firstAttribute="top" secondItem="nBL-W1-0Jz" secondAttribute="top" constant="15" id="oXL-q0-D6c"/>
+                            <constraint firstAttribute="bottom" secondItem="2hw-Uz-qnS" secondAttribute="bottom" id="sKd-UP-LBC"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YBg-Ye-2r5">
+                        <rect key="frame" x="0.0" y="72" width="320" height="36"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Петрович" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="enn-hV-2zc">
+                                <rect key="frame" x="106" y="15" width="206" height="21"/>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Отчество" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fan-yO-WaS">
+                                <rect key="frame" x="15" y="17" width="83" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="83" id="Vg5-Tq-TUc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="14"/>
+                                <color key="textColor" red="0.4431372549" green="0.4431372549" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="fan-yO-WaS" secondAttribute="bottom" constant="-2" id="M00-Sl-5NV"/>
+                            <constraint firstItem="enn-hV-2zc" firstAttribute="leading" secondItem="fan-yO-WaS" secondAttribute="trailing" constant="8" id="Ob2-tc-htR"/>
+                            <constraint firstAttribute="trailing" secondItem="enn-hV-2zc" secondAttribute="trailing" constant="8" id="WIY-Wd-6Cj"/>
+                            <constraint firstAttribute="bottom" secondItem="enn-hV-2zc" secondAttribute="bottom" id="jke-iE-af1"/>
+                            <constraint firstItem="fan-yO-WaS" firstAttribute="leading" secondItem="YBg-Ye-2r5" secondAttribute="leading" constant="15" id="q9q-Us-OOS"/>
+                            <constraint firstAttribute="height" constant="36" id="xLL-UB-Tjc"/>
+                            <constraint firstItem="fan-yO-WaS" firstAttribute="top" secondItem="YBg-Ye-2r5" secondAttribute="top" constant="17" id="ydk-op-6cZ"/>
+                            <constraint firstItem="enn-hV-2zc" firstAttribute="top" secondItem="YBg-Ye-2r5" secondAttribute="top" constant="15" id="yz1-fD-Hn1"/>
+                        </constraints>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="03A-hS-F4u">
+                        <rect key="frame" x="15" y="120" width="290" height="1"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="F5c-vR-wSq"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="nBZ-ZS-7Pr" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="Bv4-9h-eFW"/>
+                    <constraint firstAttribute="trailing" secondItem="YBg-Ye-2r5" secondAttribute="trailing" id="CtZ-3Q-aT8"/>
+                    <constraint firstItem="nBZ-ZS-7Pr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="FeO-wU-MRq"/>
+                    <constraint firstItem="YBg-Ye-2r5" firstAttribute="top" secondItem="nBL-W1-0Jz" secondAttribute="bottom" id="Mam-iX-oiF"/>
+                    <constraint firstItem="nBL-W1-0Jz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="QfN-Cd-Sbq"/>
+                    <constraint firstAttribute="trailing" secondItem="nBZ-ZS-7Pr" secondAttribute="trailing" id="Ze3-1B-ZD2"/>
+                    <constraint firstItem="nBL-W1-0Jz" firstAttribute="top" secondItem="nBZ-ZS-7Pr" secondAttribute="bottom" id="e8R-4X-rOF"/>
+                    <constraint firstAttribute="trailing" secondItem="03A-hS-F4u" secondAttribute="trailing" constant="15" id="ghu-qR-pz3"/>
+                    <constraint firstItem="YBg-Ye-2r5" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="lzd-lg-1xX"/>
+                    <constraint firstAttribute="bottom" secondItem="YBg-Ye-2r5" secondAttribute="bottom" priority="999" constant="14" id="t0U-SP-0dF"/>
+                    <constraint firstItem="03A-hS-F4u" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="wgn-hl-81Q"/>
+                    <constraint firstAttribute="bottom" secondItem="03A-hS-F4u" secondAttribute="bottom" constant="1" id="yWA-rh-853"/>
+                    <constraint firstAttribute="trailing" secondItem="nBL-W1-0Jz" secondAttribute="trailing" id="yht-eB-Rld"/>
+                </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="firstNameLabel" destination="2hw-Uz-qnS" id="ZPg-VQ-2mw"/>
+                <outlet property="firstNamePlaceholderLabel" destination="E82-gf-tQg" id="kqT-eh-XmM"/>
+                <outlet property="firstNameViewHeightConstraint" destination="eEl-RM-LfH" id="t7Y-KT-veD"/>
+                <outlet property="lastNameLabel" destination="jd7-ge-e6S" id="uFm-7Z-odU"/>
+                <outlet property="lastNamePlaceholderLabel" destination="1gh-7k-PmU" id="H70-Ps-Nr6"/>
+                <outlet property="lastNameViewHeightConstraint" destination="m5x-aF-No8" id="WXO-5O-Oe0"/>
+                <outlet property="middleNameLabel" destination="enn-hV-2zc" id="TlX-A9-DNm"/>
+                <outlet property="middleNamePlaceholderLabel" destination="fan-yO-WaS" id="dT3-xp-EdE"/>
+                <outlet property="middleNameViewHeightConstraint" destination="xLL-UB-Tjc" id="l8D-yF-Olq"/>
+                <outlet property="separatorView" destination="03A-hS-F4u" id="ywd-kF-YgH"/>
+            </connections>
+            <point key="canvasLocation" x="574" y="370.5"/>
         </tableViewCell>
     </objects>
 </document>

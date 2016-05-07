@@ -24,3 +24,9 @@
 "HTTPStatusServerError" = "Простите, на сервере произошла ошибка";
 "HTTPStatusNotConnectToTheServer" = "Невозможно связаться с сервером";
 "HTTPStatusNoInternetConnection" = "Отсутствует соединение с сетью Интернет";
+
+// user screen
+"firstNamePlaceholder" = "Имя";
+"lastNamePlaceholder" = "Фамилия";
+"middletNamePlaceholder" = "Отчество";
+"companyName" = "Работает в компании ";

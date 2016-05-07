@@ -8,6 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
+@class User;
+
 @interface UserFullNameTableViewCell : UITableViewCell
+
+- (void)configCellWithUser:(User *)user;
 
 @end

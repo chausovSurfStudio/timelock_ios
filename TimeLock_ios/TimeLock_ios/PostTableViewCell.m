@@ -25,7 +25,7 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.timeLabel.textColor = TEXT_COLOR_EXTRA;
+    self.timeLabel.textColor = EXTRA_THEME_COLOR;
     self.usernameLabel.textColor = TEXT_COLOR;
     self.postTextLabel.textColor = TEXT_COLOR;
 }

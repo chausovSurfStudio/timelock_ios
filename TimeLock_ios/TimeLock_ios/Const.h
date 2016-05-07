@@ -29,7 +29,7 @@
 #define ALERT_INFO_COLOR    [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]
 
 #define TEXT_COLOR          [UIColor colorWithRed:43./255 green:43./255 blue:43./255 alpha:0.9]
-#define TEXT_COLOR_EXTRA    [UIColor colorWithRed:93./255 green:93./255 blue:93./255 alpha:0.9]
+#define TEXT_COLOR_EXTRA    [UIColor colorWithRed:113./255 green:113./255 blue:113./255 alpha:0.9]
 #define TEXT_COLOR_LIGHT    [UIColor whiteColor]
 
 #define TEXT_FIELD_TEXT_COLOR   TEXT_COLOR
@@ -40,6 +40,8 @@
 // FONTS
 
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
+#define COMPANY_NAME_FONT       [UIFont fontWithName:@"PTSans-Regular" size:16]
+#define COMPANY_NAME_FONT_BOLD  [UIFont fontWithName:@"PTSans-Bold" size:17]
 
 // URL PATH
 

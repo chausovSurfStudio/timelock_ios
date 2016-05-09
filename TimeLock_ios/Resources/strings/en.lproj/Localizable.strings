@@ -30,3 +30,12 @@
 "lastNamePlaceholder" = "Фамилия";
 "middletNamePlaceholder" = "Отчество";
 "companyName" = "Работает в компании ";
+
+// profile
+"userNotFound" = "Данные о пользователе не получены, попробуйте обновить даный экран и повторить попытку";
+"changeProfileNavBarTitle" = "Редактирование профиля";
+"changeProfileButtonTitle" = "Редактировать профиль";
+"exitButtonTitle" = "Выйти";
+"saveButtonTitle" = "Сохранить";
+"cancelButtonTitle" = "Отменить";
+"usernamePlaceholder" = "Логин";

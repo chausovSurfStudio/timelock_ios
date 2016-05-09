@@ -24,11 +24,9 @@
     [super awakeFromNib];
     [self.changeProfileButton setButtonWithBorderStyle];
     [self.exitButton setMainButtonStyle];
+    [self.changeProfileButton setTitle:NSLocalizedString(@"changeProfileButtonTitle", nil) forState:UIControlStateNormal];
+    [self.exitButton setTitle:NSLocalizedString(@"exitButtonTitle", nil) forState:UIControlStateNormal];
     [self configButton];
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
 }
 
 - (void)configButton {

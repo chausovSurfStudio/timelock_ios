@@ -11,7 +11,7 @@
 
 @implementation UIViewController (BarsAppearance)
 
-+(void)load {
++ (void)load {
     UINavigationBar *navBar = [UINavigationBar appearance];
     navBar.translucent = NO;
     navBar.barTintColor = NAVIGATION_BAR_COLOR;
@@ -27,6 +27,14 @@
 
 -(void)popFromNavigationController {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (void)decorateBackButton {
+    UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"icBack"]
+                                                                   style:UIBarButtonItemStylePlain
+                                                                  target:self
+                                                                  action:@selector(popFromNavigationController)];
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 @end

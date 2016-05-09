@@ -14,6 +14,7 @@
 
 #import "UIRefreshControl+Utils.h"
 #import "TLNetworkManager+User.h"
+#import "BarsAppearance.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 #import <MBProgressHUD/MBProgressHUD.h>
@@ -49,6 +50,7 @@ static NSString *companyNameCellIdentifier = @"companyNameCellIdentifier";
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.navigationItem.title = self.username;
+    [self decorateBackButton];
     
     [self.tableView registerNib:[UINib nibWithNibName:@"UserTopTableViewCell" bundle:nil] forCellReuseIdentifier:topCellIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"UserFullNameTableViewCell" bundle:nil] forCellReuseIdentifier:fullNameCellIdentifier];

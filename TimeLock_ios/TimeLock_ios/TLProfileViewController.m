@@ -10,6 +10,7 @@
 #import "TopProfileTableViewCell.h"
 #import "ProfileSettingsTableViewCell.h"
 #import "User.h"
+#import "ChangeProfileViewController.h"
 
 #import "TLNetworkManager+Authorization.h"
 #import "TLNetworkManager+Post.h"
@@ -38,8 +39,8 @@ static NSString * const settingsCellIdentifier = @"settingsCellIdentifier";
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"profileScreenNavBarTitle", nil);
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"TopProfileTableViewCell" bundle:nil]  forCellReuseIdentifier:topCellIdentifier];
-    [self.tableView registerNib:[UINib nibWithNibName:@"ProfileSettingsTableViewCell" bundle:nil]  forCellReuseIdentifier:settingsCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"TopProfileTableViewCell" bundle:nil] forCellReuseIdentifier:topCellIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"ProfileSettingsTableViewCell" bundle:nil] forCellReuseIdentifier:settingsCellIdentifier];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
@@ -115,7 +116,12 @@ static NSString * const settingsCellIdentifier = @"settingsCellIdentifier";
 
 #pragma mark - ProfileSettingsTableViewCellDelegate
 - (void)changeProfileButtonPressed {
-    NSLog(@"changeProfileButtonPressed");
+    if (!self.user) {
+        [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"userNotFound", nil) animation:YES autoHide:YES];
+    } else {
+        ChangeProfileViewController *vc = [[ChangeProfileViewController alloc] initWithUser:self.user];
+        [self.navigationController pushViewController:vc animated:YES];
+    }
 }
 
 - (void)exitButtonPressed {

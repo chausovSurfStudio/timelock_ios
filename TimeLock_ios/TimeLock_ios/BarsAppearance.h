@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (BarsAppearance)
-//-(void)decorateBackButton;
+- (void)decorateBackButton;
 //-(void)addCartButton;
 @end

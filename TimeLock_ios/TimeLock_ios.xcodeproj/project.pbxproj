@@ -45,6 +45,18 @@
 		844F94681CDE36110033647F /* TLNetworkManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94671CDE36110033647F /* TLNetworkManager+User.m */; };
 		844F946C1CDE3FE20033647F /* UserCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */; };
 		844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */; };
+		84AD1E8A1CDFB2D90055CB87 /* ChangeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD1E881CDFB2D90055CB87 /* ChangeProfileViewController.m */; };
+		84AD1E8B1CDFB2D90055CB87 /* ChangeProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1E891CDFB2D90055CB87 /* ChangeProfileViewController.xib */; };
+		84AD1E901CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD1E8E1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m */; };
+		84AD1E911CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1E8F1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.xib */; };
+		84AD1E951CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD1E931CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m */; };
+		84AD1E961CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1E941CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib */; };
+		84AD1EAA1CDFC4F30055CB87 /* icBack.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA41CDFC4F20055CB87 /* icBack.png */; };
+		84AD1EAB1CDFC4F30055CB87 /* icBack@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA51CDFC4F20055CB87 /* icBack@2x.png */; };
+		84AD1EAC1CDFC4F30055CB87 /* icBack@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA61CDFC4F30055CB87 /* icBack@3x.png */; };
+		84AD1EAD1CDFC4F30055CB87 /* icBackPressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA71CDFC4F30055CB87 /* icBackPressed.png */; };
+		84AD1EAE1CDFC4F30055CB87 /* icBackPressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA81CDFC4F30055CB87 /* icBackPressed@2x.png */; };
+		84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA91CDFC4F30055CB87 /* icBackPressed@3x.png */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
@@ -169,6 +181,21 @@
 		844F94691CDE3FE20033647F /* UserCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCompanyTableViewCell.h; sourceTree = "<group>"; };
 		844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCompanyTableViewCell.m; sourceTree = "<group>"; };
 		844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		84AD1E871CDFB2D90055CB87 /* ChangeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileViewController.h; sourceTree = "<group>"; };
+		84AD1E881CDFB2D90055CB87 /* ChangeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileViewController.m; sourceTree = "<group>"; };
+		84AD1E891CDFB2D90055CB87 /* ChangeProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeProfileViewController.xib; sourceTree = "<group>"; };
+		84AD1E8D1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileDataTableViewCell.h; sourceTree = "<group>"; };
+		84AD1E8E1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileDataTableViewCell.m; sourceTree = "<group>"; };
+		84AD1E8F1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeProfileDataTableViewCell.xib; sourceTree = "<group>"; };
+		84AD1E921CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileResultTableViewCell.h; sourceTree = "<group>"; };
+		84AD1E931CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileResultTableViewCell.m; sourceTree = "<group>"; };
+		84AD1E941CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeProfileResultTableViewCell.xib; sourceTree = "<group>"; };
+		84AD1EA41CDFC4F20055CB87 /* icBack.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icBack.png; path = Resources/icon/navbar/icBack.png; sourceTree = "<group>"; };
+		84AD1EA51CDFC4F20055CB87 /* icBack@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icBack@2x.png"; path = "Resources/icon/navbar/icBack@2x.png"; sourceTree = "<group>"; };
+		84AD1EA61CDFC4F30055CB87 /* icBack@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icBack@3x.png"; path = "Resources/icon/navbar/icBack@3x.png"; sourceTree = "<group>"; };
+		84AD1EA71CDFC4F30055CB87 /* icBackPressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = icBackPressed.png; path = Resources/icon/navbar/icBackPressed.png; sourceTree = "<group>"; };
+		84AD1EA81CDFC4F30055CB87 /* icBackPressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icBackPressed@2x.png"; path = "Resources/icon/navbar/icBackPressed@2x.png"; sourceTree = "<group>"; };
+		84AD1EA91CDFC4F30055CB87 /* icBackPressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icBackPressed@3x.png"; path = "Resources/icon/navbar/icBackPressed@3x.png"; sourceTree = "<group>"; };
 		84B9F9631CD3AD4F0088D718 /* TLNetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TLNetworkManager.h; sourceTree = "<group>"; };
 		84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNetworkManager.m; sourceTree = "<group>"; };
 		84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Authorization.h"; sourceTree = "<group>"; };
@@ -428,6 +455,43 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		84AD1E861CDFB2910055CB87 /* ChangeProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84AD1E8C1CDFB8A70055CB87 /* Cell */,
+				84AD1E871CDFB2D90055CB87 /* ChangeProfileViewController.h */,
+				84AD1E881CDFB2D90055CB87 /* ChangeProfileViewController.m */,
+				84AD1E891CDFB2D90055CB87 /* ChangeProfileViewController.xib */,
+			);
+			name = ChangeProfileViewController;
+			sourceTree = "<group>";
+		};
+		84AD1E8C1CDFB8A70055CB87 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84AD1E8D1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.h */,
+				84AD1E8E1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m */,
+				84AD1E8F1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.xib */,
+				84AD1E921CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.h */,
+				84AD1E931CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m */,
+				84AD1E941CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		84AD1E971CDFC48E0055CB87 /* navbar */ = {
+			isa = PBXGroup;
+			children = (
+				84AD1EA41CDFC4F20055CB87 /* icBack.png */,
+				84AD1EA51CDFC4F20055CB87 /* icBack@2x.png */,
+				84AD1EA61CDFC4F30055CB87 /* icBack@3x.png */,
+				84AD1EA71CDFC4F30055CB87 /* icBackPressed.png */,
+				84AD1EA81CDFC4F30055CB87 /* icBackPressed@2x.png */,
+				84AD1EA91CDFC4F30055CB87 /* icBackPressed@3x.png */,
+			);
+			name = navbar;
+			sourceTree = "<group>";
+		};
 		84B9F9661CD3B6560088D718 /* Authorization */ = {
 			isa = PBXGroup;
 			children = (
@@ -569,6 +633,7 @@
 		84E64F1A1CD0D585001A06A2 /* icon */ = {
 			isa = PBXGroup;
 			children = (
+				84AD1E971CDFC48E0055CB87 /* navbar */,
 				84E64F1B1CD0D58A001A06A2 /* tabbar */,
 				84FDCFF71CDBF65B006A9039 /* ic_alert@2x.png */,
 				84FDCFF81CDBF65B006A9039 /* ic_alert@3x.png */,
@@ -621,6 +686,7 @@
 		84E64F301CD0D6D0001A06A2 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
+				84AD1E861CDFB2910055CB87 /* ChangeProfileViewController */,
 				84E64F381CD0D729001A06A2 /* ProfileViewController */,
 			);
 			name = Profile;
@@ -851,35 +917,44 @@
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
 				8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
+				84AD1E8B1CDFB2D90055CB87 /* ChangeProfileViewController.xib in Resources */,
 				84E64F591CD0E5E2001A06A2 /* Localizable.strings in Resources */,
 				84FDCFEA1CDBEFFC006A9039 /* user_placeholder@2x.png in Resources */,
 				84E64EEE1CD0C9E2001A06A2 /* Assets.xcassets in Resources */,
 				84E64F2A1CD0D60A001A06A2 /* ic_index@3x.png in Resources */,
+				84AD1E911CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.xib in Resources */,
 				84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */,
 				8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */,
 				844F945A1CDE324B0033647F /* UserTopTableViewCell.xib in Resources */,
 				84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */,
+				84AD1EAE1CDFC4F30055CB87 /* icBackPressed@2x.png in Resources */,
 				84097FEE1CDCDB640050FCE6 /* ic_sad_smile.png in Resources */,
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
 				84E64F281CD0D60A001A06A2 /* ic_index.png in Resources */,
 				84097FE81CDCDAC30050FCE6 /* ic_arrow_down.png in Resources */,
+				84AD1EAC1CDFC4F30055CB87 /* icBack@3x.png in Resources */,
 				8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
 				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
 				84FDCFE91CDBEFFC006A9039 /* user_placeholder.png in Resources */,
+				84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
+				84AD1E961CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib in Resources */,
 				84E64F361CD0D715001A06A2 /* TLMainViewController.xib in Resources */,
+				84AD1EAA1CDFC4F30055CB87 /* icBack.png in Resources */,
 				84097FEA1CDCDAC30050FCE6 /* ic_arrow_down@3x.png in Resources */,
 				84FDCFFA1CDBF65B006A9039 /* ic_alert@3x.png in Resources */,
 				84E64F3D1CD0D747001A06A2 /* TLProfileViewController.xib in Resources */,
 				84FDCFF61CDBF252006A9039 /* AlertViewController.xib in Resources */,
 				84097FEF1CDCDB640050FCE6 /* ic_sad_smile@2x.png in Resources */,
 				84E64F251CD0D60A001A06A2 /* ic_catalog.png in Resources */,
+				84AD1EAB1CDFC4F30055CB87 /* icBack@2x.png in Resources */,
 				84E64F431CD0D76B001A06A2 /* TLCheckinsViewController.xib in Resources */,
 				84097FE91CDCDAC30050FCE6 /* ic_arrow_down@2x.png in Resources */,
 				84E64F291CD0D60A001A06A2 /* ic_index@2x.png in Resources */,
 				84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */,
+				84AD1EAD1CDFC4F30055CB87 /* icBackPressed.png in Resources */,
 				84E64F2D1CD0D60A001A06A2 /* ic_profile@3x.png in Resources */,
 				844F94531CDE24D80033647F /* UserViewController.xib in Resources */,
 				84097FF01CDCDB640050FCE6 /* ic_sad_smile@3x.png in Resources */,
@@ -957,6 +1032,7 @@
 			files = (
 				84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */,
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
+				84AD1E8A1CDFB2D90055CB87 /* ChangeProfileViewController.m in Sources */,
 				84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */,
 				8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */,
 				84097FF31CDCDDE90050FCE6 /* EmptyScreenView.m in Sources */,
@@ -981,12 +1057,14 @@
 				84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */,
 				84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */,
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
+				84AD1E901CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m in Sources */,
 				8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */,
 				8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */,
 				844F94521CDE24D80033647F /* UserViewController.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				84FDCFF51CDBF252006A9039 /* AlertViewController.m in Sources */,
 				8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */,
+				84AD1E951CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m in Sources */,
 				8446AB521CD936FB002B0C9C /* TableViewButton.m in Sources */,
 				84E64EEC1CD0C9E2001A06A2 /* TimeLock_ios.xcdatamodeld in Sources */,
 				8446AB281CD8B58F002B0C9C /* Post+CoreDataProperties.m in Sources */,

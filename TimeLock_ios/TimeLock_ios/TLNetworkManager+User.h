@@ -11,5 +11,6 @@
 @interface TLNetworkManager (User)
 
 - (void)userProfileWithID:(NSNumber *)userID completion:(void (^)(BOOL success, id object))completion;
+- (void)updateUserWithID:(NSNumber *)userID params:(NSDictionary *)params completion:(void (^)(BOOL success, id object))completion;
 
 @end

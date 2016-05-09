@@ -12,6 +12,7 @@
 #import "User.h"
 
 #import "BarsAppearance.h"
+#import "TLNetworkManager+User.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
@@ -19,6 +20,9 @@
 
 @property (nonatomic, strong) User *user;
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
+
+@property (nonatomic, strong) ChangeProfileDataTableViewCell *dataCell;
+@property (nonatomic, strong) ChangeProfileResultTableViewCell *resultCell;
 
 @end
 
@@ -65,20 +69,48 @@ static NSString * const changeProfileDataCellIdentifier = @"changeProfileDataCel
     if (indexPath.row == 0) {
         ChangeProfileDataTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:changeProfileDataCellIdentifier];
         [cell configWithUser:self.user];
+        self.dataCell = cell;
         return cell;
     }
     ChangeProfileResultTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:changeProfileResultCellIdentifier];
     cell.delegate = self;
+    self.resultCell = cell;
+    [self configSignal];
     return cell;
 }
 
 #pragma mark - ChangeProfileResultTableViewCellDelegate
 - (void)saveResultButtonPressed {
-    NSLog(@"save button prerssed");
+    NSDictionary *dict = @{
+                           @"username": self.dataCell.usernameTextField.text ? : @"",
+                           @"first_name": self.dataCell.firstNameTextField.text ? : @"",
+                           @"last_name": self.dataCell.lastNameTextField.text ? : @"",
+                           @"middle_name": self.dataCell.middleNameTextField.text ? : @""
+                           };
+    [[TLNetworkManager sharedNetworkManager] updateUserWithID:self.user.userID params:dict completion:^(BOOL success, id object) {
+        if (success) {
+            [self.navigationController popViewControllerAnimated:YES];
+            [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"userInfoUpdate", nil) animation:YES autoHide:YES];
+        }
+    }];
 }
 
 - (void)cancelButtonPressed {
     [self.navigationController popViewControllerAnimated:YES];
+}
+
+
+#pragma mark - Signal
+- (void)configSignal {
+    // валидация кнопки "сохранить", достаточно лишь наличие username
+    [[self.dataCell.usernameTextField rac_textSignal] subscribeNext:^(id x) {
+        NSString *text = (NSString *)x;
+        if ([text isEqualToString:@""]) {
+            self.resultCell.saveButton.enabled = NO;
+        } else {
+            self.resultCell.saveButton.enabled = YES;
+        }
+    }];
 }
 
 @end

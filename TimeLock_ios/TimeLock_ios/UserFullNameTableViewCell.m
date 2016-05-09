@@ -37,7 +37,7 @@
     self.lastNamePlaceholderLabel.textColor = EXTRA_THEME_COLOR;
     
     self.firstNamePlaceholderLabel.text = NSLocalizedString(@"firstNamePlaceholder", nil);
-    self.middleNamePlaceholderLabel.text = NSLocalizedString(@"middletNamePlaceholder", nil);
+    self.middleNamePlaceholderLabel.text = NSLocalizedString(@"middleNamePlaceholder", nil);
     self.lastNamePlaceholderLabel.text = NSLocalizedString(@"lastNamePlaceholder", nil);
     
     self.separatorView.backgroundColor = SEPARATOR_COLOR;

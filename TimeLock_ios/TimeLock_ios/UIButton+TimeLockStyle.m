@@ -21,6 +21,7 @@
     [self setTitleColor:BORDER_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
     [self setTitleColor:BORDER_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateSelected];
     [self setTitleColor:BORDER_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateHighlighted];
+    [self setTitleColor:BORDER_BUTTON_TEXT_COLOR_DISABLED forState:UIControlStateDisabled];
     
     [self.layer setBorderWidth:1.0f];
     [self.layer setBorderColor:EXTRA_THEME_COLOR.CGColor];

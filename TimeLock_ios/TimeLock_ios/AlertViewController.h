@@ -29,6 +29,6 @@
 - (void)hideAlert:(BOOL)animation delay:(CGFloat)delay;
 
 //показ сообщение об ошибке с текстом по коду ошибки
-- (void)showErrorAlertWithErrorCode:(HTTPStatusCode)statucCode animation:(BOOL)animation autoHide:(BOOL)hide;
+- (void)showErrorAlertWithErrorCode:(HTTPStatusCode)statusCode error:(NSString *)error animation:(BOOL)animation autoHide:(BOOL)hide;
 
 @end

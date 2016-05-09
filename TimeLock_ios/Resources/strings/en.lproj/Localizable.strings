@@ -28,11 +28,12 @@
 // user screen
 "firstNamePlaceholder" = "Имя";
 "lastNamePlaceholder" = "Фамилия";
-"middletNamePlaceholder" = "Отчество";
+"middleNamePlaceholder" = "Отчество";
 "companyName" = "Работает в компании ";
 
 // profile
 "userNotFound" = "Данные о пользователе не получены, попробуйте обновить даный экран и повторить попытку";
+"userInfoUpdate" = "Данные пользователя изменены";
 "changeProfileNavBarTitle" = "Редактирование профиля";
 "changeProfileButtonTitle" = "Редактировать профиль";
 "exitButtonTitle" = "Выйти";

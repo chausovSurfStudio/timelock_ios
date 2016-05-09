@@ -75,10 +75,11 @@ static TLNetworkManager *networkManager;
     
     void (^failureBlock)(AFHTTPRequestOperation * operation, NSError * error) = ^(AFHTTPRequestOperation * operation, NSError * error){
         NSLog(@"error: %@",  error);
+        NSString *errorDescription = operation.responseObject[@"message"];
         
         NSInteger statusCode = [error.userInfo[AFNetworkingOperationFailingURLResponseErrorKey] statusCode];
         if (!manualErrorShowing && statusCode != HTTPStatusNotAuthorized) {
-            [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
+            [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode error:errorDescription animation:YES autoHide:YES];
         }
         if (statusCode == HTTPStatusNotAuthorized) {
             [TLUtils setObjectToUserSettings:nil forKey:@"token"];
@@ -93,13 +94,13 @@ static TLNetworkManager *networkManager;
                 });
             } else {
                 if (!manualErrorShowing) {
-                    [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
+                    [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode error:errorDescription animation:YES autoHide:YES];
                 }
                 completion(NO, error);
             }
         } else {
             if (!manualErrorShowing) {
-                [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode animation:YES autoHide:YES];
+                [[AlertViewController sharedInstance] showErrorAlertWithErrorCode:statusCode error:errorDescription animation:YES autoHide:YES];
             }
             completion(NO, error);
         }

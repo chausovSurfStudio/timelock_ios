@@ -84,7 +84,7 @@ static CGFloat const alertLaberlHeightOffset = 12;
 }
 
 //показ сообщение об ошибке с текстом по коду ошибки
-- (void)showErrorAlertWithErrorCode:(HTTPStatusCode)statusCode animation:(BOOL)animation autoHide:(BOOL)hide {
+- (void)showErrorAlertWithErrorCode:(HTTPStatusCode)statusCode error:(NSString *)error animation:(BOOL)animation autoHide:(BOOL)hide {
     self.view.backgroundColor = ALERT_ERROR_COLOR;
     self.iconImageView.hidden = NO;
     self.alertLabel.textAlignment = NSTextAlignmentLeft;
@@ -94,7 +94,8 @@ static CGFloat const alertLaberlHeightOffset = 12;
             text = NSLocalizedString(@"HTTPStatusNotAuthorized", nil);
             break;
         case HTTPStatusBadRequest:
-            text = NSLocalizedString(@"HTTPStatusBadRequest", nil);
+//            text = NSLocalizedString(@"HTTPStatusBadRequest", nil);
+            text = error;
             break;
         case HTTPStatusForbidden:
             text = NSLocalizedString(@"HTTPStatusForbidden", nil);

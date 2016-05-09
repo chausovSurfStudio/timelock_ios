@@ -8,12 +8,26 @@
 
 #import "TLNetworkManager+User.h"
 #import "DataStorageManager+User.h"
+#import "User.h"
 
 @implementation TLNetworkManager (User)
 
 - (void)userProfileWithID:(NSNumber *)userID completion:(void (^)(BOOL success, id object))completion {
     NSString *url = [BASE_URL stringByAppendingString:[NSString stringWithFormat:USER_PATH, userID]];
     [self requestType:GET url:url parameters:nil completion:^(BOOL success, id result){
+        if (success && [result isKindOfClass:[NSDictionary class]]) {
+            [[DataStorageManager sharedDataStorage] createAndSaveUser:result completion:^(BOOL success, id object) {
+                completion(success, object);
+            }];
+        } else {
+            completion(NO, result);
+        }
+    }];
+}
+
+- (void)updateUserWithID:(NSNumber *)userID params:(NSDictionary *)params completion:(void (^)(BOOL success, id object))completion {
+    NSString *url = [BASE_URL stringByAppendingString:[NSString stringWithFormat:USER_PATH, userID]];
+    [self requestType:PUT url:url parameters:params completion:^(BOOL success, id result){
         if (success && [result isKindOfClass:[NSDictionary class]]) {
             [[DataStorageManager sharedDataStorage] createAndSaveUser:result completion:^(BOOL success, id object) {
                 completion(success, object);

@@ -31,4 +31,7 @@
 /** Проверить существует ли строка и не пустая ли она */
 + (BOOL)checkExistenceOfString:(NSString *)string;
 
+/** View для хэдэра секций в таблице чекинов */
++ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date;
+
 @end

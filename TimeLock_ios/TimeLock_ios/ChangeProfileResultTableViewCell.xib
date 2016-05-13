@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -14,19 +14,23 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="114"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-hg-cf2">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JJU-hg-cf2">
                         <rect key="frame" x="15" y="65" width="290" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="3MG-xv-3vC"/>
                         </constraints>
-                        <state key="normal" title="Отмена"/>
+                        <state key="normal" title="Отмена">
+                            <color key="titleColor" red="0.89803921568627454" green="0.5865432820855615" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                     </button>
-                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8l-IC-nkS">
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C8l-IC-nkS">
                         <rect key="frame" x="15" y="15" width="290" height="40"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="40" id="VhA-w7-QvX"/>
                         </constraints>
-                        <state key="normal" title="Сохранить"/>
+                        <state key="normal" title="Сохранить">
+                            <color key="titleColor" red="0.89803921568627454" green="0.80332971256684493" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
                     </button>
                 </subviews>
                 <constraints>

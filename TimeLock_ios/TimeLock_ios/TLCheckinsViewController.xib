@@ -4,11 +4,21 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="PT_Sans-Web-Bold.ttf">
+            <string>PTSans-Bold</string>
+        </mutableArray>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLCheckinsViewController">
             <connections>
+                <outlet property="borderView" destination="6pY-8b-seo" id="Zlu-8e-eHx"/>
                 <outlet property="emptyScreenView" destination="qIb-IZ-oRe" id="Q8T-wb-egc"/>
+                <outlet property="leftButton" destination="cmx-5i-OLr" id="PmE-0i-lVG"/>
+                <outlet property="rightButton" destination="0Ru-4U-EV8" id="6ZC-tR-ffc"/>
                 <outlet property="tableView" destination="Ul1-pi-A6x" id="AyJ-Na-Fwv"/>
+                <outlet property="topLabel" destination="gUc-P0-8wg" id="SsE-HV-FKM"/>
+                <outlet property="topView" destination="P9B-44-G3N" id="8Q1-tA-i0z"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,33 +27,96 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-pi-A6x">
-                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="d0r-zf-rmK"/>
-                        <outlet property="delegate" destination="-1" id="Hmv-QY-unH"/>
-                    </connections>
-                </tableView>
                 <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIb-IZ-oRe" customClass="EmptyScreenView">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="string" keyPath="xibName" value="EmptyScreenView"/>
                     </userDefinedRuntimeAttributes>
                 </scrollView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-pi-A6x">
+                    <rect key="frame" x="0.0" y="44" width="320" height="436"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="d0r-zf-rmK"/>
+                        <outlet property="delegate" destination="-1" id="Hmv-QY-unH"/>
+                    </connections>
+                </tableView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P9B-44-G3N">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6pY-8b-seo">
+                            <rect key="frame" x="15" y="8" width="290" height="28"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gUc-P0-8wg">
+                                    <rect key="frame" x="55" y="4" width="180" height="21"/>
+                                    <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-5i-OLr">
+                                    <rect key="frame" x="0.0" y="0.0" width="44" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="NUX-4t-KZd"/>
+                                    </constraints>
+                                    <state key="normal" image="ic_arrow_left.png">
+                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ru-4U-EV8">
+                                    <rect key="frame" x="246" y="0.0" width="44" height="28"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="fEh-zS-3fF"/>
+                                    </constraints>
+                                    <state key="normal" image="ic_arrow_right.png">
+                                        <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </state>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.45619568850267378" green="0.40627088903743314" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="leading" secondItem="gUc-P0-8wg" secondAttribute="trailing" constant="11" id="1s4-04-Kgq"/>
+                                <constraint firstItem="gUc-P0-8wg" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" constant="4" id="3xg-bf-ehR"/>
+                                <constraint firstItem="gUc-P0-8wg" firstAttribute="centerX" secondItem="6pY-8b-seo" secondAttribute="centerX" id="Gt2-XT-Afu"/>
+                                <constraint firstAttribute="trailing" secondItem="0Ru-4U-EV8" secondAttribute="trailing" id="Oia-W4-8t3"/>
+                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" id="V2T-mx-BYY"/>
+                                <constraint firstItem="gUc-P0-8wg" firstAttribute="leading" secondItem="cmx-5i-OLr" secondAttribute="trailing" constant="11" id="V5H-Yz-19u"/>
+                                <constraint firstItem="cmx-5i-OLr" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" id="a57-zd-eHT"/>
+                                <constraint firstItem="cmx-5i-OLr" firstAttribute="leading" secondItem="6pY-8b-seo" secondAttribute="leading" id="gox-qT-XyK"/>
+                                <constraint firstAttribute="bottom" secondItem="cmx-5i-OLr" secondAttribute="bottom" id="n9s-bg-AiY"/>
+                                <constraint firstAttribute="bottom" secondItem="gUc-P0-8wg" secondAttribute="bottom" constant="3" id="nSY-Kq-05A"/>
+                                <constraint firstAttribute="bottom" secondItem="0Ru-4U-EV8" secondAttribute="bottom" id="tao-5I-P8T"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" red="1" green="0.60406918449197866" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstItem="6pY-8b-seo" firstAttribute="leading" secondItem="P9B-44-G3N" secondAttribute="leading" constant="15" id="ANJ-vo-S3Z"/>
+                        <constraint firstAttribute="trailing" secondItem="6pY-8b-seo" secondAttribute="trailing" constant="15" id="BJX-sV-VNo"/>
+                        <constraint firstAttribute="bottom" secondItem="6pY-8b-seo" secondAttribute="bottom" constant="8" id="Xdn-fP-qfI"/>
+                        <constraint firstAttribute="height" constant="44" id="s6D-MT-4Dl"/>
+                        <constraint firstItem="6pY-8b-seo" firstAttribute="top" secondItem="P9B-44-G3N" secondAttribute="top" constant="8" id="wPc-sE-8M1"/>
+                    </constraints>
+                </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="Ul1-pi-A6x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Y5-lB-RtZ"/>
-                <constraint firstAttribute="trailing" secondItem="qIb-IZ-oRe" secondAttribute="trailing" id="D7R-Nz-a44"/>
-                <constraint firstItem="qIb-IZ-oRe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PXP-ba-5mb"/>
-                <constraint firstAttribute="bottom" secondItem="qIb-IZ-oRe" secondAttribute="bottom" id="Uee-iA-2hd"/>
-                <constraint firstAttribute="bottom" secondItem="Ul1-pi-A6x" secondAttribute="bottom" id="WBP-t0-Wpn"/>
-                <constraint firstAttribute="trailing" secondItem="Ul1-pi-A6x" secondAttribute="trailing" id="WUa-dQ-eY7"/>
-                <constraint firstItem="Ul1-pi-A6x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xwf-os-KNB"/>
-                <constraint firstItem="qIb-IZ-oRe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eTz-Tc-Vp1"/>
+                <constraint firstAttribute="bottom" secondItem="Ul1-pi-A6x" secondAttribute="bottom" id="9NQ-5I-Gqp"/>
+                <constraint firstItem="qIb-IZ-oRe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="ARH-Ib-Z8b"/>
+                <constraint firstItem="Ul1-pi-A6x" firstAttribute="top" secondItem="P9B-44-G3N" secondAttribute="bottom" id="ETH-JJ-cOH"/>
+                <constraint firstAttribute="trailing" secondItem="P9B-44-G3N" secondAttribute="trailing" id="Fzc-ou-Gpp"/>
+                <constraint firstAttribute="bottom" secondItem="qIb-IZ-oRe" secondAttribute="bottom" id="LDd-7s-dAO"/>
+                <constraint firstAttribute="trailing" secondItem="qIb-IZ-oRe" secondAttribute="trailing" id="Pcf-3n-nv4"/>
+                <constraint firstItem="Ul1-pi-A6x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="SBl-ju-IOI"/>
+                <constraint firstItem="qIb-IZ-oRe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="XbN-i8-6hb"/>
+                <constraint firstItem="P9B-44-G3N" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="il3-sd-vBv"/>
+                <constraint firstAttribute="trailing" secondItem="Ul1-pi-A6x" secondAttribute="trailing" id="sPz-0p-uMY"/>
+                <constraint firstItem="P9B-44-G3N" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="z9y-Vs-hWR"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="ic_arrow_left.png" width="5" height="12"/>
+        <image name="ic_arrow_right.png" width="5" height="9"/>
+    </resources>
 </document>

@@ -24,7 +24,7 @@
     NSArray *notesDict = [dict safeGetArrayByKey:@"notes"];
     [Note MR_importFromArray:notesDict];
     
-    NSDate *monday = [dict safeGetDateFromStringByKey:@"monday" andDateFormat:@"dd.MM.yyyy HH:mm:ss"];
+    NSDate *monday = [dict safeGetDateFromStringByKey:@"monday" andDateFormat:serverDateFormat];
     NSDateComponents *dayComponent = [[NSDateComponents alloc] init];
     NSCalendar *theCalendar = [NSCalendar currentCalendar];
     dayComponent.day = 1;

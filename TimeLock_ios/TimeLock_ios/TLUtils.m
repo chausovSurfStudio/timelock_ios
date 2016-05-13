@@ -65,4 +65,28 @@
     return (string && ![string isEqualToString:@""]);
 }
 
+// View для хэдэра секций в таблице чекинов
++ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date {
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CHECKINS_HEADER_HEIGHT)];
+    view.backgroundColor = MAIN_THEME_COLOR;
+    if (date) {
+        NSDateFormatter *formatter = [NSDateFormatter new];
+        [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
+        [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"ru_RU_POSIX"]];
+        [formatter setDateFormat:@"EEEE, d MMMM, yyyy"];
+        NSString *dateString = [formatter stringFromDate:date];
+        UILabel *dateLabel = [[UILabel alloc] initWithFrame:CGRectMake(LEFT_OFFSET, TOP_OFFSET, SCREEN_WIDTH - 2 * LEFT_OFFSET, 21)];
+        NSDictionary *attributes = @{
+                                     NSForegroundColorAttributeName: TEXT_COLOR_LIGHT,
+                                     NSFontAttributeName: SECTION_HEADER_FONT,
+                                     };
+        NSMutableAttributedString *attributedDateString = [[NSMutableAttributedString alloc] initWithString:[dateString capitalizedString] attributes:attributes];
+        [attributedDateString addAttribute:NSForegroundColorAttributeName value:EXTRA_THEME_COLOR range:NSMakeRange(0, 1)];
+        [attributedDateString addAttribute:NSFontAttributeName value:SECTION_HEADER_FONT_BOLD range:NSMakeRange(0, 1)];
+        dateLabel.attributedText = attributedDateString;
+        [view addSubview:dateLabel];
+    }
+    return view;
+}
+
 @end

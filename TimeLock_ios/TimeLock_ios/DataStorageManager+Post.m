@@ -14,8 +14,6 @@
 
 #import <MagicalRecord/MagicalRecord.h>
 
-static NSString * const dateFormatString = @"dd.MM.yyyy HH:mm:ss";
-
 @implementation DataStorageManager (Post)
 
 - (void)createAndSavePosts:(NSArray *)params completion:(void (^)(BOOL success, id object))completion {

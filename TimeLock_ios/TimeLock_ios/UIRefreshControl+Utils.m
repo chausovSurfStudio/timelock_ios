@@ -20,7 +20,7 @@
     if (refreshing)
         [self beginRefreshing];
     else
-        [self smoothEndRefreshing];
+        [self endRefreshing];
 }
 
 @end

@@ -30,7 +30,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.clipsToBounds = YES;
-    self.layer.cornerRadius = 5;
+    self.layer.cornerRadius = CORNER_RADIUS;
 }
 
 - (void)setMainButtonStyle {
@@ -47,7 +47,7 @@
     self.titleLabel.textAlignment = NSTextAlignmentCenter;
     self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
     self.clipsToBounds = YES;
-    self.layer.cornerRadius = 5;
+    self.layer.cornerRadius = CORNER_RADIUS;
 }
 
 @end

@@ -18,7 +18,7 @@
 #define EXTRA_THEME_COLOR   [UIColor colorWithRed:189/255.0 green:89/255.0  blue:0/255.0  alpha:1.0]            //оранжевый
 
 #define MAIN_THEME_COLOR_PRESSED    [UIColor colorWithRed:74/255.0 green:74/255.0  blue:74/255.0  alpha:0.7]
-#define EXTRA_THEME_COLOR_PRESSED   [UIColor blackColor]
+#define EXTRA_THEME_COLOR_PRESSED   [UIColor colorWithRed:229/255.0 green:129/255.0  blue:70/255.0  alpha:1.0]
 
 #define BORDER_BUTTON_TEXT_COLOR            TEXT_COLOR
 #define BORDER_BUTTON_TEXT_COLOR_PRESSED    TEXT_COLOR_LIGHT
@@ -43,6 +43,8 @@
 #define BUTTON_FONT [UIFont fontWithName:@"PTSans-Bold" size:18]
 #define COMPANY_NAME_FONT       [UIFont fontWithName:@"PTSans-Regular" size:16]
 #define COMPANY_NAME_FONT_BOLD  [UIFont fontWithName:@"PTSans-Bold" size:17]
+#define SECTION_HEADER_FONT         [UIFont fontWithName:@"PTSans-Regular" size:16]
+#define SECTION_HEADER_FONT_BOLD    [UIFont fontWithName:@"PTSans-Bold" size:16]
 
 // URL PATH
 
@@ -69,6 +71,8 @@ static NSString * const saturdayString = @"saturday";
 static NSString * const sundayString = @"sunday";
 static NSString * const resultTimeString = @"resultTime";
 
+static NSString * const serverDateFormat = @"dd.MM.yyyy HH:mm:ss";
+
 // IPHONE
 
 #define IS_IPAD (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad)
@@ -89,6 +93,12 @@ static NSString * const resultTimeString = @"resultTime";
 
 // OTHER
 
-static NSInteger const NAVIGATION_BAR_HEIGHT  = 64;
+static NSInteger const LEFT_OFFSET = 15;
+static NSInteger const TOP_OFFSET = 20;
+
+static NSInteger const NAVIGATION_BAR_HEIGHT = 64;
+static CGFloat const CHECKINS_HEADER_HEIGHT = 60.0f;
+
+static CGFloat const CORNER_RADIUS = 5.0f;
 
 #endif

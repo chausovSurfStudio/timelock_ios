@@ -1,5 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15B42" minimumToolsVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10174" systemVersion="15C50" minimumToolsVersion="Automatic">
+    <entity name="Checkin" representedClassName="Checkin" syncable="YES">
+        <attribute name="checkinID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
+            </userInfo>
+        </attribute>
+        <attribute name="time" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
+            </userInfo>
+        </attribute>
+        <attribute name="trustLevel" optional="YES" attributeType="Boolean" defaultValueString="NO" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="trust_level"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="relatedByAttribute" value="checkinID"/>
+        </userInfo>
+    </entity>
+    <entity name="Note" representedClassName="Note" syncable="YES">
+        <attribute name="body" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
+            </userInfo>
+        </attribute>
+        <attribute name="noteID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
+            <userInfo>
+                <entry key="mappedKeyName" value="id"/>
+            </userInfo>
+        </attribute>
+        <attribute name="timestamp" optional="YES" attributeType="Date" syncable="YES">
+            <userInfo>
+                <entry key="dateFormat" value="dd.MM.yyyy HH:mm:ss"/>
+            </userInfo>
+        </attribute>
+        <userInfo>
+            <entry key="relatedByAttribute" value="noteID"/>
+        </userInfo>
+    </entity>
     <entity name="Post" representedClassName="Post" syncable="YES">
         <attribute name="body" optional="YES" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="postID" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES">
@@ -66,5 +112,7 @@
     <elements>
         <element name="Post" positionX="-1845" positionY="-490" width="128" height="103"/>
         <element name="User" positionX="-1539" positionY="-550" width="128" height="163"/>
+        <element name="Checkin" positionX="-1307" positionY="-499" width="128" height="103"/>
+        <element name="Note" positionX="-1539" positionY="-346" width="128" height="103"/>
     </elements>
 </model>

@@ -53,11 +53,21 @@ static NSString * const TOKEN_PATH = @"/token";
 static NSString * const POST_PATH = @"/posts/";
 static NSString * const CURRENT_USER_PATH = @"/users/";
 static NSString * const USER_PATH = @"/users/%@";
+static NSString * const CHECKINS_PAGE_PATH = @"/checkins/?page=%ld";
 
 // CONST STRING
 
 static NSString * const needRelogin = @"needReloginNotification";
 static NSString * const needRepeatRequest = @"needRepeatRequestNotification";
+
+static NSString * const mondayString = @"monday";
+static NSString * const tuesdayString = @"tuesday";
+static NSString * const wednesdayString = @"wednesday";
+static NSString * const thursdayString = @"thursday";
+static NSString * const fridayString = @"friday";
+static NSString * const saturdayString = @"saturday";
+static NSString * const sundayString = @"sunday";
+static NSString * const resultTimeString = @"resultTime";
 
 // IPHONE
 

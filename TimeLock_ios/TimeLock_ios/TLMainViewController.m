@@ -13,7 +13,6 @@
 #import "PostTableViewCell.h"
 #import "User.h"
 #import "Post.h"
-#import "EmptyScreenView.h"
 
 #import "UIRefreshControl+Utils.h"
 
@@ -26,7 +25,6 @@
 @property (nonatomic, strong) IBOutlet UITableView *tableView;
 @property (nonatomic, strong) IBOutlet UIScrollView *emptyScreenView;
 
-@property (nonatomic,readwrite,strong) UIRefreshControl *refreshControl;
 @property (nonatomic, strong) NSArray *posts;
 @property (nonatomic, strong) MBProgressHUD *hud;
 

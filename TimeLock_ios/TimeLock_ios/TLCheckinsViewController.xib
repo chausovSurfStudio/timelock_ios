@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -7,6 +7,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TLCheckinsViewController">
             <connections>
+                <outlet property="emptyScreenView" destination="qIb-IZ-oRe" id="Q8T-wb-egc"/>
+                <outlet property="tableView" destination="Ul1-pi-A6x" id="AyJ-Na-Fwv"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -15,21 +17,31 @@
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Чекины" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k2o-pQ-hFF">
-                    <rect key="frame" x="124" y="229" width="73" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="0Tg-b5-BNK"/>
-                        <constraint firstAttribute="width" constant="73" id="eSU-xV-djy"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-pi-A6x">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="d0r-zf-rmK"/>
+                        <outlet property="delegate" destination="-1" id="Hmv-QY-unH"/>
+                    </connections>
+                </tableView>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qIb-IZ-oRe" customClass="EmptyScreenView">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="xibName" value="EmptyScreenView"/>
+                    </userDefinedRuntimeAttributes>
+                </scrollView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="k2o-pQ-hFF" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="SH7-kv-Tny"/>
-                <constraint firstItem="k2o-pQ-hFF" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="tch-k4-EDa"/>
+                <constraint firstItem="Ul1-pi-A6x" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="0Y5-lB-RtZ"/>
+                <constraint firstAttribute="trailing" secondItem="qIb-IZ-oRe" secondAttribute="trailing" id="D7R-Nz-a44"/>
+                <constraint firstItem="qIb-IZ-oRe" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="PXP-ba-5mb"/>
+                <constraint firstAttribute="bottom" secondItem="qIb-IZ-oRe" secondAttribute="bottom" id="Uee-iA-2hd"/>
+                <constraint firstAttribute="bottom" secondItem="Ul1-pi-A6x" secondAttribute="bottom" id="WBP-t0-Wpn"/>
+                <constraint firstAttribute="trailing" secondItem="Ul1-pi-A6x" secondAttribute="trailing" id="WUa-dQ-eY7"/>
+                <constraint firstItem="Ul1-pi-A6x" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Xwf-os-KNB"/>
+                <constraint firstItem="qIb-IZ-oRe" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eTz-Tc-Vp1"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

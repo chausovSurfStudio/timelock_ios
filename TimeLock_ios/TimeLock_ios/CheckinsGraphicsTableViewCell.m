@@ -7,12 +7,14 @@
 //
 
 #import "CheckinsGraphicsTableViewCell.h"
+#import "GraphView.h"
 #import "Checkin.h"
 
-@interface CheckinsGraphicsTableViewCell()
+@interface CheckinsGraphicsTableViewCell() <GraphViewDataSource>
 
 @property (nonatomic, strong) IBOutlet UILabel *emptyDayLabel;
-@property (nonatomic, strong) IBOutlet UIView *graphView;
+@property (nonatomic, strong) IBOutlet GraphView *graphView;
+@property (nonatomic, strong) NSArray *checkins;
 
 @end
 
@@ -21,6 +23,7 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
     [self configStyle];
+    self.graphView.dataSource = self;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -35,12 +38,20 @@
         self.emptyDayLabel.hidden = YES;
         self.graphView.hidden = NO;
     }
+    self.checkins = checkins;
+    [self layoutSubviews];
+    [self.graphView layoutSubviews];
 }
 
 - (void)configStyle {
     self.emptyDayLabel.textColor = TEXT_COLOR;
     self.emptyDayLabel.font = SINGLE_CHECKIN_DESCRIPTION_FONT;
     self.emptyDayLabel.text = NSLocalizedString(@"emptyDay", nil);
+}
+
+#pragma mark - GraphViewDataSource
+- (NSArray *)checkinsForGraphView {
+    return self.checkins;
 }
 
 @end

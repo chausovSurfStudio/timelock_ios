@@ -75,6 +75,7 @@
 		84D3B09E1CE77AEC0064049F /* SingleCheckinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B09C1CE77AEC0064049F /* SingleCheckinTableViewCell.xib */; };
 		84D3B0A21CE77B140064049F /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0A01CE77B140064049F /* NoteTableViewCell.m */; };
 		84D3B0A31CE77B140064049F /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */; };
+		84D3B0A71CE7AB770064049F /* GraphView.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0A61CE7AB770064049F /* GraphView.m */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
 		84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EE21CD0C9E2001A06A2 /* AppDelegate.m */; };
 		84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E64EE71CD0C9E2001A06A2 /* Main.storyboard */; };
@@ -241,6 +242,8 @@
 		84D3B09F1CE77B140064049F /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
 		84D3B0A01CE77B140064049F /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
 		84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
+		84D3B0A51CE7AB770064049F /* GraphView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GraphView.h; sourceTree = "<group>"; };
+		84D3B0A61CE7AB770064049F /* GraphView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GraphView.m; sourceTree = "<group>"; };
 		84E64EDB1CD0C9E2001A06A2 /* TimeLock_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLock_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E64EDF1CD0C9E2001A06A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84E64EE11CD0C9E2001A06A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -577,6 +580,15 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		84D3B0A41CE7AB4C0064049F /* GraphView */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B0A51CE7AB770064049F /* GraphView.h */,
+				84D3B0A61CE7AB770064049F /* GraphView.m */,
+			);
+			name = GraphView;
+			sourceTree = "<group>";
+		};
 		84E64ED21CD0C9E1001A06A2 = {
 			isa = PBXGroup;
 			children = (
@@ -808,6 +820,7 @@
 		84E64F3E1CD0D751001A06A2 /* CheckinsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84D3B0A41CE7AB4C0064049F /* GraphView */,
 				84D3B0941CE775580064049F /* Cell */,
 				84E64F3F1CD0D76B001A06A2 /* TLCheckinsViewController.h */,
 				84E64F401CD0D76B001A06A2 /* TLCheckinsViewController.m */,
@@ -1122,6 +1135,7 @@
 				84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */,
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
 				84AD1E8A1CDFB2D90055CB87 /* ChangeProfileViewController.m in Sources */,
+				84D3B0A71CE7AB770064049F /* GraphView.m in Sources */,
 				84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */,
 				8448A97C1CD611AA008E4AE1 /* TLUtils.m in Sources */,
 				84097FF31CDCDDE90050FCE6 /* EmptyScreenView.m in Sources */,

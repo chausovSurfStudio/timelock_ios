@@ -16,6 +16,7 @@
 
 #define MAIN_THEME_COLOR    [UIColor colorWithRed:74/255.0 green:74/255.0  blue:74/255.0  alpha:1.0]            //серый
 #define EXTRA_THEME_COLOR   [UIColor colorWithRed:189/255.0 green:89/255.0  blue:0/255.0  alpha:1.0]            //оранжевый
+#define GREEN_COLOR         [UIColor colorWithRed:24/255.0 green:152/255.0  blue:31/255.0  alpha:1.0]
 
 #define MAIN_THEME_COLOR_PRESSED    [UIColor colorWithRed:74/255.0 green:74/255.0  blue:74/255.0  alpha:0.7]
 #define EXTRA_THEME_COLOR_PRESSED   [UIColor colorWithRed:229/255.0 green:129/255.0  blue:70/255.0  alpha:1.0]

@@ -69,6 +69,12 @@
 		84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1EA91CDFC4F30055CB87 /* icBackPressed@3x.png */; };
 		84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */; };
 		84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */; };
+		84D3B0981CE776170064049F /* CheckinsGraphicsTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0961CE776170064049F /* CheckinsGraphicsTableViewCell.m */; };
+		84D3B0991CE776170064049F /* CheckinsGraphicsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0971CE776170064049F /* CheckinsGraphicsTableViewCell.xib */; };
+		84D3B09D1CE77AEC0064049F /* SingleCheckinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B09B1CE77AEC0064049F /* SingleCheckinTableViewCell.m */; };
+		84D3B09E1CE77AEC0064049F /* SingleCheckinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B09C1CE77AEC0064049F /* SingleCheckinTableViewCell.xib */; };
+		84D3B0A21CE77B140064049F /* NoteTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0A01CE77B140064049F /* NoteTableViewCell.m */; };
+		84D3B0A31CE77B140064049F /* NoteTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
 		84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EE21CD0C9E2001A06A2 /* AppDelegate.m */; };
 		84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E64EE71CD0C9E2001A06A2 /* Main.storyboard */; };
@@ -226,6 +232,15 @@
 		84B9F9641CD3AD4F0088D718 /* TLNetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TLNetworkManager.m; sourceTree = "<group>"; };
 		84B9F9671CD3B6AF0088D718 /* TLNetworkManager+Authorization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Authorization.h"; sourceTree = "<group>"; };
 		84B9F9681CD3B6AF0088D718 /* TLNetworkManager+Authorization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLNetworkManager+Authorization.m"; sourceTree = "<group>"; };
+		84D3B0951CE776170064049F /* CheckinsGraphicsTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinsGraphicsTableViewCell.h; sourceTree = "<group>"; };
+		84D3B0961CE776170064049F /* CheckinsGraphicsTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinsGraphicsTableViewCell.m; sourceTree = "<group>"; };
+		84D3B0971CE776170064049F /* CheckinsGraphicsTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckinsGraphicsTableViewCell.xib; sourceTree = "<group>"; };
+		84D3B09A1CE77AEC0064049F /* SingleCheckinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SingleCheckinTableViewCell.h; sourceTree = "<group>"; };
+		84D3B09B1CE77AEC0064049F /* SingleCheckinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SingleCheckinTableViewCell.m; sourceTree = "<group>"; };
+		84D3B09C1CE77AEC0064049F /* SingleCheckinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SingleCheckinTableViewCell.xib; sourceTree = "<group>"; };
+		84D3B09F1CE77B140064049F /* NoteTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteTableViewCell.h; sourceTree = "<group>"; };
+		84D3B0A01CE77B140064049F /* NoteTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NoteTableViewCell.m; sourceTree = "<group>"; };
+		84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoteTableViewCell.xib; sourceTree = "<group>"; };
 		84E64EDB1CD0C9E2001A06A2 /* TimeLock_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLock_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E64EDF1CD0C9E2001A06A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84E64EE11CD0C9E2001A06A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -546,6 +561,22 @@
 			name = Authorization;
 			sourceTree = "<group>";
 		};
+		84D3B0941CE775580064049F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B0951CE776170064049F /* CheckinsGraphicsTableViewCell.h */,
+				84D3B0961CE776170064049F /* CheckinsGraphicsTableViewCell.m */,
+				84D3B0971CE776170064049F /* CheckinsGraphicsTableViewCell.xib */,
+				84D3B09A1CE77AEC0064049F /* SingleCheckinTableViewCell.h */,
+				84D3B09B1CE77AEC0064049F /* SingleCheckinTableViewCell.m */,
+				84D3B09C1CE77AEC0064049F /* SingleCheckinTableViewCell.xib */,
+				84D3B09F1CE77B140064049F /* NoteTableViewCell.h */,
+				84D3B0A01CE77B140064049F /* NoteTableViewCell.m */,
+				84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		84E64ED21CD0C9E1001A06A2 = {
 			isa = PBXGroup;
 			children = (
@@ -777,6 +808,7 @@
 		84E64F3E1CD0D751001A06A2 /* CheckinsViewController */ = {
 			isa = PBXGroup;
 			children = (
+				84D3B0941CE775580064049F /* Cell */,
 				84E64F3F1CD0D76B001A06A2 /* TLCheckinsViewController.h */,
 				84E64F401CD0D76B001A06A2 /* TLCheckinsViewController.m */,
 				84E64F411CD0D76B001A06A2 /* TLCheckinsViewController.xib */,
@@ -964,6 +996,7 @@
 				84E64F4F1CD0DEC0001A06A2 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
 				844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */,
 				847D5D521CE676E5009157EE /* ic_arrow_left@2x.png in Resources */,
+				84D3B09E1CE77AEC0064049F /* SingleCheckinTableViewCell.xib in Resources */,
 				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
@@ -987,10 +1020,12 @@
 				84097FE81CDCDAC30050FCE6 /* ic_arrow_down.png in Resources */,
 				84AD1EAC1CDFC4F30055CB87 /* icBack@3x.png in Resources */,
 				8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */,
+				84D3B0A31CE77B140064049F /* NoteTableViewCell.xib in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
 				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
 				84FDCFE91CDBEFFC006A9039 /* user_placeholder.png in Resources */,
+				84D3B0991CE776170064049F /* CheckinsGraphicsTableViewCell.xib in Resources */,
 				84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
 				84AD1E961CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib in Resources */,
@@ -1109,10 +1144,12 @@
 				84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */,
 				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,
 				84E64F421CD0D76B001A06A2 /* TLCheckinsViewController.m in Sources */,
+				84D3B09D1CE77AEC0064049F /* SingleCheckinTableViewCell.m in Sources */,
 				84E64F6B1CD14BCF001A06A2 /* UIImage+Utilities.m in Sources */,
 				84B9F9691CD3B6AF0088D718 /* TLNetworkManager+Authorization.m in Sources */,
 				84E64F3C1CD0D747001A06A2 /* TLProfileViewController.m in Sources */,
 				84AD1E901CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m in Sources */,
+				84D3B0981CE776170064049F /* CheckinsGraphicsTableViewCell.m in Sources */,
 				8446AB4D1CD92625002B0C9C /* ProfileSettingsTableViewCell.m in Sources */,
 				8446AB111CD8B10B002B0C9C /* DataStorageManager.m in Sources */,
 				847D5D3E1CE6206A009157EE /* TLNetworkManager+Checkin.m in Sources */,
@@ -1120,6 +1157,7 @@
 				844F94521CDE24D80033647F /* UserViewController.m in Sources */,
 				84E64EE01CD0C9E2001A06A2 /* main.m in Sources */,
 				847D5D411CE62289009157EE /* DataStorageManager+Checkin.m in Sources */,
+				84D3B0A21CE77B140064049F /* NoteTableViewCell.m in Sources */,
 				84FDCFF51CDBF252006A9039 /* AlertViewController.m in Sources */,
 				8446AB201CD8B52E002B0C9C /* User+CoreDataProperties.m in Sources */,
 				84AD1E951CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.m in Sources */,

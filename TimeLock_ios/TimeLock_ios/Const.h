@@ -45,6 +45,9 @@
 #define COMPANY_NAME_FONT_BOLD  [UIFont fontWithName:@"PTSans-Bold" size:17]
 #define SECTION_HEADER_FONT         [UIFont fontWithName:@"PTSans-Regular" size:16]
 #define SECTION_HEADER_FONT_BOLD    [UIFont fontWithName:@"PTSans-Bold" size:16]
+#define SINGLE_CHECKIN_DESCRIPTION_FONT [UIFont fontWithName:@"PTSans-Regular" size:15]
+#define SINGLE_CHECKIN_TIME_FONT        [UIFont fontWithName:@"PTSans-Bold" size:17]
+#define NOTE_FONT                       [UIFont fontWithName:@"PTSans-Regular" size:15]
 
 // URL PATH
 

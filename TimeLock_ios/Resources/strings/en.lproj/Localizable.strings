@@ -40,3 +40,8 @@
 "saveButtonTitle" = "Сохранить";
 "cancelButtonTitle" = "Отменить";
 "usernamePlaceholder" = "Логин";
+
+// checkins
+"oneMoreCheckin" = "И еще один чекин: ";
+"soloCheckin" = "В этот день зарегестрирован только один чекин: ";
+"emptyDay" = "Отметки отсутствуют";

@@ -8,6 +8,9 @@
 
 #import "TLCheckinsViewController.h"
 #import "TLNetworkManager+Checkin.h"
+#import "CheckinsGraphicsTableViewCell.h"
+#import "SingleCheckinTableViewCell.h"
+#import "NoteTableViewCell.h"
 
 #import "UIRefreshControl+Utils.h"
 
@@ -30,7 +33,9 @@
 
 @end
 
-static NSString *identifier = @"postTableViewCell";
+static NSString *checkinsGraphicsIdentifier = @"checkinsGraphicsIdentifier";
+static NSString *singleCheckinIdentifier = @"singleCheckinIdentifier";
+static NSString *noteIdentifier = @"noteIdentifier";
 
 @implementation TLCheckinsViewController
 
@@ -38,9 +43,12 @@ static NSString *identifier = @"postTableViewCell";
     [super viewDidLoad];
     self.navigationItem.title = NSLocalizedString(@"checkinsScreenNavBarTitle", nil);
     
-    [self.tableView registerNib:[UINib nibWithNibName:@"PostTableViewCell" bundle:nil]  forCellReuseIdentifier:identifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"CheckinsGraphicsTableViewCell" bundle:nil] forCellReuseIdentifier:checkinsGraphicsIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"SingleCheckinTableViewCell" bundle:nil] forCellReuseIdentifier:singleCheckinIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"NoteTableViewCell" bundle:nil] forCellReuseIdentifier:noteIdentifier];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+    self.tableView.contentInsetBottom = 49;
     
     self.tableView.manualRefreshControl = [[UIRefreshControl alloc] init];
     for (UIRefreshControl *ptr in @[_tableView.manualRefreshControl,
@@ -131,11 +139,50 @@ static NSString *identifier = @"postTableViewCell";
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    NSArray *checkins = self.resultDict[[self keyForSection:section]][0];
+    NSArray *notes = self.resultDict[[self keyForSection:section]][1];
+    NSInteger result = 0;
+    if ([self needShowGraphicsInSection:section]) {
+        result += 1;
+    }
+    if (checkins.count % 2 == 1) {
+        result += 1;
+    }
+    if (notes.count > 0) {
+        result += notes.count;
+    }
+    return result;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [[UITableViewCell alloc] init];
+    NSArray *checkins = self.resultDict[[self keyForSection:indexPath.section]][0];
+    NSArray *notes = self.resultDict[[self keyForSection:indexPath.section]][1];
+    if (indexPath.row == 0) {
+        if ([self needShowGraphicsInSection:indexPath.section]) {
+            CheckinsGraphicsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:checkinsGraphicsIdentifier];
+            [cell configWithCheckins:checkins];
+            return cell;
+        }
+        if (checkins.count % 2 == 1) {
+            SingleCheckinTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:singleCheckinIdentifier];
+            [cell configWithCheckin:checkins.lastObject isSolo:(checkins.count == 1)];
+            return cell;
+        }
+    }
+    if ((checkins.count % 2 == 1) && (indexPath.row == 1)) {
+        SingleCheckinTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:singleCheckinIdentifier];
+        [cell configWithCheckin:checkins.lastObject isSolo:(checkins.count == 1)];
+        return cell;
+    }
+    NSInteger index = indexPath.row;
+    if ([self needShowGraphicsInSection:indexPath.section]) {
+        index -= 1;
+    }
+    if (checkins.count % 2 == 1) {
+        index -= 1;
+    }
+    NoteTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:noteIdentifier];
+    [cell configWithNote:notes[index]];
     return cell;
 }
 
@@ -206,6 +253,40 @@ static NSString *identifier = @"postTableViewCell";
             return nil;
             break;
     }
+}
+
+- (NSString *)keyForSection:(NSInteger)section {
+    switch (section) {
+        case 0:
+            return mondayString;
+            break;
+        case 1:
+            return tuesdayString;
+            break;
+        case 2:
+            return wednesdayString;
+            break;
+        case 3:
+            return thursdayString;
+            break;
+        case 4:
+            return fridayString;
+            break;
+        case 5:
+            return saturdayString;
+            break;
+        case 6:
+            return sundayString;
+            break;
+        default:
+            return mondayString;
+            break;
+    }
+}
+
+- (BOOL)needShowGraphicsInSection:(NSInteger)section {
+    NSArray *checkins = self.resultDict[[self keyForSection:section]][0];
+    return (checkins.count == 0 || checkins.count >= 2);
 }
 
 @end

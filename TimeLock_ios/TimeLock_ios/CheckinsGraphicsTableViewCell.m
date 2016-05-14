@@ -39,8 +39,7 @@
         self.graphView.hidden = NO;
     }
     self.checkins = checkins;
-    [self layoutSubviews];
-    [self.graphView layoutSubviews];
+    [self.graphView setNeedsDisplay];
 }
 
 - (void)configStyle {

@@ -44,6 +44,22 @@ static CGFloat const minutesInDay = 1440.0f;
         }
     }
     
+    // рисование отметок
+    [TEXT_COLOR_EXTRA setStroke];
+    NSDictionary *attr = @{
+                           NSForegroundColorAttributeName:TEXT_COLOR_EXTRA,
+                           NSFontAttributeName: [UIFont fontWithName:@"PTSans-Bold" size:8],
+                           };
+    CGFloat delta = self.graphWidth / 8.0;
+    for (int i = 0; i < 9; i++) {
+        CGContextMoveToPoint(context, LEFT_OFFSET + delta * i, 12);
+        CGContextAddLineToPoint(context, LEFT_OFFSET + delta * i, 15);
+        if (i != 0 && i != 8) {
+            [[NSString stringWithFormat:@"%d:00", 3 * i] drawInRect:CGRectMake(LEFT_OFFSET + delta * i - 10, 14, 23, 30) withAttributes:attr];
+        }
+    }
+    CGContextStrokePath(context);
+    
     UIGraphicsPopContext();
 }
 

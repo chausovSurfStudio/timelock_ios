@@ -133,6 +133,10 @@ static NSString *noteIdentifier = @"noteIdentifier";
     return CHECKINS_HEADER_HEIGHT;
 }
 
+- (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    return NO;
+}
+
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 7;
@@ -193,7 +197,7 @@ static NSString *noteIdentifier = @"noteIdentifier";
     
     [self.borderView.layer setBorderColor:EXTRA_THEME_COLOR.CGColor];
     [self.borderView.layer setCornerRadius:CORNER_RADIUS];
-    [self.borderView.layer setBorderWidth:2.0f];
+    [self.borderView.layer setBorderWidth:1.0f];
     self.borderView.clipsToBounds = YES;
     
     self.topLabel.textColor = TEXT_COLOR_LIGHT;

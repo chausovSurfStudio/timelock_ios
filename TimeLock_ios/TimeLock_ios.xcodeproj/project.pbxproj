@@ -83,6 +83,16 @@
 		84D3B0BF1CE8A0200064049F /* ic_arrow_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0B91CE8A0200064049F /* ic_arrow_right@3x.png */; };
 		84D3B0C31CE8ACA20064049F /* WeekResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0C11CE8ACA20064049F /* WeekResultTableViewCell.m */; };
 		84D3B0C41CE8ACA20064049F /* WeekResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0C21CE8ACA20064049F /* WeekResultTableViewCell.xib */; };
+		84D3B0CA1CE91F2D0064049F /* CheckinsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0C81CE91F2D0064049F /* CheckinsListViewController.m */; };
+		84D3B0CB1CE91F2D0064049F /* CheckinsListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0C91CE91F2D0064049F /* CheckinsListViewController.xib */; };
+		84D3B0CF1CE91F430064049F /* CheckinTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0CD1CE91F430064049F /* CheckinTableViewCell.m */; };
+		84D3B0D01CE91F430064049F /* CheckinTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0CE1CE91F430064049F /* CheckinTableViewCell.xib */; };
+		84D3B0D71CE92D210064049F /* ic_button_add_pressed.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D11CE92D210064049F /* ic_button_add_pressed.png */; };
+		84D3B0D81CE92D210064049F /* ic_button_add_pressed@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D21CE92D210064049F /* ic_button_add_pressed@2x.png */; };
+		84D3B0D91CE92D210064049F /* ic_button_add_pressed@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D31CE92D210064049F /* ic_button_add_pressed@3x.png */; };
+		84D3B0DA1CE92D210064049F /* ic_button_add.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D41CE92D210064049F /* ic_button_add.png */; };
+		84D3B0DB1CE92D210064049F /* ic_button_add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D51CE92D210064049F /* ic_button_add@2x.png */; };
+		84D3B0DC1CE92D210064049F /* ic_button_add@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0D61CE92D210064049F /* ic_button_add@3x.png */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
 		84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EE21CD0C9E2001A06A2 /* AppDelegate.m */; };
 		84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E64EE71CD0C9E2001A06A2 /* Main.storyboard */; };
@@ -259,6 +269,18 @@
 		84D3B0C01CE8ACA20064049F /* WeekResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekResultTableViewCell.h; sourceTree = "<group>"; };
 		84D3B0C11CE8ACA20064049F /* WeekResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekResultTableViewCell.m; sourceTree = "<group>"; };
 		84D3B0C21CE8ACA20064049F /* WeekResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekResultTableViewCell.xib; sourceTree = "<group>"; };
+		84D3B0C71CE91F2D0064049F /* CheckinsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinsListViewController.h; sourceTree = "<group>"; };
+		84D3B0C81CE91F2D0064049F /* CheckinsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinsListViewController.m; sourceTree = "<group>"; };
+		84D3B0C91CE91F2D0064049F /* CheckinsListViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckinsListViewController.xib; sourceTree = "<group>"; };
+		84D3B0CC1CE91F430064049F /* CheckinTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CheckinTableViewCell.h; sourceTree = "<group>"; };
+		84D3B0CD1CE91F430064049F /* CheckinTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CheckinTableViewCell.m; sourceTree = "<group>"; };
+		84D3B0CE1CE91F430064049F /* CheckinTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CheckinTableViewCell.xib; sourceTree = "<group>"; };
+		84D3B0D11CE92D210064049F /* ic_button_add_pressed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_button_add_pressed.png; path = Resources/icon/ic_button_add_pressed.png; sourceTree = "<group>"; };
+		84D3B0D21CE92D210064049F /* ic_button_add_pressed@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_button_add_pressed@2x.png"; path = "Resources/icon/ic_button_add_pressed@2x.png"; sourceTree = "<group>"; };
+		84D3B0D31CE92D210064049F /* ic_button_add_pressed@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_button_add_pressed@3x.png"; path = "Resources/icon/ic_button_add_pressed@3x.png"; sourceTree = "<group>"; };
+		84D3B0D41CE92D210064049F /* ic_button_add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_button_add.png; path = Resources/icon/ic_button_add.png; sourceTree = "<group>"; };
+		84D3B0D51CE92D210064049F /* ic_button_add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_button_add@2x.png"; path = "Resources/icon/ic_button_add@2x.png"; sourceTree = "<group>"; };
+		84D3B0D61CE92D210064049F /* ic_button_add@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_button_add@3x.png"; path = "Resources/icon/ic_button_add@3x.png"; sourceTree = "<group>"; };
 		84E64EDB1CD0C9E2001A06A2 /* TimeLock_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLock_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E64EDF1CD0C9E2001A06A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84E64EE11CD0C9E2001A06A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -607,6 +629,27 @@
 			name = GraphView;
 			sourceTree = "<group>";
 		};
+		84D3B0C51CE91EED0064049F /* CheckinsListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B0C61CE91EFE0064049F /* Cell */,
+				84D3B0C71CE91F2D0064049F /* CheckinsListViewController.h */,
+				84D3B0C81CE91F2D0064049F /* CheckinsListViewController.m */,
+				84D3B0C91CE91F2D0064049F /* CheckinsListViewController.xib */,
+			);
+			name = CheckinsListViewController;
+			sourceTree = "<group>";
+		};
+		84D3B0C61CE91EFE0064049F /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				84D3B0CC1CE91F430064049F /* CheckinTableViewCell.h */,
+				84D3B0CD1CE91F430064049F /* CheckinTableViewCell.m */,
+				84D3B0CE1CE91F430064049F /* CheckinTableViewCell.xib */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
 		84E64ED21CD0C9E1001A06A2 = {
 			isa = PBXGroup;
 			children = (
@@ -759,6 +802,12 @@
 				84D3B0B71CE8A0200064049F /* ic_arrow_right.png */,
 				84D3B0B81CE8A0200064049F /* ic_arrow_right@2x.png */,
 				84D3B0B91CE8A0200064049F /* ic_arrow_right@3x.png */,
+				84D3B0D11CE92D210064049F /* ic_button_add_pressed.png */,
+				84D3B0D21CE92D210064049F /* ic_button_add_pressed@2x.png */,
+				84D3B0D31CE92D210064049F /* ic_button_add_pressed@3x.png */,
+				84D3B0D41CE92D210064049F /* ic_button_add.png */,
+				84D3B0D51CE92D210064049F /* ic_button_add@2x.png */,
+				84D3B0D61CE92D210064049F /* ic_button_add@3x.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -811,6 +860,7 @@
 		84E64F311CD0D6D9001A06A2 /* Checkins */ = {
 			isa = PBXGroup;
 			children = (
+				84D3B0C51CE91EED0064049F /* CheckinsListViewController */,
 				84E64F3E1CD0D751001A06A2 /* CheckinsViewController */,
 			);
 			name = Checkins;
@@ -1030,6 +1080,9 @@
 				84D3B0BC1CE8A0200064049F /* ic_arrow_left@3x.png in Resources */,
 				844F945F1CDE32620033647F /* UserFullNameTableViewCell.xib in Resources */,
 				84FDCFF91CDBF65B006A9039 /* ic_alert@2x.png in Resources */,
+				84D3B0D81CE92D210064049F /* ic_button_add_pressed@2x.png in Resources */,
+				84D3B0D01CE91F430064049F /* CheckinTableViewCell.xib in Resources */,
+				84D3B0DA1CE92D210064049F /* ic_button_add.png in Resources */,
 				84E64F4F1CD0DEC0001A06A2 /* PT_Sans-Web-BoldItalic.ttf in Resources */,
 				844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */,
 				84D3B09E1CE77AEC0064049F /* SingleCheckinTableViewCell.xib in Resources */,
@@ -1039,6 +1092,7 @@
 				8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
 				84AD1E8B1CDFB2D90055CB87 /* ChangeProfileViewController.xib in Resources */,
+				84D3B0CB1CE91F2D0064049F /* CheckinsListViewController.xib in Resources */,
 				84E64F591CD0E5E2001A06A2 /* Localizable.strings in Resources */,
 				84FDCFEA1CDBEFFC006A9039 /* user_placeholder@2x.png in Resources */,
 				84E64EEE1CD0C9E2001A06A2 /* Assets.xcassets in Resources */,
@@ -1048,6 +1102,7 @@
 				84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */,
 				8446AB491CD9260A002B0C9C /* TopProfileTableViewCell.xib in Resources */,
 				844F945A1CDE324B0033647F /* UserTopTableViewCell.xib in Resources */,
+				84D3B0DB1CE92D210064049F /* ic_button_add@2x.png in Resources */,
 				84D3B0BD1CE8A0200064049F /* ic_arrow_right.png in Resources */,
 				84D3B0B21CE898920064049F /* ic_white_sad_smile@2x.png in Resources */,
 				84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */,
@@ -1061,13 +1116,16 @@
 				8446AB4E1CD92625002B0C9C /* ProfileSettingsTableViewCell.xib in Resources */,
 				84D3B0A31CE77B140064049F /* NoteTableViewCell.xib in Resources */,
 				84D3B0BE1CE8A0200064049F /* ic_arrow_right@2x.png in Resources */,
+				84D3B0DC1CE92D210064049F /* ic_button_add@3x.png in Resources */,
 				84E64F2B1CD0D60A001A06A2 /* ic_profile.png in Resources */,
 				8446AB3C1CD8F949002B0C9C /* PostTableViewCell.xib in Resources */,
 				84E64F271CD0D60A001A06A2 /* ic_catalog@3x.png in Resources */,
 				84D3B0B11CE898920064049F /* ic_white_sad_smile.png in Resources */,
 				84FDCFE91CDBEFFC006A9039 /* user_placeholder.png in Resources */,
+				84D3B0D91CE92D210064049F /* ic_button_add_pressed@3x.png in Resources */,
 				84D3B0991CE776170064049F /* CheckinsGraphicsTableViewCell.xib in Resources */,
 				84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */,
+				84D3B0D71CE92D210064049F /* ic_button_add_pressed.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
 				84AD1E961CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib in Resources */,
 				84E64F361CD0D715001A06A2 /* TLMainViewController.xib in Resources */,
@@ -1161,6 +1219,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D3B0CF1CE91F430064049F /* CheckinTableViewCell.m in Sources */,
+				84D3B0CA1CE91F2D0064049F /* CheckinsListViewController.m in Sources */,
 				84B9F9651CD3AD4F0088D718 /* TLNetworkManager.m in Sources */,
 				84E64F481CD0DBD5001A06A2 /* BarsAppearance.m in Sources */,
 				84AD1E8A1CDFB2D90055CB87 /* ChangeProfileViewController.m in Sources */,

@@ -12,6 +12,7 @@
 #import "SingleCheckinTableViewCell.h"
 #import "NoteTableViewCell.h"
 #import "WeekResultTableViewCell.h"
+#import "CheckinsListViewController.h"
 
 #import "UIRefreshControl+Utils.h"
 
@@ -126,6 +127,12 @@ static NSString *weekResultIdentifier = @"weekResultIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    NSArray *checkins = self.resultDict[[self keyForSection:indexPath.section]][0];
+    NSDate *date = self.resultDict[[self keyForSection:indexPath.section]][2];
+    CheckinsListViewController *vc = [[CheckinsListViewController alloc] initWithCheckins:checkins date:date completeion:^{
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CheckinsListViewController">
+            <connections>
+                <outlet property="addButton" destination="N8W-7F-1mJ" id="L7j-W9-Kvc"/>
+                <outlet property="emptyLabel" destination="nTn-Ab-RFN" id="RtE-6b-XXi"/>
+                <outlet property="emptyScreenView" destination="nJc-wh-TJf" id="DP3-sS-Mp2"/>
+                <outlet property="tableView" destination="aD3-OC-ezS" id="Wno-om-XgY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nJc-wh-TJf">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9lJ-6B-FBF">
+                            <rect key="frame" x="0.0" y="170" width="320" height="140"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_sad_smile.png" translatesAutoresizingMaskIntoConstraints="NO" id="RTb-l8-qg1">
+                                    <rect key="frame" x="129" y="0.0" width="62" height="62"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="62" id="HEE-8S-fRM"/>
+                                        <constraint firstAttribute="height" constant="62" id="zkO-Al-OUh"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nTn-Ab-RFN">
+                                    <rect key="frame" x="15" y="80" width="290" height="60"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="140" id="99M-52-UGg"/>
+                                <constraint firstItem="RTb-l8-qg1" firstAttribute="centerX" secondItem="9lJ-6B-FBF" secondAttribute="centerX" id="AgQ-aU-UX4"/>
+                                <constraint firstAttribute="bottom" secondItem="nTn-Ab-RFN" secondAttribute="bottom" id="QQa-GR-Wfa"/>
+                                <constraint firstItem="nTn-Ab-RFN" firstAttribute="leading" secondItem="9lJ-6B-FBF" secondAttribute="leading" constant="15" id="XI8-qu-s52"/>
+                                <constraint firstAttribute="trailing" secondItem="nTn-Ab-RFN" secondAttribute="trailing" constant="15" id="YTs-UT-Ler"/>
+                                <constraint firstItem="RTb-l8-qg1" firstAttribute="top" secondItem="9lJ-6B-FBF" secondAttribute="top" id="lYD-b9-QK3"/>
+                                <constraint firstItem="nTn-Ab-RFN" firstAttribute="top" secondItem="RTb-l8-qg1" secondAttribute="bottom" constant="18" id="xPm-gD-p3a"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="9lJ-6B-FBF" secondAttribute="trailing" id="EAy-hB-HUd"/>
+                        <constraint firstItem="9lJ-6B-FBF" firstAttribute="leading" secondItem="nJc-wh-TJf" secondAttribute="leading" id="EvU-rk-VNi"/>
+                        <constraint firstItem="9lJ-6B-FBF" firstAttribute="centerX" secondItem="nJc-wh-TJf" secondAttribute="centerX" id="FLf-fF-6cj"/>
+                        <constraint firstItem="9lJ-6B-FBF" firstAttribute="centerY" secondItem="nJc-wh-TJf" secondAttribute="centerY" id="dGJ-xg-dDf"/>
+                    </constraints>
+                </view>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="aD3-OC-ezS">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="92s-9F-iAh"/>
+                        <outlet property="delegate" destination="-1" id="0Fb-UI-a2X"/>
+                    </connections>
+                </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8W-7F-1mJ">
+                    <rect key="frame" x="131" y="363" width="58" height="58"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="58" id="5NK-4L-1t4"/>
+                        <constraint firstAttribute="width" constant="58" id="dxd-rr-lLf"/>
+                    </constraints>
+                    <state key="normal" title="Button" image="ic_button_add.png"/>
+                    <state key="highlighted" image="ic_button_add_pressed.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="N8W-7F-1mJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="A9t-AE-Ixb"/>
+                <constraint firstAttribute="bottom" secondItem="N8W-7F-1mJ" secondAttribute="bottom" constant="59" id="JvA-gJ-RdD"/>
+                <constraint firstAttribute="bottom" secondItem="nJc-wh-TJf" secondAttribute="bottom" id="MQC-4R-lPK"/>
+                <constraint firstItem="nJc-wh-TJf" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="VZ2-5D-JFd"/>
+                <constraint firstItem="aD3-OC-ezS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="XSO-ad-nAA"/>
+                <constraint firstAttribute="trailing" secondItem="aD3-OC-ezS" secondAttribute="trailing" id="e01-MY-k4Q"/>
+                <constraint firstItem="nJc-wh-TJf" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="nL5-ro-1qf"/>
+                <constraint firstAttribute="bottom" secondItem="aD3-OC-ezS" secondAttribute="bottom" id="quQ-Bn-Puz"/>
+                <constraint firstAttribute="trailing" secondItem="nJc-wh-TJf" secondAttribute="trailing" id="tf9-Rf-Uri"/>
+                <constraint firstItem="aD3-OC-ezS" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="xqQ-dG-1BN"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="ic_button_add.png" width="58" height="58"/>
+        <image name="ic_button_add_pressed.png" width="58" height="58"/>
+        <image name="ic_sad_smile.png" width="62" height="62"/>
+    </resources>
+</document>

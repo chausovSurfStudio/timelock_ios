@@ -126,7 +126,7 @@ static NSString *noteIdentifier = @"noteIdentifier";
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [TLUtils viewForheaderInCheckinsTableWithDate:[self dateForSection:section]];
+    return [TLUtils viewForheaderInCheckinsTableWithDate:[self dateForSection:section] andTime:[self timeForSection:section]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
@@ -134,7 +134,17 @@ static NSString *noteIdentifier = @"noteIdentifier";
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if ([self isRowWithGraphicsInIndexPath:indexPath]) {
+        return YES;
+    }
+    if ([self isRowWithSingleCheckinInIndexPath:indexPath]) {
+        return YES;
+    }
     return NO;
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return 0.0001f;
 }
 
 #pragma mark - UITableViewDataSource
@@ -201,7 +211,7 @@ static NSString *noteIdentifier = @"noteIdentifier";
     self.borderView.clipsToBounds = YES;
     
     self.topLabel.textColor = TEXT_COLOR_LIGHT;
-    self.topLabel.font = SECTION_HEADER_FONT_BOLD;
+    self.topLabel.font = SECTION_HEADER_FONT;
     self.topLabel.textAlignment = NSTextAlignmentCenter;
     
     self.rightButton.backgroundColor = [UIColor clearColor];
@@ -259,6 +269,14 @@ static NSString *noteIdentifier = @"noteIdentifier";
     }
 }
 
+- (NSNumber *)timeForSection:(NSInteger)section {
+    NSNumber *time = self.resultDict[[self keyForSection:section]][3];
+    if (time) {
+        return time;
+    }
+    return @(0);
+}
+
 - (NSString *)keyForSection:(NSInteger)section {
     switch (section) {
         case 0:
@@ -291,6 +309,20 @@ static NSString *noteIdentifier = @"noteIdentifier";
 - (BOOL)needShowGraphicsInSection:(NSInteger)section {
     NSArray *checkins = self.resultDict[[self keyForSection:section]][0];
     return (checkins.count == 0 || checkins.count >= 2);
+}
+
+- (BOOL)isRowWithGraphicsInIndexPath:(NSIndexPath *)indexPath {
+    return (indexPath.row == 0 && [self needShowGraphicsInSection:indexPath.section]);
+}
+
+- (BOOL)isRowWithSingleCheckinInIndexPath:(NSIndexPath *)indexPath {
+    NSArray *checkins = self.resultDict[[self keyForSection:indexPath.section]][0];
+    if (indexPath.row == 0 && checkins.count == 1) {
+        return YES;
+    } else if ((checkins.count % 2 == 1) && (indexPath.row == 1)) {
+        return YES;
+    }
+    return NO;
 }
 
 @end

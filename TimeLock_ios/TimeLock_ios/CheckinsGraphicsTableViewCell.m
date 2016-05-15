@@ -30,6 +30,11 @@
     [super setSelected:selected animated:animated];
 }
 
+- (void)setHighlighted:(BOOL)highlighted animated:(BOOL)animated {
+    [super setHighlighted:highlighted animated:animated];
+    self.graphView.backgroundColor = highlighted ? HIGHLIGHTED_CELL_COLOR : [UIColor whiteColor];
+}
+
 - (void)configWithCheckins:(NSArray *)checkins {
     if (checkins.count == 0) {
         self.emptyDayLabel.hidden = NO;

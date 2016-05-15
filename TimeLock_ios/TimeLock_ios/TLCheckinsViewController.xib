@@ -33,9 +33,9 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="xibName" value="EmptyScreenView"/>
                     </userDefinedRuntimeAttributes>
                 </scrollView>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-pi-A6x">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="grouped" separatorStyle="none" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="Ul1-pi-A6x">
                     <rect key="frame" x="0.0" y="44" width="320" height="436"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="d0r-zf-rmK"/>
                         <outlet property="delegate" destination="-1" id="Hmv-QY-unH"/>
@@ -54,37 +54,37 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cmx-5i-OLr">
-                                    <rect key="frame" x="0.0" y="0.0" width="44" height="28"/>
+                                    <rect key="frame" x="0.0" y="3" width="24" height="22"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="44" id="NUX-4t-KZd"/>
+                                        <constraint firstAttribute="width" constant="24" id="NUX-4t-KZd"/>
                                     </constraints>
                                     <state key="normal" image="ic_arrow_left.png">
                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Ru-4U-EV8">
-                                    <rect key="frame" x="246" y="0.0" width="44" height="28"/>
+                                    <rect key="frame" x="266" y="3" width="24" height="22"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="44" id="fEh-zS-3fF"/>
+                                        <constraint firstAttribute="width" constant="24" id="fEh-zS-3fF"/>
                                     </constraints>
                                     <state key="normal" image="ic_arrow_right.png">
                                         <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </state>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.45619568850267378" green="0.40627088903743314" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" red="0.74117647058823533" green="0.34901960784313724" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
-                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="leading" secondItem="gUc-P0-8wg" secondAttribute="trailing" constant="11" id="1s4-04-Kgq"/>
+                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="leading" secondItem="gUc-P0-8wg" secondAttribute="trailing" constant="31" id="1s4-04-Kgq"/>
                                 <constraint firstItem="gUc-P0-8wg" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" constant="4" id="3xg-bf-ehR"/>
                                 <constraint firstItem="gUc-P0-8wg" firstAttribute="centerX" secondItem="6pY-8b-seo" secondAttribute="centerX" id="Gt2-XT-Afu"/>
                                 <constraint firstAttribute="trailing" secondItem="0Ru-4U-EV8" secondAttribute="trailing" id="Oia-W4-8t3"/>
-                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" id="V2T-mx-BYY"/>
-                                <constraint firstItem="gUc-P0-8wg" firstAttribute="leading" secondItem="cmx-5i-OLr" secondAttribute="trailing" constant="11" id="V5H-Yz-19u"/>
-                                <constraint firstItem="cmx-5i-OLr" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" id="a57-zd-eHT"/>
+                                <constraint firstItem="0Ru-4U-EV8" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" constant="3" id="V2T-mx-BYY"/>
+                                <constraint firstItem="gUc-P0-8wg" firstAttribute="leading" secondItem="cmx-5i-OLr" secondAttribute="trailing" constant="31" id="V5H-Yz-19u"/>
+                                <constraint firstItem="cmx-5i-OLr" firstAttribute="top" secondItem="6pY-8b-seo" secondAttribute="top" constant="3" id="a57-zd-eHT"/>
                                 <constraint firstItem="cmx-5i-OLr" firstAttribute="leading" secondItem="6pY-8b-seo" secondAttribute="leading" id="gox-qT-XyK"/>
-                                <constraint firstAttribute="bottom" secondItem="cmx-5i-OLr" secondAttribute="bottom" id="n9s-bg-AiY"/>
+                                <constraint firstAttribute="bottom" secondItem="cmx-5i-OLr" secondAttribute="bottom" constant="3" id="n9s-bg-AiY"/>
                                 <constraint firstAttribute="bottom" secondItem="gUc-P0-8wg" secondAttribute="bottom" constant="3" id="nSY-Kq-05A"/>
-                                <constraint firstAttribute="bottom" secondItem="0Ru-4U-EV8" secondAttribute="bottom" id="tao-5I-P8T"/>
+                                <constraint firstAttribute="bottom" secondItem="0Ru-4U-EV8" secondAttribute="bottom" constant="3" id="tao-5I-P8T"/>
                             </constraints>
                         </view>
                     </subviews>
@@ -116,7 +116,7 @@
         </view>
     </objects>
     <resources>
-        <image name="ic_arrow_left.png" width="5" height="12"/>
-        <image name="ic_arrow_right.png" width="5" height="9"/>
+        <image name="ic_arrow_left.png" width="32" height="32"/>
+        <image name="ic_arrow_right.png" width="32" height="32"/>
     </resources>
 </document>

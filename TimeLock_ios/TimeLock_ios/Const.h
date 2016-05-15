@@ -37,7 +37,8 @@
 #define TEXT_FIELD_TEXT_COLOR   TEXT_COLOR
 #define TEXT_FIELD_TINT_COLOR   MAIN_THEME_COLOR
 
-#define SEPARATOR_COLOR [UIColor colorWithRed:173/255.0 green:173/255.0  blue:173/255.0  alpha:1.0]
+#define SEPARATOR_COLOR         [UIColor colorWithRed:173/255.0 green:173/255.0  blue:173/255.0  alpha:1.0]
+#define HIGHLIGHTED_CELL_COLOR  [UIColor colorWithRed:217/255.0 green:217/255.0  blue:217/255.0  alpha:1.0]
 
 // FONTS
 

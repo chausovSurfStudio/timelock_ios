@@ -32,6 +32,6 @@
 + (BOOL)checkExistenceOfString:(NSString *)string;
 
 /** View для хэдэра секций в таблице чекинов */
-+ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date;
++ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date andTime:(NSNumber *)time;
 
 @end

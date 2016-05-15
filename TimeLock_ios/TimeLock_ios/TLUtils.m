@@ -9,6 +9,10 @@
 #import "TLUtils.h"
 #import <MBProgressHUD/MBProgressHUD.h>
 
+static CGFloat const sadImageSize = 32.0f;
+static CGFloat const timeLabelWidth = 50.0f;
+static CGFloat const timeLabelHeight = 21.0f;
+
 @implementation TLUtils
 
 #pragma mark - NSUserDefaults
@@ -66,7 +70,7 @@
 }
 
 // View для хэдэра секций в таблице чекинов
-+ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date {
++ (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date andTime:(NSNumber *)time {
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, SCREEN_WIDTH, CHECKINS_HEADER_HEIGHT)];
     view.backgroundColor = MAIN_THEME_COLOR;
     if (date) {
@@ -86,7 +90,33 @@
         dateLabel.attributedText = attributedDateString;
         [view addSubview:dateLabel];
     }
+    if (time && [time integerValue] != 0) {
+        UILabel *timeLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - LEFT_OFFSET - timeLabelWidth,
+                                                                       (CHECKINS_HEADER_HEIGHT - timeLabelHeight) / 2.0,
+                                                                       timeLabelWidth,
+                                                                       timeLabelHeight)];
+        timeLabel.textColor = TEXT_COLOR_LIGHT;
+        timeLabel.font = SECTION_HEADER_FONT_BOLD;
+        timeLabel.text = [TLUtils formatTimeStringForMinutes:time];
+        timeLabel.textAlignment = NSTextAlignmentRight;
+        [view addSubview:timeLabel];
+    } else {
+        UIImageView *sadImageView = [[UIImageView alloc] initWithFrame:CGRectMake(SCREEN_WIDTH - LEFT_OFFSET - sadImageSize,
+                                                                                  (CHECKINS_HEADER_HEIGHT - sadImageSize) / 2.0,
+                                                                                  sadImageSize,
+                                                                                  sadImageSize)];
+        sadImageView.image = [UIImage imageNamed:@"ic_white_sad_smile.png"];
+        [view addSubview:sadImageView];
+    }
+    
     return view;
+}
+
++ (NSString *)formatTimeStringForMinutes:(NSNumber *)value {
+    NSInteger minutes = [value integerValue];
+    NSInteger hours = minutes / 60;
+    minutes = minutes % 60;
+    return [NSString stringWithFormat:@"%ld:%02ld", (long)hours, (long)minutes];
 }
 
 @end

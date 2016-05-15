@@ -34,4 +34,7 @@
 /** View для хэдэра секций в таблице чекинов */
 + (UIView *)viewForheaderInCheckinsTableWithDate:(NSDate *)date andTime:(NSNumber *)time;
 
+/** Возращает строку в формате 4:05, на вход подается количество минут */
++ (NSString *)formatTimeStringForMinutes:(NSNumber *)value;
+
 @end

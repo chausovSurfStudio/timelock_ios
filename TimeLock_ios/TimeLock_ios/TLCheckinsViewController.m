@@ -11,6 +11,7 @@
 #import "CheckinsGraphicsTableViewCell.h"
 #import "SingleCheckinTableViewCell.h"
 #import "NoteTableViewCell.h"
+#import "WeekResultTableViewCell.h"
 
 #import "UIRefreshControl+Utils.h"
 
@@ -36,6 +37,7 @@
 static NSString *checkinsGraphicsIdentifier = @"checkinsGraphicsIdentifier";
 static NSString *singleCheckinIdentifier = @"singleCheckinIdentifier";
 static NSString *noteIdentifier = @"noteIdentifier";
+static NSString *weekResultIdentifier = @"weekResultIdentifier";
 
 @implementation TLCheckinsViewController
 
@@ -46,6 +48,7 @@ static NSString *noteIdentifier = @"noteIdentifier";
     [self.tableView registerNib:[UINib nibWithNibName:@"CheckinsGraphicsTableViewCell" bundle:nil] forCellReuseIdentifier:checkinsGraphicsIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"SingleCheckinTableViewCell" bundle:nil] forCellReuseIdentifier:singleCheckinIdentifier];
     [self.tableView registerNib:[UINib nibWithNibName:@"NoteTableViewCell" bundle:nil] forCellReuseIdentifier:noteIdentifier];
+    [self.tableView registerNib:[UINib nibWithNibName:@"WeekResultTableViewCell" bundle:nil] forCellReuseIdentifier:weekResultIdentifier];
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.contentInsetBottom = 49;
@@ -126,14 +129,17 @@ static NSString *noteIdentifier = @"noteIdentifier";
 }
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
-    return [TLUtils viewForheaderInCheckinsTableWithDate:[self dateForSection:section] andTime:[self timeForSection:section]];
+    return section == 0 ? nil : [TLUtils viewForheaderInCheckinsTableWithDate:[self dateForSection:section] andTime:[self timeForSection:section]];
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
-    return CHECKINS_HEADER_HEIGHT;
+    return section == 0 ? 0.001f : CHECKINS_HEADER_HEIGHT;
 }
 
 - (BOOL)tableView:(UITableView *)tableView shouldHighlightRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 0) {
+        return NO;
+    }
     if ([self isRowWithGraphicsInIndexPath:indexPath]) {
         return YES;
     }
@@ -149,10 +155,13 @@ static NSString *noteIdentifier = @"noteIdentifier";
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 7;
+    return 8;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    if (section == 0) {
+        return 1;
+    }
     NSArray *checkins = self.resultDict[[self keyForSection:section]][0];
     NSArray *notes = self.resultDict[[self keyForSection:section]][1];
     NSInteger result = 0;
@@ -171,6 +180,11 @@ static NSString *noteIdentifier = @"noteIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     NSArray *checkins = self.resultDict[[self keyForSection:indexPath.section]][0];
     NSArray *notes = self.resultDict[[self keyForSection:indexPath.section]][1];
+    if (indexPath.section == 0) {
+        WeekResultTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:weekResultIdentifier];
+        [cell configWithTime:self.resultDict[@"resultTime"]];
+        return cell;
+    }
     if (indexPath.row == 0) {
         if ([self needShowGraphicsInSection:indexPath.section]) {
             CheckinsGraphicsTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:checkinsGraphicsIdentifier];
@@ -219,8 +233,8 @@ static NSString *noteIdentifier = @"noteIdentifier";
 }
 
 - (void)refreshTopView {
-    NSDate *monday = [self dateForSection:0];
-    NSDate *sunday = [self dateForSection:6];
+    NSDate *monday = [self dateForSection:1];
+    NSDate *sunday = [self dateForSection:7];
     NSDateFormatter *formatter = [NSDateFormatter new];
     [formatter setTimeZone:[NSTimeZone timeZoneWithAbbreviation:@"GMT"]];
     [formatter setLocale:[NSLocale localeWithLocaleIdentifier:@"ru_RU_POSIX"]];
@@ -241,26 +255,27 @@ static NSString *noteIdentifier = @"noteIdentifier";
 
 #pragma mark - Others
 - (NSDate *)dateForSection:(NSInteger)section {
+    // нулевая секция отведена под результат недели
     switch (section) {
-        case 0:
+        case 1:
             return self.resultDict[mondayString][2];
             break;
-        case 1:
+        case 2:
             return self.resultDict[tuesdayString][2];
             break;
-        case 2:
+        case 3:
             return self.resultDict[wednesdayString][2];
             break;
-        case 3:
+        case 4:
             return self.resultDict[thursdayString][2];
             break;
-        case 4:
+        case 5:
             return self.resultDict[fridayString][2];
             break;
-        case 5:
+        case 6:
             return self.resultDict[saturdayString][2];
             break;
-        case 6:
+        case 7:
             return self.resultDict[sundayString][2];
             break;
         default:
@@ -278,26 +293,27 @@ static NSString *noteIdentifier = @"noteIdentifier";
 }
 
 - (NSString *)keyForSection:(NSInteger)section {
+    // нулевая секция отведена под результат недели
     switch (section) {
-        case 0:
+        case 1:
             return mondayString;
             break;
-        case 1:
+        case 2:
             return tuesdayString;
             break;
-        case 2:
+        case 3:
             return wednesdayString;
             break;
-        case 3:
+        case 4:
             return thursdayString;
             break;
-        case 4:
+        case 5:
             return fridayString;
             break;
-        case 5:
+        case 6:
             return saturdayString;
             break;
-        case 6:
+        case 7:
             return sundayString;
             break;
         default:

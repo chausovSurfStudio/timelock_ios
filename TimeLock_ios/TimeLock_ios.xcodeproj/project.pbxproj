@@ -81,6 +81,8 @@
 		84D3B0BD1CE8A0200064049F /* ic_arrow_right.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0B71CE8A0200064049F /* ic_arrow_right.png */; };
 		84D3B0BE1CE8A0200064049F /* ic_arrow_right@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0B81CE8A0200064049F /* ic_arrow_right@2x.png */; };
 		84D3B0BF1CE8A0200064049F /* ic_arrow_right@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0B91CE8A0200064049F /* ic_arrow_right@3x.png */; };
+		84D3B0C31CE8ACA20064049F /* WeekResultTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84D3B0C11CE8ACA20064049F /* WeekResultTableViewCell.m */; };
+		84D3B0C41CE8ACA20064049F /* WeekResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84D3B0C21CE8ACA20064049F /* WeekResultTableViewCell.xib */; };
 		84E64EE01CD0C9E2001A06A2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EDF1CD0C9E2001A06A2 /* main.m */; };
 		84E64EE31CD0C9E2001A06A2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 84E64EE21CD0C9E2001A06A2 /* AppDelegate.m */; };
 		84E64EE91CD0C9E2001A06A2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 84E64EE71CD0C9E2001A06A2 /* Main.storyboard */; };
@@ -254,6 +256,9 @@
 		84D3B0B71CE8A0200064049F /* ic_arrow_right.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_arrow_right.png; path = Resources/icon/ic_arrow_right.png; sourceTree = "<group>"; };
 		84D3B0B81CE8A0200064049F /* ic_arrow_right@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_arrow_right@2x.png"; path = "Resources/icon/ic_arrow_right@2x.png"; sourceTree = "<group>"; };
 		84D3B0B91CE8A0200064049F /* ic_arrow_right@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_arrow_right@3x.png"; path = "Resources/icon/ic_arrow_right@3x.png"; sourceTree = "<group>"; };
+		84D3B0C01CE8ACA20064049F /* WeekResultTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeekResultTableViewCell.h; sourceTree = "<group>"; };
+		84D3B0C11CE8ACA20064049F /* WeekResultTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeekResultTableViewCell.m; sourceTree = "<group>"; };
+		84D3B0C21CE8ACA20064049F /* WeekResultTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeekResultTableViewCell.xib; sourceTree = "<group>"; };
 		84E64EDB1CD0C9E2001A06A2 /* TimeLock_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TimeLock_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84E64EDF1CD0C9E2001A06A2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		84E64EE11CD0C9E2001A06A2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -586,6 +591,9 @@
 				84D3B09F1CE77B140064049F /* NoteTableViewCell.h */,
 				84D3B0A01CE77B140064049F /* NoteTableViewCell.m */,
 				84D3B0A11CE77B140064049F /* NoteTableViewCell.xib */,
+				84D3B0C01CE8ACA20064049F /* WeekResultTableViewCell.h */,
+				84D3B0C11CE8ACA20064049F /* WeekResultTableViewCell.m */,
+				84D3B0C21CE8ACA20064049F /* WeekResultTableViewCell.xib */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -1043,6 +1051,7 @@
 				84D3B0BD1CE8A0200064049F /* ic_arrow_right.png in Resources */,
 				84D3B0B21CE898920064049F /* ic_white_sad_smile@2x.png in Resources */,
 				84097FE41CDCD9C80050FCE6 /* EmptyScreenView.xib in Resources */,
+				84D3B0C41CE8ACA20064049F /* WeekResultTableViewCell.xib in Resources */,
 				84AD1EAE1CDFC4F30055CB87 /* icBackPressed@2x.png in Resources */,
 				84097FEE1CDCDB640050FCE6 /* ic_sad_smile.png in Resources */,
 				84E64F2C1CD0D60A001A06A2 /* ic_profile@2x.png in Resources */,
@@ -1174,6 +1183,7 @@
 				8446AB321CD8B5FE002B0C9C /* DataStorageManager+Post.m in Sources */,
 				8446AB361CD8C745002B0C9C /* TLNetworkManager+Post.m in Sources */,
 				844F945E1CDE32620033647F /* UserFullNameTableViewCell.m in Sources */,
+				84D3B0C31CE8ACA20064049F /* WeekResultTableViewCell.m in Sources */,
 				8446AB3B1CD8F949002B0C9C /* PostTableViewCell.m in Sources */,
 				84E64F621CD10C8E001A06A2 /* TLLaunchLoginViewController.m in Sources */,
 				84E64F671CD1139F001A06A2 /* UIButton+TimeLockStyle.m in Sources */,

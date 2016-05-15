@@ -112,6 +112,7 @@ static CGFloat const timeLabelHeight = 21.0f;
     return view;
 }
 
+// Возращает строку в формате 4:05, на вход подается количество минут
 + (NSString *)formatTimeStringForMinutes:(NSNumber *)value {
     NSInteger minutes = [value integerValue];
     NSInteger hours = minutes / 60;

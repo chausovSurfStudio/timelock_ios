@@ -45,6 +45,8 @@
 		844F94681CDE36110033647F /* TLNetworkManager+User.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F94671CDE36110033647F /* TLNetworkManager+User.m */; };
 		844F946C1CDE3FE20033647F /* UserCompanyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */; };
 		844F946D1CDE3FE20033647F /* UserCompanyTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */; };
+		845A36211CEA4431005CD381 /* EditCheckinViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 845A361F1CEA4431005CD381 /* EditCheckinViewController.m */; };
+		845A36221CEA4431005CD381 /* EditCheckinViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 845A36201CEA4431005CD381 /* EditCheckinViewController.xib */; };
 		847D5D3E1CE6206A009157EE /* TLNetworkManager+Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D3D1CE6206A009157EE /* TLNetworkManager+Checkin.m */; };
 		847D5D411CE62289009157EE /* DataStorageManager+Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D401CE62289009157EE /* DataStorageManager+Checkin.m */; };
 		847D5D4A1CE63B39009157EE /* Checkin+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D431CE63B39009157EE /* Checkin+CoreDataProperties.m */; };
@@ -215,6 +217,9 @@
 		844F94691CDE3FE20033647F /* UserCompanyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserCompanyTableViewCell.h; sourceTree = "<group>"; };
 		844F946A1CDE3FE20033647F /* UserCompanyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserCompanyTableViewCell.m; sourceTree = "<group>"; };
 		844F946B1CDE3FE20033647F /* UserCompanyTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = UserCompanyTableViewCell.xib; sourceTree = "<group>"; };
+		845A361E1CEA4431005CD381 /* EditCheckinViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditCheckinViewController.h; sourceTree = "<group>"; };
+		845A361F1CEA4431005CD381 /* EditCheckinViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditCheckinViewController.m; sourceTree = "<group>"; };
+		845A36201CEA4431005CD381 /* EditCheckinViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EditCheckinViewController.xib; sourceTree = "<group>"; };
 		847D5D3C1CE6206A009157EE /* TLNetworkManager+Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "TLNetworkManager+Checkin.h"; sourceTree = "<group>"; };
 		847D5D3D1CE6206A009157EE /* TLNetworkManager+Checkin.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "TLNetworkManager+Checkin.m"; sourceTree = "<group>"; };
 		847D5D3F1CE62289009157EE /* DataStorageManager+Checkin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DataStorageManager+Checkin.h"; sourceTree = "<group>"; };
@@ -546,6 +551,16 @@
 			name = User;
 			sourceTree = "<group>";
 		};
+		845A361D1CEA43E1005CD381 /* EditCheckinViewController */ = {
+			isa = PBXGroup;
+			children = (
+				845A361E1CEA4431005CD381 /* EditCheckinViewController.h */,
+				845A361F1CEA4431005CD381 /* EditCheckinViewController.m */,
+				845A36201CEA4431005CD381 /* EditCheckinViewController.xib */,
+			);
+			name = EditCheckinViewController;
+			sourceTree = "<group>";
+		};
 		847D5D3B1CE62045009157EE /* Checkins */ = {
 			isa = PBXGroup;
 			children = (
@@ -860,6 +875,7 @@
 		84E64F311CD0D6D9001A06A2 /* Checkins */ = {
 			isa = PBXGroup;
 			children = (
+				845A361D1CEA43E1005CD381 /* EditCheckinViewController */,
 				84D3B0C51CE91EED0064049F /* CheckinsListViewController */,
 				84E64F3E1CD0D751001A06A2 /* CheckinsViewController */,
 			);
@@ -1140,6 +1156,7 @@
 				84E64F431CD0D76B001A06A2 /* TLCheckinsViewController.xib in Resources */,
 				84097FE91CDCDAC30050FCE6 /* ic_arrow_down@2x.png in Resources */,
 				84E64F291CD0D60A001A06A2 /* ic_index@2x.png in Resources */,
+				845A36221CEA4431005CD381 /* EditCheckinViewController.xib in Resources */,
 				84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */,
 				84AD1EAD1CDFC4F30055CB87 /* icBackPressed.png in Resources */,
 				84E64F2D1CD0D60A001A06A2 /* ic_profile@3x.png in Resources */,
@@ -1235,6 +1252,7 @@
 				8446AB291CD8B58F002B0C9C /* Post.m in Sources */,
 				8446AB481CD9260A002B0C9C /* TopProfileTableViewCell.m in Sources */,
 				844F946C1CDE3FE20033647F /* UserCompanyTableViewCell.m in Sources */,
+				845A36211CEA4431005CD381 /* EditCheckinViewController.m in Sources */,
 				847D5D4B1CE63B39009157EE /* Checkin.m in Sources */,
 				84097FF71CDCE4E70050FCE6 /* UIRefreshControl+Utils.m in Sources */,
 				8446AB401CD91231002B0C9C /* UIRefreshControl+Animation.m in Sources */,

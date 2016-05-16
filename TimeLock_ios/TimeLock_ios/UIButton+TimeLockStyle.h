@@ -12,5 +12,6 @@
 
 - (void)setButtonWithBorderStyle;
 - (void)setMainButtonStyle;
+- (void)setWhiteButtonWithoutBorderStyle;
 
 @end

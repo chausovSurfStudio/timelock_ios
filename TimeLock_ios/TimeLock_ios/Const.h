@@ -26,6 +26,8 @@
 #define BORDER_BUTTON_TEXT_COLOR_DISABLED   TEXT_COLOR_EXTRA
 #define MAIN_BUTTON_TEXT_COLOR              TEXT_COLOR_LIGHT
 #define MAIN_BUTTON_TEXT_COLOR_PRESSED      TEXT_COLOR_LIGHT
+#define WHITE_BUTTON_TEXT_COLOR             EXTRA_THEME_COLOR
+#define WHITE_BUTTON_TEXT_COLOR_PRESSED     [EXTRA_THEME_COLOR colorWithAlphaComponent:0.6f]
 
 #define ALERT_ERROR_COLOR   [UIColor colorWithRed:199./255 green:30./255 blue:30./255 alpha:0.9]
 #define ALERT_INFO_COLOR    [UIColor colorWithRed:54./255 green:210./255 blue:159./255 alpha:1.0]

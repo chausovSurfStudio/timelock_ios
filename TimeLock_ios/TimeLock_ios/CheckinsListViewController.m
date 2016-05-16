@@ -8,6 +8,7 @@
 
 #import "CheckinsListViewController.h"
 #import "CheckinTableViewCell.h"
+#import "EditCheckinViewController.h"
 #import "BarsAppearance.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
@@ -83,7 +84,7 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     @weakify(self);
     [[self.addButton rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(id x) {
         @strongify(self);
-        NSLog(@"add button pressed");
+        [self showEditVCToCreateCheckin];
     }];
 }
 
@@ -94,6 +95,7 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self showEditVCForCheckinInRow:indexPath.row];
 }
 
 #pragma mark - UITableViewDataSource
@@ -113,13 +115,13 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     if (index == 0) {
-        NSLog(@"more, row = %ld", (long)indexPath.row);
+        [self showEditVCForCheckinInRow:indexPath.row];
     } else {
         NSLog(@"delete, row = %ld", (long)indexPath.row);
     }
 }
 
-- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
+- (BOOL):(SWTableViewCell *)cell {
     return YES;
 }
 
@@ -142,5 +144,34 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     [rightUtilityButtons sw_addUtilityButtonWithColor:MAIN_THEME_COLOR attributedTitle:deleteString];
     return rightUtilityButtons;
 }
+
+- (void)showEditVCForCheckinInRow:(NSInteger)row {
+    @weakify(self);
+    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initWithCheckin:self.checkins[row] completion:^{
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            @strongify(self);
+            self.completion();
+        }];
+    }];
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)showEditVCToCreateCheckin {
+    @weakify(self);
+    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initToCreateNewCheckinWithCompletion:^{
+        [self.navigationController dismissViewControllerAnimated:YES completion:^{
+            @strongify(self);
+            self.completion();
+        }];
+    }];
+    vc.providesPresentationContextTransitionStyle = YES;
+    vc.definesPresentationContext = YES;
+    [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
+    [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
 
 @end

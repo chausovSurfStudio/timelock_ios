@@ -50,4 +50,20 @@
     self.layer.cornerRadius = CORNER_RADIUS;
 }
 
+- (void)setWhiteButtonWithoutBorderStyle {
+    [self setBackgroundColor:[UIColor clearColor]];
+    [self setBackgroundImage:[UIImage imageFromColor:[UIColor whiteColor]] forState:UIControlStateNormal];
+    [self setBackgroundImage:[UIImage imageFromColor:[UIColor whiteColor]] forState:UIControlStateHighlighted];
+    [self setBackgroundImage:[UIImage imageFromColor:[UIColor whiteColor]] forState:UIControlStateSelected];
+    
+    [self setTitleColor:WHITE_BUTTON_TEXT_COLOR forState:UIControlStateNormal];
+    [self setTitleColor:WHITE_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateSelected];
+    [self setTitleColor:WHITE_BUTTON_TEXT_COLOR_PRESSED forState:UIControlStateHighlighted];
+    
+    self.titleLabel.font = BUTTON_FONT;
+    self.titleLabel.textAlignment = NSTextAlignmentCenter;
+    self.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter;
+    self.clipsToBounds = YES;
+}
+
 @end

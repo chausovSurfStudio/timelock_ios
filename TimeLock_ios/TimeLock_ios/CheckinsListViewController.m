@@ -12,7 +12,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-@interface CheckinsListViewController () <UITableViewDelegate, UITableViewDataSource>
+@interface CheckinsListViewController () <UITableViewDelegate, UITableViewDataSource, SWTableViewCellDelegate>
 
 @property (nonatomic, strong) void (^completion)();
 @property (nonatomic, strong) NSArray *checkins;
@@ -104,7 +104,23 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CheckinTableViewCell *cell = [self.tableView dequeueReusableCellWithIdentifier:checkinIdentifier];
     [cell configWithCheckin:self.checkins[indexPath.row]];
+    cell.rightUtilityButtons = [self rightUtilityButtonsForCell];
+    cell.delegate = self;
     return cell;
+}
+
+#pragma mark - SWTableViewCellDelegate
+- (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
+    if (index == 0) {
+        NSLog(@"more, row = %ld", (long)indexPath.row);
+    } else {
+        NSLog(@"delete, row = %ld", (long)indexPath.row);
+    }
+}
+
+- (BOOL)swipeableTableViewCellShouldHideUtilityButtonsOnSwipe:(SWTableViewCell *)cell {
+    return YES;
 }
 
 #pragma mark - Others
@@ -112,6 +128,19 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     if (self.completion) {
         self.completion();
     }
+}
+
+- (NSArray *)rightUtilityButtonsForCell {
+    NSMutableArray *rightUtilityButtons = [NSMutableArray new];
+    NSDictionary *dict = @{
+                            NSForegroundColorAttributeName:TEXT_COLOR_LIGHT,
+                            NSFontAttributeName:CHECKIN_DESCRIPTION_FONT_BOLD,
+                            };
+    NSAttributedString *editString = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"editCheckin", nil) attributes:dict];
+    NSAttributedString *deleteString = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"deleteCheckin", nil) attributes:dict];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:EXTRA_THEME_COLOR attributedTitle:editString];
+    [rightUtilityButtons sw_addUtilityButtonWithColor:MAIN_THEME_COLOR attributedTitle:deleteString];
+    return rightUtilityButtons;
 }
 
 @end

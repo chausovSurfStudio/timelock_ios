@@ -48,3 +48,6 @@
 "weekResultExists" = "На этой неделе отработано ";
 "weekResultEmpty" = "Активности не зафиксировано";
 "emptyCheckinsList" = "В данный день не зафиксировано ни одного чекина";
+
+"editCheckin" = "Изменить";
+"deleteCheckin" = "Удалить";

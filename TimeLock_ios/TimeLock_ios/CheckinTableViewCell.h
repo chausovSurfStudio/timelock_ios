@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <SWTableViewCell/SWTableViewCell.h>
 
 @class Checkin;
 
-@interface CheckinTableViewCell : UITableViewCell
+@interface CheckinTableViewCell : SWTableViewCell
 
 - (void)configWithCheckin:(Checkin *)checkin;
 

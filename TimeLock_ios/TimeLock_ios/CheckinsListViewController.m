@@ -10,6 +10,10 @@
 #import "CheckinTableViewCell.h"
 #import "EditCheckinViewController.h"
 #import "BarsAppearance.h"
+#import "Checkin.h"
+
+#import "TLNetworkManager+Checkin.h"
+#import "AlertViewController.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
@@ -95,7 +99,7 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self showEditVCForCheckinInRow:indexPath.row];
+    [self showEditVCForCheckinAtIndexPath:indexPath];
 }
 
 #pragma mark - UITableViewDataSource
@@ -115,9 +119,9 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 - (void)swipeableTableViewCell:(SWTableViewCell *)cell didTriggerRightUtilityButtonWithIndex:(NSInteger)index {
     NSIndexPath *indexPath = [self.tableView indexPathForCell:cell];
     if (index == 0) {
-        [self showEditVCForCheckinInRow:indexPath.row];
+        [self showEditVCForCheckinAtIndexPath:indexPath];
     } else {
-        NSLog(@"delete, row = %ld", (long)indexPath.row);
+        [self deleteCheckinAtIndexPath:indexPath];
     }
 }
 
@@ -136,7 +140,7 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     NSMutableArray *rightUtilityButtons = [NSMutableArray new];
     NSDictionary *dict = @{
                             NSForegroundColorAttributeName:TEXT_COLOR_LIGHT,
-                            NSFontAttributeName:CHECKIN_DESCRIPTION_FONT_BOLD,
+                            NSFontAttributeName:UTILITY_BUTTON_FONT,
                             };
     NSAttributedString *editString = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"editCheckin", nil) attributes:dict];
     NSAttributedString *deleteString = [[NSAttributedString alloc] initWithString:NSLocalizedString(@"deleteCheckin", nil) attributes:dict];
@@ -145,9 +149,9 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     return rightUtilityButtons;
 }
 
-- (void)showEditVCForCheckinInRow:(NSInteger)row {
+- (void)showEditVCForCheckinAtIndexPath:(NSIndexPath *)indexPath {
     @weakify(self);
-    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initWithCheckin:self.checkins[row] completion:^{
+    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initWithCheckin:self.checkins[indexPath.row] completion:^{
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             @strongify(self);
             self.completion();
@@ -161,7 +165,7 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 
 - (void)showEditVCToCreateCheckin {
     @weakify(self);
-    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initToCreateNewCheckinWithCompletion:^{
+    EditCheckinViewController *vc = [[EditCheckinViewController alloc] initToCreateNewCheckinWithDate:self.date completion:^{
         [self.navigationController dismissViewControllerAnimated:YES completion:^{
             @strongify(self);
             self.completion();
@@ -171,6 +175,20 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     vc.definesPresentationContext = YES;
     [vc setModalPresentationStyle:UIModalPresentationOverCurrentContext];
     [self.navigationController presentViewController:vc animated:YES completion:nil];
+}
+
+- (void)deleteCheckinAtIndexPath:(NSIndexPath *)indexPath {
+    Checkin *checkin = self.checkins[indexPath.row];
+    @weakify(self);
+    [[TLNetworkManager sharedNetworkManager] deleteCheckinWithID:checkin.checkinID completion:^(BOOL success, id object) {
+        @strongify(self);
+        if (success) {
+            [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successDeleteCheckin", nil) animation:YES autoHide:YES];
+            [self complete];
+        } else {
+            // ошибка обработается на уровне запроса
+        }
+    }];
 }
 
 

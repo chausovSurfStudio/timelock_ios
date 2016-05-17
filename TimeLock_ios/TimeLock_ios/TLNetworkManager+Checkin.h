@@ -11,5 +11,8 @@
 @interface TLNetworkManager (Checkin)
 
 - (void)getCheckinsPage:(NSInteger)page completion:(void (^)(BOOL success, id object))completion;
+- (void)deleteCheckinWithID:(NSNumber *)checkinID completion:(void (^)(BOOL success, id object))completion;
+- (void)updateCheckinWithID:(NSNumber *)checkinID date:(NSDate *)date completion:(void (^)(BOOL success, id object))completion;
+- (void)createCheckinWithDate:(NSDate *)date completion:(void (^)(BOOL success, id object))completion;
 
 @end

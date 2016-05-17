@@ -55,6 +55,7 @@
 #define CHECKIN_DESCRIPTION_FONT        [UIFont fontWithName:@"PTSans-Regular" size:18]
 #define CHECKIN_DESCRIPTION_FONT_BOLD   [UIFont fontWithName:@"PTSans-Bold" size:18]
 #define EMPTY_CHECKINS_LIST_FONT        [UIFont fontWithName:@"PTSans-Regular" size:18]
+#define UTILITY_BUTTON_FONT             [UIFont fontWithName:@"PTSans-Bold" size:16]
 
 // URL PATH
 
@@ -66,6 +67,8 @@ static NSString * const POST_PATH = @"/posts/";
 static NSString * const CURRENT_USER_PATH = @"/users/";
 static NSString * const USER_PATH = @"/users/%@";
 static NSString * const CHECKINS_PAGE_PATH = @"/checkins/?page=%ld";
+static NSString * const CHECKIN_WITH_ID_PATH = @"/checkins/%@";
+static NSString * const CHECKIN_PATH = @"/checkins/";
 
 // CONST STRING
 

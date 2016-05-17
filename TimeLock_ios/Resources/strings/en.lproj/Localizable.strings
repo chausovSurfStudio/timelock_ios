@@ -51,3 +51,7 @@
 
 "editCheckin" = "Изменить";
 "deleteCheckin" = "Удалить";
+
+"successDeleteCheckin" = "Удаление чекина прошло успешно";
+"successCreateCheckin" = "Создание чекина прошло успешно";
+"successUpdateCheckin" = "Изменение чекина прошло успешно";

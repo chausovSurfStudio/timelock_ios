@@ -8,14 +8,17 @@
 
 #import "EditCheckinViewController.h"
 #import "Checkin.h"
+#import "AlertViewController.h"
 
 #import "UIButton+TimeLockStyle.h"
+#import "TLNetworkManager+Checkin.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
 @interface EditCheckinViewController ()
 
 @property (nonatomic, strong) Checkin *checkin;
+@property (nonatomic, strong) NSDate *date;
 @property (nonatomic, strong) void (^completion)();
 
 @property (nonatomic, strong) IBOutlet UIDatePicker *datePicker;
@@ -33,15 +36,17 @@
     self = [super init];
     if (self) {
         self.checkin = checkin;
+        self.date = nil;
         self.completion = completion;
     }
     return self;
 }
 
-- (instancetype)initToCreateNewCheckinWithCompletion:(void (^)())completion {
+- (instancetype)initToCreateNewCheckinWithDate:(NSDate *)date completion:(void (^)())completion {
     self = [super init];
     if (self) {
         self.checkin = nil;
+        self.date = date;
         self.completion = completion;
     }
     return self;
@@ -62,7 +67,15 @@
     if (self.checkin && self.checkin.time) {
         self.datePicker.date = self.checkin.time;
     } else {
-        self.datePicker.date = [NSDate date];
+        NSDate *currentDate = [NSDate date];
+        NSCalendar *calendar = [NSCalendar currentCalendar];
+        NSDateComponents *needDateComponents = [calendar components: NSUIntegerMax fromDate:self.date];
+        NSDateComponents *currerntDateComponents = [calendar components: NSUIntegerMax fromDate:currentDate];
+        [needDateComponents setHour:currerntDateComponents.hour];
+        [needDateComponents setMinute:currerntDateComponents.minute];
+        [needDateComponents setSecond:currerntDateComponents.second];
+        NSDate *newDate = [calendar dateFromComponents:needDateComponents];
+        self.datePicker.date = newDate;
     }
 }
 
@@ -92,11 +105,27 @@
 
 - (void)saveChanges {
     if (self.checkin && self.checkin.checkinID) {
-        NSLog(@"изменяем чекин");
-        [self complete];
+        @weakify(self);
+        [[TLNetworkManager sharedNetworkManager] updateCheckinWithID:self.checkin.checkinID date:self.datePicker.date completion:^(BOOL success, id object) {
+            @strongify(self);
+            if (success) {
+                [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successUpdateCheckin", nil) animation:YES autoHide:YES];
+                [self complete];
+            } else {
+                // ошибка обработается на уровне запроса, экран не будет закрыт
+            }
+        }];
     } else {
-        NSLog(@"создаем чекин");
-        [self complete];
+        @weakify(self);
+        [[TLNetworkManager sharedNetworkManager] createCheckinWithDate:self.datePicker.date completion:^(BOOL success, id object) {
+            @strongify(self);
+            if (success) {
+                [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successCreateCheckin", nil) animation:YES autoHide:YES];
+                [self complete];
+            } else {
+                // ошибка обработается на уровне запроса, экран не будет закрыт
+            }
+        }];
     }
 }
 

@@ -16,8 +16,7 @@
 @implementation DataStorageManager (Checkin)
 
 - (void)saveCheckinsPage:(NSDictionary *)dict completion:(void (^)(BOOL success, id object))completion {
-    NSLog(@"CHECKIN COUNT = %ld", (unsigned long)[Checkin MR_findAll].count);
-    NSLog(@"NOTE COUNT = %ld", (unsigned long)[Note MR_findAll].count);
+    [Checkin MR_truncateAll];
     
     NSArray *checkinsDict = [dict safeGetArrayByKey:@"checkins"];
     [Checkin MR_importFromArray:checkinsDict];
@@ -46,6 +45,8 @@
     [resultDict setValue:@[[self checkinsForDate:sunday],       [self notesForDate:sunday],     sunday,     [self safeGetTimeFromArray:times forIndex:6]] forKey:sundayString];
     [resultDict setValue:[self safeGetTimeFromArray:times forIndex:7] forKey:resultTimeString];
     
+    NSLog(@"NOTE COUNT = %@", [Note MR_numberOfEntities]);
+    NSLog(@"CHECKIN COUNT = %@", [Checkin MR_numberOfEntities]);
     completion(YES, [resultDict copy]);
 }
 

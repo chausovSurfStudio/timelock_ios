@@ -13,6 +13,6 @@
 @interface EditCheckinViewController : UIViewController
 
 - (instancetype)initWithCheckin:(Checkin *)checkin completion:(void (^)())completion;
-- (instancetype)initToCreateNewCheckinWithCompletion:(void (^)())completion;
+- (instancetype)initToCreateNewCheckinWithDate:(NSDate *)date completion:(void (^)())completion;
 
 @end

@@ -11,6 +11,7 @@
                 <outlet property="cancelButton" destination="N5f-ei-kws" id="BFd-Nb-EG6"/>
                 <outlet property="datePicker" destination="7EB-eq-UXu" id="94u-ko-iSn"/>
                 <outlet property="firstSeparatorView" destination="mHD-AG-6X9" id="Qhj-uk-pIo"/>
+                <outlet property="hudView" destination="W0v-J3-AZ1" id="rwZ-ki-kpr"/>
                 <outlet property="saveButton" destination="gru-cr-Zia" id="QbV-ra-Hf2"/>
                 <outlet property="secondSeparatorView" destination="bEz-vq-bJD" id="3cI-YD-6XL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
@@ -86,12 +87,20 @@
                         <constraint firstItem="N5f-ei-kws" firstAttribute="top" secondItem="mHD-AG-6X9" secondAttribute="bottom" constant="3" id="z9L-ny-Kfo"/>
                     </constraints>
                 </view>
+                <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W0v-J3-AZ1">
+                    <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                    <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="trailing" secondItem="W0v-J3-AZ1" secondAttribute="trailing" id="2hT-za-heV"/>
+                <constraint firstItem="W0v-J3-AZ1" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="5j4-gF-EAl"/>
+                <constraint firstAttribute="bottom" secondItem="W0v-J3-AZ1" secondAttribute="bottom" id="5uN-ai-4YY"/>
                 <constraint firstAttribute="trailing" secondItem="P4Z-Ry-cNI" secondAttribute="trailing" constant="15" id="Cny-IS-oiY"/>
                 <constraint firstAttribute="bottom" secondItem="P4Z-Ry-cNI" secondAttribute="bottom" constant="59" id="SYL-Yw-FiP"/>
                 <constraint firstItem="P4Z-Ry-cNI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="Y4M-7c-RgK"/>
+                <constraint firstItem="W0v-J3-AZ1" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="arj-AG-Nvl"/>
             </constraints>
             <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
         </view>

@@ -40,7 +40,7 @@
                                 <constraint firstAttribute="height" constant="30" id="bWm-0U-SGu"/>
                             </constraints>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocorrectionType="no"/>
+                            <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                         </textField>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="9ai-aa-1yc">
                             <rect key="frame" x="15" y="46" width="290" height="30"/>

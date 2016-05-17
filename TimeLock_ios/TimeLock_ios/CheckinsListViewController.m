@@ -16,6 +16,7 @@
 #import "AlertViewController.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface CheckinsListViewController () <UITableViewDelegate, UITableViewDataSource, SWTableViewCellDelegate>
 
@@ -27,6 +28,8 @@
 @property (nonatomic, strong) IBOutlet UIView *emptyScreenView;
 @property (nonatomic, strong) IBOutlet UILabel *emptyLabel;
 @property (nonatomic, strong) IBOutlet UIButton *addButton;
+
+@property (nonatomic, strong) MBProgressHUD *hud;
 
 @end
 
@@ -129,6 +132,17 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
     return YES;
 }
 
+#pragma mark - HUDView
+- (void)showHudView {
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [TLUtils showHudView:self.hud onView:self.view];
+}
+
+- (void)hideHudView {
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    [TLUtils hideHudView:self.hud onView:self.view];
+}
+
 #pragma mark - Others
 - (void)complete {
     if (self.completion) {
@@ -179,9 +193,11 @@ static NSString *checkinIdentifier = @"checkinIdentifier";
 
 - (void)deleteCheckinAtIndexPath:(NSIndexPath *)indexPath {
     Checkin *checkin = self.checkins[indexPath.row];
+    [self showHudView];
     @weakify(self);
     [[TLNetworkManager sharedNetworkManager] deleteCheckinWithID:checkin.checkinID completion:^(BOOL success, id object) {
         @strongify(self);
+        [self hideHudView];
         if (success) {
             [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successDeleteCheckin", nil) animation:YES autoHide:YES];
             [self complete];

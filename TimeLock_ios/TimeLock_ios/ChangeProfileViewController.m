@@ -49,6 +49,9 @@ static NSString * const changeProfileDataCellIdentifier = @"changeProfileDataCel
     self.tableView.rowHeight = UITableViewAutomaticDimension;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+    
+    UIGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 #pragma mark - UITableViewDelegate
@@ -111,6 +114,11 @@ static NSString * const changeProfileDataCellIdentifier = @"changeProfileDataCel
             self.resultCell.saveButton.enabled = YES;
         }
     }];
+}
+
+#pragma mark - Others
+- (void)hideKeyboard {
+    [self.view endEditing:YES];
 }
 
 @end

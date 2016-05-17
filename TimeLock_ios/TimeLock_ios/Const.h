@@ -56,11 +56,12 @@
 #define CHECKIN_DESCRIPTION_FONT_BOLD   [UIFont fontWithName:@"PTSans-Bold" size:18]
 #define EMPTY_CHECKINS_LIST_FONT        [UIFont fontWithName:@"PTSans-Regular" size:18]
 #define UTILITY_BUTTON_FONT             [UIFont fontWithName:@"PTSans-Bold" size:16]
+#define TEXT_FIELD_FONT                 [UIFont fontWithName:@"PTSans-Regular" size:14]
 
 // URL PATH
 
-static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
-//static NSString * const BASE_URL = @"http://1d6dfd94.ngrok.io/api/v1.0";
+//static NSString * const BASE_URL = @"http://127.0.0.1:5000/api/v1.0";
+static NSString * const BASE_URL = @"https://422c3290.ngrok.io/api/v1.0";
 
 static NSString * const TOKEN_PATH = @"/token";
 static NSString * const POST_PATH = @"/posts/";

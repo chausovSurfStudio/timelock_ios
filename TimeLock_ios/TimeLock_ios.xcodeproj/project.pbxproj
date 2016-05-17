@@ -53,6 +53,9 @@
 		847D5D4B1CE63B39009157EE /* Checkin.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D451CE63B39009157EE /* Checkin.m */; };
 		847D5D4C1CE63B39009157EE /* Note+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D471CE63B39009157EE /* Note+CoreDataProperties.m */; };
 		847D5D4D1CE63B39009157EE /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = 847D5D491CE63B39009157EE /* Note.m */; };
+		84AA86091CEB74E9000DBE4C /* ic_time.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AA86061CEB74E8000DBE4C /* ic_time.png */; };
+		84AA860A1CEB74E9000DBE4C /* ic_time@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AA86071CEB74E9000DBE4C /* ic_time@2x.png */; };
+		84AA860B1CEB74E9000DBE4C /* ic_time@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 84AA86081CEB74E9000DBE4C /* ic_time@3x.png */; };
 		84AD1E8A1CDFB2D90055CB87 /* ChangeProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD1E881CDFB2D90055CB87 /* ChangeProfileViewController.m */; };
 		84AD1E8B1CDFB2D90055CB87 /* ChangeProfileViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84AD1E891CDFB2D90055CB87 /* ChangeProfileViewController.xib */; };
 		84AD1E901CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84AD1E8E1CDFB8CA0055CB87 /* ChangeProfileDataTableViewCell.m */; };
@@ -232,6 +235,9 @@
 		847D5D471CE63B39009157EE /* Note+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "Note+CoreDataProperties.m"; sourceTree = "<group>"; };
 		847D5D481CE63B39009157EE /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
 		847D5D491CE63B39009157EE /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
+		84AA86061CEB74E8000DBE4C /* ic_time.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ic_time.png; path = Resources/icon/ic_time.png; sourceTree = "<group>"; };
+		84AA86071CEB74E9000DBE4C /* ic_time@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_time@2x.png"; path = "Resources/icon/ic_time@2x.png"; sourceTree = "<group>"; };
+		84AA86081CEB74E9000DBE4C /* ic_time@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "ic_time@3x.png"; path = "Resources/icon/ic_time@3x.png"; sourceTree = "<group>"; };
 		84AD1E871CDFB2D90055CB87 /* ChangeProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChangeProfileViewController.h; sourceTree = "<group>"; };
 		84AD1E881CDFB2D90055CB87 /* ChangeProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChangeProfileViewController.m; sourceTree = "<group>"; };
 		84AD1E891CDFB2D90055CB87 /* ChangeProfileViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ChangeProfileViewController.xib; sourceTree = "<group>"; };
@@ -823,6 +829,9 @@
 				84D3B0D41CE92D210064049F /* ic_button_add.png */,
 				84D3B0D51CE92D210064049F /* ic_button_add@2x.png */,
 				84D3B0D61CE92D210064049F /* ic_button_add@3x.png */,
+				84AA86061CEB74E8000DBE4C /* ic_time.png */,
+				84AA86071CEB74E9000DBE4C /* ic_time@2x.png */,
+				84AA86081CEB74E9000DBE4C /* ic_time@3x.png */,
 			);
 			name = icon;
 			sourceTree = "<group>";
@@ -1105,6 +1114,7 @@
 				84E64F631CD10C8E001A06A2 /* TLLaunchLoginViewController.xib in Resources */,
 				84E64F501CD0DEC0001A06A2 /* PT_Sans-Web-Italic.ttf in Resources */,
 				84E64F511CD0DEC0001A06A2 /* PT_Sans-Web-Regular.ttf in Resources */,
+				84AA860B1CEB74E9000DBE4C /* ic_time@3x.png in Resources */,
 				8446AB431CD9252A002B0C9C /* profileTopCellImage.jpg in Resources */,
 				84E64EF11CD0C9E2001A06A2 /* LaunchScreen.storyboard in Resources */,
 				84AD1E8B1CDFB2D90055CB87 /* ChangeProfileViewController.xib in Resources */,
@@ -1143,6 +1153,7 @@
 				84AD1EAF1CDFC4F30055CB87 /* icBackPressed@3x.png in Resources */,
 				84D3B0D71CE92D210064049F /* ic_button_add_pressed.png in Resources */,
 				84E64F261CD0D60A001A06A2 /* ic_catalog@2x.png in Resources */,
+				84AA860A1CEB74E9000DBE4C /* ic_time@2x.png in Resources */,
 				84AD1E961CDFB8E50055CB87 /* ChangeProfileResultTableViewCell.xib in Resources */,
 				84E64F361CD0D715001A06A2 /* TLMainViewController.xib in Resources */,
 				84AD1EAA1CDFC4F30055CB87 /* icBack.png in Resources */,
@@ -1159,6 +1170,7 @@
 				845A36221CEA4431005CD381 /* EditCheckinViewController.xib in Resources */,
 				84FDCFEB1CDBEFFC006A9039 /* user_placeholder@3x.png in Resources */,
 				84AD1EAD1CDFC4F30055CB87 /* icBackPressed.png in Resources */,
+				84AA86091CEB74E9000DBE4C /* ic_time.png in Resources */,
 				84E64F2D1CD0D60A001A06A2 /* ic_profile@3x.png in Resources */,
 				844F94531CDE24D80033647F /* UserViewController.xib in Resources */,
 				84D3B0BB1CE8A0200064049F /* ic_arrow_left@2x.png in Resources */,

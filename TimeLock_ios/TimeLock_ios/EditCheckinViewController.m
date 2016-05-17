@@ -14,6 +14,7 @@
 #import "TLNetworkManager+Checkin.h"
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface EditCheckinViewController ()
 
@@ -27,6 +28,9 @@
 @property (nonatomic, strong) IBOutlet UIView *firstSeparatorView;
 @property (nonatomic, strong) IBOutlet UIView *secondSeparatorView;
 @property (nonatomic, strong) IBOutlet UIView *backWhiteView;
+
+@property (nonatomic, strong) MBProgressHUD *hud;
+@property (nonatomic, strong) IBOutlet UIView *hudView;
 
 @end
 
@@ -56,6 +60,7 @@
     [super viewDidLoad];
     [self configStyle];
     [self configButton];
+    self.hudView.hidden = YES;
     UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(simpleComplete)];
     [self.view addGestureRecognizer:tapGesture];
     self.datePicker.locale = [NSLocale localeWithLocaleIdentifier:@"ru_RU_POSIX"];
@@ -79,6 +84,7 @@
     }
 }
 
+#pragma mark - Config
 - (void)configStyle {
     [self.cancelButton setWhiteButtonWithoutBorderStyle];
     [self.saveButton setWhiteButtonWithoutBorderStyle];
@@ -103,11 +109,27 @@
     }];
 }
 
+#pragma mark - HUDView
+- (void)showHudView {
+    self.hudView.hidden = NO;
+    [[UIApplication sharedApplication] beginIgnoringInteractionEvents];
+    [TLUtils showHudView:self.hud onView:self.hudView];
+}
+
+- (void)hideHudView {
+    self.hudView.hidden = YES;
+    [[UIApplication sharedApplication] endIgnoringInteractionEvents];
+    [TLUtils hideHudView:self.hud onView:self.hudView];
+}
+
+#pragma mark - Actions
 - (void)saveChanges {
+    [self showHudView];
     if (self.checkin && self.checkin.checkinID) {
         @weakify(self);
         [[TLNetworkManager sharedNetworkManager] updateCheckinWithID:self.checkin.checkinID date:self.datePicker.date completion:^(BOOL success, id object) {
             @strongify(self);
+            [self hideHudView];
             if (success) {
                 [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successUpdateCheckin", nil) animation:YES autoHide:YES];
                 [self complete];
@@ -119,6 +141,7 @@
         @weakify(self);
         [[TLNetworkManager sharedNetworkManager] createCheckinWithDate:self.datePicker.date completion:^(BOOL success, id object) {
             @strongify(self);
+            [self hideHudView];
             if (success) {
                 [[AlertViewController sharedInstance] showInfoAlert:NSLocalizedString(@"successCreateCheckin", nil) animation:YES autoHide:YES];
                 [self complete];

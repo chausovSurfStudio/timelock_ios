@@ -13,7 +13,7 @@
 
 #import <ReactiveCocoa/ReactiveCocoa.h>
 
-static const CGFloat ANIMATION_DURATION = 0.5f;
+static const CGFloat ANIMATION_DURATION = 0.7f;
 
 @interface TLLaunchLoginViewController ()
 
@@ -31,6 +31,8 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self configButtons];
+    UITapGestureRecognizer *tapGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+    [self.view addGestureRecognizer:tapGesture];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -76,7 +78,9 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
     self.passwordTextField.tintColor = TEXT_FIELD_TINT_COLOR;
     self.emailTextField.textColor = TEXT_FIELD_TEXT_COLOR;
     self.passwordTextField.textColor = TEXT_FIELD_TEXT_COLOR;
-    
+    self.emailTextField.font = TEXT_FIELD_FONT;
+    self.passwordTextField.font = TEXT_FIELD_FONT;
+    self.passwordTextField.secureTextEntry = YES;
 }
 
 - (void)configTitles {
@@ -105,6 +109,10 @@ static const CGFloat ANIMATION_DURATION = 0.5f;
             }
         }];
     }];
+}
+
+- (void)hideKeyboard {
+    [self.view endEditing:YES];
 }
 
 @end
